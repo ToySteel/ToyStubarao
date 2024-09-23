@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"15185e6cea6a15ba","type":"text","text":"Toy steel jogo estilo tubarao","x":-149,"y":-76,"width":250,"height":60,"color":"#ee00ff"},
+		{"id":"2efe6479bcf298d6","type":"text","text":"personagem","x":-399,"y":60,"width":250,"height":60,"color":"4"},
+		{"id":"4b70797f22f99b3e","type":"text","text":"cenario","x":139,"y":-169,"width":250,"height":60,"color":"4"},
+		{"id":"67f989d50e4eb60d","type":"text","text":"sistema de arvore de abilidades","x":98,"y":112,"width":250,"height":60,"color":"4"},
+		{"id":"8bf608309b0f76c0","type":"text","text":"abilidades?","x":-420,"y":220,"width":250,"height":60,"color":"2"},
+		{"id":"708bdd69490eb29b","type":"text","text":"aparencia","x":-667,"y":-21,"width":250,"height":60,"color":"2"},
+		{"id":"06df1265cb381440","type":"file","file":"Arvore de abilidades.md","x":640,"y":280,"width":400,"height":400,"color":"5"},
+		{"id":"67d7aef750b08643","type":"text","text":"salvamento ou ajuda","x":-74,"y":250,"width":250,"height":60,"color":"1"},
+		{"id":"81f4f1062d00ff67","type":"file","file":"Salvamento ou ajuda.md","x":94,"y":452,"width":400,"height":400,"color":"5"},
+		{"id":"f2b5282f263b9aef","type":"file","file":"Sistema de luzes.md","x":-674,"y":380,"width":400,"height":400,"color":"3"},
+		{"id":"6c774c2b3ba0108c","type":"text","text":"ambientaçao","x":460,"y":-199,"width":250,"height":60,"color":"3"},
+		{"id":"45b287009b19a4a2","type":"text","text":"fundo do mar","x":335,"y":-46,"width":250,"height":60,"color":"5"},
+		{"id":"e42eb615b8b3436f","type":"text","text":"base de pesquisa","x":348,"y":39,"width":250,"height":60,"color":"2"}
+	],
+	"edges":[
+		{"id":"4f9efc16bb5537fb","fromNode":"15185e6cea6a15ba","fromSide":"left","toNode":"2efe6479bcf298d6","toSide":"top","color":"3"},
+		{"id":"c62db46457acfbc6","fromNode":"15185e6cea6a15ba","fromSide":"top","toNode":"4b70797f22f99b3e","toSide":"left","color":"6"},
+		{"id":"eb7dc7659f22b65b","fromNode":"15185e6cea6a15ba","fromSide":"bottom","toNode":"67f989d50e4eb60d","toSide":"top","color":"1"},
+		{"id":"267af717ecbd5d8e","fromNode":"2efe6479bcf298d6","fromSide":"bottom","toNode":"8bf608309b0f76c0","toSide":"top","color":"1"},
+		{"id":"b942e6c88d611e2d","fromNode":"2efe6479bcf298d6","fromSide":"left","toNode":"708bdd69490eb29b","toSide":"bottom","color":"5"},
+		{"id":"bd04072e305206c7","fromNode":"8bf608309b0f76c0","fromSide":"bottom","toNode":"f2b5282f263b9aef","toSide":"top","color":"6"},
+		{"id":"e2be70ef8a2b9602","fromNode":"67f989d50e4eb60d","fromSide":"bottom","toNode":"06df1265cb381440","toSide":"top","color":"6"},
+		{"id":"b8b0266d3f03ea07","fromNode":"2efe6479bcf298d6","fromSide":"right","toNode":"67d7aef750b08643","toSide":"top"},
+		{"id":"c50bd524485e503b","fromNode":"67d7aef750b08643","fromSide":"bottom","toNode":"81f4f1062d00ff67","toSide":"top","color":"6"},
+		{"id":"7a15ef758f23991a","fromNode":"4b70797f22f99b3e","fromSide":"right","toNode":"6c774c2b3ba0108c","toSide":"left"},
+		{"id":"f700896d3cfc658b","fromNode":"6c774c2b3ba0108c","fromSide":"bottom","toNode":"45b287009b19a4a2","toSide":"top"},
+		{"id":"ec9c622b6b3c66bf","fromNode":"4b70797f22f99b3e","fromSide":"bottom","toNode":"e42eb615b8b3436f","toSide":"left","color":"3"},
+		{"id":"9d9e66de08869009","fromNode":"81f4f1062d00ff67","fromSide":"left","toNode":"e42eb615b8b3436f","toSide":"bottom"}
+	]
+}

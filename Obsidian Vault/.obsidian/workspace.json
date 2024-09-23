@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "57a36e340d743361",
+    "type": "split",
+    "children": [
+      {
+        "id": "0b69773076fcc3ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5740524a4f8298d9",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Principal.canvas",
+                "viewState": {
+                  "x": 140.26392352475057,
+                  "y": 475.7909094304911,
+                  "zoom": -0.7746904905044366
+                }
+              }
+            }
+          },
+          {
+            "id": "81fe183f8fcf6c19",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Diario de bordo/2024-09-23.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6bd3159c03bc12b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "8eb97bab34beb814",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2822ec56ea4fc2ce",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1154b1fbd109f51e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "06a706ca61f084ae",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1dcf942261e9bd1e",
+    "type": "split",
+    "children": [
+      {
+        "id": "de825ac9f96139da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de46ed20df1a050e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Diario de bordo/2024-09-23.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f6042d4cd855303b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Diario de bordo/2024-09-23.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "32810040fe270dc5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "70dd1fb266a92c11",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Diario de bordo/2024-09-23.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "81fe183f8fcf6c19",
+  "lastOpenFiles": [
+    "Principal.canvas",
+    "Untitled.canvas",
+    "Sistema de luzes.md",
+    "Diario de bordo/2024-09-23.md",
+    "Arvore de abilidades.md",
+    "Salvamento ou ajuda.md",
+    "Diario de bordo",
+    "Untitled"
+  ]
+}
