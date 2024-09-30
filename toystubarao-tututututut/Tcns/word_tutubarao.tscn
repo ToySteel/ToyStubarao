@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://phoq2ht71cmx"]
+
+[ext_resource type="PackedScene" uid="uid://tamfe7i06m3h" path="res://Tcns/personagem.tscn" id="1_nwxbq"]
+
+[node name="word tutubarao" type="Node2D"]
+
+[node name="Personagem" parent="." instance=ExtResource("1_nwxbq")]

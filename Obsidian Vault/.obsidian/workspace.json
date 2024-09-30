@@ -45,15 +45,30 @@
               "state": {
                 "file": "Principal.canvas",
                 "viewState": {
-                  "x": -7.99827004929071,
-                  "y": 444.02694446687013,
-                  "zoom": -0.9235346113490793
+                  "x": 228.3446440742191,
+                  "y": -19.99555917358471,
+                  "zoom": -0.8736482136843376
+                }
+              }
+            }
+          },
+          {
+            "id": "dd93f9b29e9b2ec4",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Principal.canvas",
+                "viewState": {
+                  "x": 158.23197502818527,
+                  "y": 423.76354848970243,
+                  "zoom": -1.060206764854292
                 }
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -180,14 +195,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "09a8c9dfed1d62e0",
+  "active": "dd93f9b29e9b2ec4",
   "lastOpenFiles": [
-    "Sistema de salvamento.md",
+    "loja.md",
     "Principal.canvas",
+    "texte.md",
+    "Sistema de salvamento.md",
     "Diario de bordo/2024-09-23.md",
     "Untitled.canvas",
     "Sistema de luzes.md",
-    "loja.md",
     "Salvamento ou ajuda.md",
     "Diario de bordo",
     "Untitled"
