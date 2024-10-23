@@ -1,7 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://phoq2ht71cmx"]
+[gd_scene load_steps=4 format=3 uid="uid://phoq2ht71cmx"]
 
 [ext_resource type="PackedScene" uid="uid://tamfe7i06m3h" path="res://Tcns/personagem.tscn" id="1_nwxbq"]
+[ext_resource type="Texture2D" uid="uid://xc8cfdsbjpfp" path="res://Assests/Sprite-0003.png" id="2_hfuu1"]
+[ext_resource type="PackedScene" uid="uid://3allu6euf42y" path="res://Tcns/ajudas.tscn" id="3_ihpx4"]
 
 [node name="word tutubarao" type="Node2D"]
 
 [node name="Personagem" parent="." instance=ExtResource("1_nwxbq")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(5, 5)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1000, 900)
+
+[node name="Sprite-0003" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.12901, 0, 0.755093, 0.32549)
+texture = ExtResource("2_hfuu1")
+centered = false
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_ihpx4")]
+position = Vector2(1, -1)

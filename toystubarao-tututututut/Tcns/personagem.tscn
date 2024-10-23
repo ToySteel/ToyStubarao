@@ -1,13 +1,38 @@
-[gd_scene load_steps=9 format=3 uid="uid://tamfe7i06m3h"]
+[gd_scene load_steps=10 format=3 uid="uid://tamfe7i06m3h"]
 
 [ext_resource type="Script" path="res://scripts/personagem.gd" id="1_2yc7x"]
 [ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="2_ibpqx"]
+[ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="3_vpu4e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jm1h"]
 height = 62.0
 
 [sub_resource type="Animation" id="Animation_wq0a5"]
 resource_name = "Cima ou baixo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_vpu4e")]
+}
 
 [sub_resource type="Animation" id="Animation_0unxr"]
 resource_name = "Nadano"
@@ -15,26 +40,26 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_ibpqx")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ibpqx")]
 }
 
 [sub_resource type="Animation" id="Animation_lqk5f"]
@@ -125,16 +150,17 @@ _data = {
 }
 
 [node name="Personagem" type="CharacterBody2D"]
-modulate = Color(0.463761, 0.455229, 1, 1)
 scale = Vector2(5, 5)
 script = ExtResource("1_2yc7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 rotation = 1.5708
+scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_5jm1h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 1)
 texture = ExtResource("2_ibpqx")
 hframes = 6
 
@@ -143,3 +169,5 @@ libraries = {
 "": SubResource("AnimationLibrary_2g61k")
 }
 autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
