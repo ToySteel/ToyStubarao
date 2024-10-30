@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var player = $Sprite2D
 @export var speed = 200
-@export var rotation_speed = 1
+@export var rotation_speed = 1.7
 @onready var anim = $AnimationPlayer
 var rotation_direction = 0
 var direçao = true
@@ -17,8 +17,10 @@ func _physics_process(delta):
 	stade()
 	if Input.is_action_pressed("ui_up"):
 		player.scale.x = 1
+		$CollisionShape2D.scale.x = 1
 	if Input.is_action_pressed("ui_down"):
 		player.scale.x = -1
+		$CollisionShape2D.scale.x = -1
 
 func stade():
 	if Input.is_action_just_pressed("ui_up"):

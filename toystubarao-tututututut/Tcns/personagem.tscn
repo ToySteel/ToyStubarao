@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://tamfe7i06m3h"]
+[gd_scene load_steps=11 format=3 uid="uid://tamfe7i06m3h"]
 
 [ext_resource type="Script" path="res://scripts/personagem.gd" id="1_2yc7x"]
 [ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="2_ibpqx"]
 [ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="3_vpu4e"]
+[ext_resource type="Texture2D" uid="uid://xc8cfdsbjpfp" path="res://Assests/Sprite-0003.png" id="4_u5i1x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jm1h"]
-height = 62.0
+radius = 7.0
+height = 19.6
 
 [sub_resource type="Animation" id="Animation_wq0a5"]
 resource_name = "Cima ou baixo"
@@ -151,18 +153,20 @@ _data = {
 
 [node name="Personagem" type="CharacterBody2D"]
 scale = Vector2(5, 5)
+collision_mask = 14
 script = ExtResource("1_2yc7x")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.430181, 0.552488, 1, 1)
+texture = ExtResource("2_ibpqx")
+hframes = 6
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+visible = false
+position = Vector2(0.199999, 3.57628e-07)
 rotation = 1.5708
 scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_5jm1h")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
-texture = ExtResource("2_ibpqx")
-hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -171,3 +175,12 @@ libraries = {
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+
+[node name="Shader" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.109804)
+scale = Vector2(27.8, 21)
+texture = ExtResource("4_u5i1x")
+region_enabled = true
+region_rect = Rect2(985.026, 0, 14.8519, 16.8738)
