@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://phoq2ht71cmx"]
 
 [ext_resource type="PackedScene" uid="uid://tamfe7i06m3h" path="res://Tcns/personagem.tscn" id="1_nwxbq"]
-[ext_resource type="Texture2D" uid="uid://d1paqpiq5swc6" path="res://Assests/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_weoly"]
+[ext_resource type="Texture2D" uid="uid://d1paqpiq5swc6" path="res://Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_weoly"]
 [ext_resource type="Texture2D" uid="uid://xc8cfdsbjpfp" path="res://Assests/Sprite-0003.png" id="2_hfuu1"]
 [ext_resource type="PackedScene" uid="uid://3allu6euf42y" path="res://Tcns/ajudas.tscn" id="3_ihpx4"]
 
@@ -151,4 +151,4 @@ position = Vector2(566, 433)
 scale = Vector2(5, 5)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_ihpx4")]
-position = Vector2(1, -1)
+position = Vector2(805, 282)
