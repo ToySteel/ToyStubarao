@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://3allu6euf42y"]
+[gd_scene load_steps=39 format=3 uid="uid://3allu6euf42y"]
 
 [ext_resource type="Script" path="res://scripts/ajudas.gd" id="1_ex3y5"]
+[ext_resource type="Resource" uid="uid://5mnx3157tj2a" path="res://dialogues/Main.dialogue" id="2_24j11"]
 [ext_resource type="Texture2D" uid="uid://b7j0klj0ebpqx" path="res://Assests/free-swimming-characters-animation-pixel-art/2 GraveRobber/Sprite-0004.png" id="2_ugxen"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhafx"]
@@ -264,12 +265,12 @@ animations = [{
 [node name="Area2D" type="Area2D"]
 scale = Vector2(5, 5)
 script = ExtResource("1_ex3y5")
+dialogue_resource = ExtResource("2_24j11")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_jhafx")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.552797, 0.587497, 0.999189, 1)
 sprite_frames = SubResource("SpriteFrames_oaliq")
 animation = &"desligando"
 autoplay = "Start"

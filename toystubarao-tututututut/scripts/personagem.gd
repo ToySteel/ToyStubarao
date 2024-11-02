@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var actionable_finder = $ActionableFinder
 @onready var player = $Sprite2D
-@export var speed = 200
+@export var speed = 100
 @export var rotation_speed = 1.7
 @onready var anim = $AnimationPlayer
 var rotation_direction = 0

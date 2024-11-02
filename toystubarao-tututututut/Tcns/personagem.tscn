@@ -161,7 +161,6 @@ collision_mask = 14
 script = ExtResource("1_2yc7x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.430181, 0.552488, 1, 1)
 texture = ExtResource("2_ibpqx")
 hframes = 6
 
@@ -179,8 +178,10 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
+limit_right = 6960
 
 [node name="Shader" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.27451)
 scale = Vector2(5, 5)
 texture = ExtResource("4_qvjx3")
