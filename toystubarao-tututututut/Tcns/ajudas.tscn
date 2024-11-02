@@ -1,11 +1,11 @@
 [gd_scene load_steps=38 format=3 uid="uid://3allu6euf42y"]
 
-[ext_resource type="Script" path="res://Tcns/ajudas.gd" id="1_ex3y5"]
+[ext_resource type="Script" path="res://scripts/ajudas.gd" id="1_ex3y5"]
 [ext_resource type="Texture2D" uid="uid://b7j0klj0ebpqx" path="res://Assests/free-swimming-characters-animation-pixel-art/2 GraveRobber/Sprite-0004.png" id="2_ugxen"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bgb7"]
-radius = 62.0
-height = 124.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhafx"]
+radius = 47.6
+height = 95.2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3tdo"]
 atlas = ExtResource("2_ugxen")
@@ -139,7 +139,7 @@ region = Rect2(576, 0, 64, 64)
 atlas = ExtResource("2_ugxen")
 region = Rect2(640, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dybh1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_oaliq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -221,7 +221,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3illy")
 }],
-"loop": true,
+"loop": false,
 "name": &"desligando",
 "speed": 10.0
 }, {
@@ -256,20 +256,24 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0n1uh")
 }],
-"loop": true,
+"loop": false,
 "name": &"ligando",
 "speed": 10.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Area2D" type="Area2D"]
+scale = Vector2(5, 5)
 script = ExtResource("1_ex3y5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_7bgb7")
+shape = SubResource("CapsuleShape2D_jhafx")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
-sprite_frames = SubResource("SpriteFrames_dybh1")
+modulate = Color(0.552797, 0.587497, 0.999189, 1)
+sprite_frames = SubResource("SpriteFrames_oaliq")
 animation = &"desligando"
 autoplay = "Start"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D2" to="." method="_on_animated_sprite_2d_2_animation_finished"]

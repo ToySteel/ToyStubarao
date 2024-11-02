@@ -1,0 +1,47 @@
+~ start
+Pesquisadora: Oi Mergulhador, como é bom te ver! Você tem muito trabalho a fazer, sabia?
+Pesquisadora: Existem mergulhadores perdidos nas profundezas e você tem que ajudá-los.
+Mergulhador: Como assim? Não estou te entendendo, acho que desmaiei pela mudança de pressão e me esqueci.
+Pesquisadora: Nossa, sério? q paia ze
+Pesquisadora: Se quiser eu posso te explicar de novo, o que você quer saber?
+=> perguntas
+~ perguntas
+Pesquisadora: Oque voce quer saber
+- Que lugar é esse?
+	Mergulhador: Onde nós estamos?
+	Pesquisadora: Ah, aqui é uma profunda caverna submarina onde estamos pesquisando inovações para ajudar a vida aquática.
+	Pesquisadora: Tem algo mais que queira saber?
+	=> perguntas
+- Qual é a minha missão?
+	Mergulhador: Você poderia me dizer qual é minha missão?
+	Pesquisadora: Terei que dar um breve contexto para explicar isso
+	Pesquisadora: A corporação Toy Steel teve a ideia de um projeto de pesquisa sobre a vida nas profundezas, então enviaram 3 mergulhadores para recolher os resultados.
+	Pesquisadora: Porém ocorreu um DESASTRE, os comunicadores falharam, e como estava no escuro não conseguiam se ver
+	Pesquisadora: Então eles se separaram e se perderam. Agora estão a mercê das águas sem conseguirem voltar
+	Pesquisadora: Seu trabalho é achar esses mergulhadores perdidos e levar eles de volta para cá e assim concluir a missão
+	Mergulhador: Mas como vou achar eles?
+	Pesquisadora: Eles possuem lanternas de sinais luminosos que iluminam distâncias incríveis!
+	Pesquisadora: Com estas lanternas você conseguirá saber para qual direção você deve ir para achá los
+	Pesquisadora: Então você também receberá um.
+	VOCÊ RECEBEU "TRANSMISSOR DE LUZ TOY STEEL"
+	set transmissor == "true"
+	Pesquisadora: Quando achar que e a hora certa, ative seu transmissor e voce ira saber para qual direçao ir
+	Pesquisadora: Tem algo mais que queira saber?
+	- COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????
+		Mergulhador: COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????
+		Pesquisadora: Sabe meu amigo, existem coisas que eu não sei, que voce não presisa saber, e que o Luis nao quer se dar ao trabalho de pensar, então so aceite.
+		Mergulhador: tudo bem faz todo o sentido.
+		=> perguntas
+- Quem e você?
+	Mergulhador: Me desculpe pela pergunta mas, quem e voce?
+	Pesquisadora: Nossa você se esqueceu bem viu.
+	Pesquisadora: Eu sou uma esquisadora que estava participando do projeto pelo laboratorio na parte cientifica.
+	Pesquisadora: Ai aconteceu este problemão e me designaram para auxiliar a cobai.. digo MERGULHADOR hehehe, MERGULHADOR heheheh.
+	=> perguntas
+- Nao quero saber mais nada.
+	if transmissor == "true":
+		Mergulhador: ok ja entendi oque deve ser feito
+		=> END
+	else:
+		Voce ainda tem que perguntar mais coisas.
+		=> perguntas

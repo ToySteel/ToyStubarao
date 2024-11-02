@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://tamfe7i06m3h"]
+[gd_scene load_steps=12 format=3 uid="uid://tamfe7i06m3h"]
 
 [ext_resource type="Script" path="res://scripts/personagem.gd" id="1_2yc7x"]
 [ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="2_ibpqx"]
 [ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="3_vpu4e"]
-[ext_resource type="Texture2D" uid="uid://xc8cfdsbjpfp" path="res://Assests/Sprite-0003.png" id="4_u5i1x"]
+[ext_resource type="Texture2D" uid="uid://dji6m80ckwukv" path="res://Assests/free-swimming-characters-animation-pixel-art/2 GraveRobber/shader.png" id="4_qvjx3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jm1h"]
 radius = 7.0
@@ -151,6 +151,10 @@ _data = {
 "idle": SubResource("Animation_k8clq")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eg1vh"]
+radius = 12.0
+height = 25.2
+
 [node name="Personagem" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 collision_mask = 14
@@ -161,8 +165,7 @@ modulate = Color(0.430181, 0.552488, 1, 1)
 texture = ExtResource("2_ibpqx")
 hframes = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+[node name="Colisao" type="CollisionShape2D" parent="."]
 position = Vector2(0.199999, 3.57628e-07)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5jm1h")
@@ -178,8 +181,14 @@ limit_left = 0
 limit_top = 0
 
 [node name="Shader" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 0.109804)
-scale = Vector2(27.8, 21)
-texture = ExtResource("4_u5i1x")
-region_enabled = true
-region_rect = Rect2(985.026, 0, 14.8519, 16.8738)
+modulate = Color(0, 0, 0, 0.27451)
+scale = Vector2(5, 5)
+texture = ExtResource("4_qvjx3")
+region_rect = Rect2(978.69, 0, 21.1876, 17.9962)
+
+[node name="ActionableFinder" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
+scale = Vector2(1.86497, 0.777329)
+shape = SubResource("CapsuleShape2D_eg1vh")
+debug_color = Color(0.800039, 0.42077, 0, 0.42)
