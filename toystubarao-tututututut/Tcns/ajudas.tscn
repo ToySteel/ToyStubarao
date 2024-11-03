@@ -263,6 +263,7 @@ animations = [{
 }]
 
 [node name="Area2D" type="Area2D"]
+modulate = Color(0.470933, 0.474989, 1, 1)
 scale = Vector2(5, 5)
 script = ExtResource("1_ex3y5")
 dialogue_resource = ExtResource("2_24j11")

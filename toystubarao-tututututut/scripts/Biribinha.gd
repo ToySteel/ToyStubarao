@@ -198,9 +198,9 @@ func _on_dash_timer_timeout():
 				#take_damage(Vector2(-200,-200))
 			#if $ray_left.is_colliding():
 				#take_damage(Vector2(200,-200))
-#func follow_camera(camera):
-	#var camera_path = camera.get_path()
-	#remote_transform.remote_path = camera_path
+func follow_camera(camera):
+	var camera_path = camera.get_path()
+	remote_transform.remote_path = camera_path
 #func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	#if Globals.player_life >0:
 		#Globals.player_life -= 1

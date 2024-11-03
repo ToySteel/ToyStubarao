@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed = 100
 @export var rotation_speed = 1.7
 @onready var anim = $AnimationPlayer
+@onready var remote_transform := $remote as RemoteTransform2D
 var rotation_direction = 0
 var direçao = true
 
@@ -39,3 +40,7 @@ func stade():
 		anim.set_current_animation("Nadano")
 	if Input.is_action_just_released("ui_down"):
 		anim.set_current_animation("idle")
+		
+#func follow_camera(camera):
+	#var camera_path = camera.get_path()
+	#remote_transform.remote_path = camera_path

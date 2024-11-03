@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-WordTutubarao="*res://Tcns/word_tutubarao.gd"
+WordTutubarao="*res://scripts/word_tutubarao.gd"
 
 [display]
 
