@@ -3,9 +3,12 @@ var state = "Start"
 @onready var anim = $AnimatedSprite2D2
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
+signal Holograma_conversas
+
 
 func action() -> void:
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	emit_signal("Holograma_conversas")
 func _process(delta):
 	_set_state()
 	pass

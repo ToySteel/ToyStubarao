@@ -18,14 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-WordTutubarao="*res://scripts/word_tutubarao.gd"
+Globals="*res://scripts/Globals.gd"
+
+[dialogue_manager]
+
+general/states=["WordTutubarao"]
 
 [display]
 
 window/size/viewport_width=1000
 window/size/viewport_height=900
-window/size/resizable=false
-window/stretch/mode="viewport"
 
 [editor_plugins]
 
