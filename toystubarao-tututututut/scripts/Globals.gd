@@ -18,7 +18,12 @@ func _process(delta):
 		Texto_missoes = "Fale Com a mulher holograma[OK]
 		Va ate o fundo da caverna
 		"
-	
+	if Missoes == 2:
+		Texto_missoes = "Fale Com a mulher holograma[OK]
+		Va ate o fundo da caverna[OK]
+		Va atraz de uma das luzes
+		"
+		
 
 
 

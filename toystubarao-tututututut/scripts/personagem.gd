@@ -49,9 +49,8 @@ func _on_word_tutubarao_fim_de_conversa():
 	em_dialgo = false
 	Globals.Missoes += 1
 func _on_cutscene_area_cutscene():
-	em_dialgo = true
-	position.x = 3527
-	position.y = 12382
 	anim.set_current_animation("Cima ou baixo")
-	rotation == 90
-	player.scale.x = 1
+	em_dialgo = true
+func _on_cutscene_area_fim_de_cutscene():
+	em_dialgo = false
+	Globals.Missoes += 1

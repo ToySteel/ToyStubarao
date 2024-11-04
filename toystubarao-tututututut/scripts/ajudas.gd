@@ -9,6 +9,7 @@ signal Holograma_conversas
 func action() -> void:
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	emit_signal("Holograma_conversas")
+	$"../StaticBody2D2".queue_free()
 func _process(delta):
 	_set_state()
 	pass

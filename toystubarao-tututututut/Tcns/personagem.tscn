@@ -238,7 +238,7 @@ height = 25.2
 
 [node name="Personagem" type="CharacterBody2D"]
 modulate = Color(0.430667, 0.414418, 0.999996, 1)
-scale = Vector2(5, 5)
+scale = Vector2(-5, 5)
 collision_mask = 14
 script = ExtResource("1_2yc7x")
 

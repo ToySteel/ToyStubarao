@@ -1,4 +1,5 @@
 extends Area2D
+signal Fim_de_cutscene
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
 @onready var anima: AnimationPlayer = $"../ANIMAÇAO DO MUNDO"
@@ -12,3 +13,8 @@ func _on_cutscene():
 
 func _on_word_tutubarao_luz() -> void:
 	anima.set_current_animation("CUTSCENE")
+
+
+func _on_animaçao_do_mundo_animation_finished(anim_name):
+	emit_signal("Fim_de_cutscene")
+	queue_free()
