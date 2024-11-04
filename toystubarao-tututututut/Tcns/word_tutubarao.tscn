@@ -523,7 +523,7 @@ layer_1/tile_data = PackedInt32Array(65535, 196610, 1, 131071, 196610, 1, 196607
 
 [node name="Personagem" parent="." instance=ExtResource("1_nwxbq")]
 modulate = Color(0.431373, 0.415686, 1, 1)
-position = Vector2(3518, 11996)
+position = Vector2(3517, 11996)
 
 [node name="PointLight2D" type="PointLight2D" parent="Personagem"]
 position = Vector2(0, 0.200005)
