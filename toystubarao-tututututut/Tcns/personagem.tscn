@@ -21,11 +21,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Sprite2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -238,7 +238,6 @@ height = 25.2
 
 [node name="Personagem" type="CharacterBody2D"]
 modulate = Color(0.430667, 0.414418, 0.999996, 1)
-position = Vector2(0, -1)
 scale = Vector2(5, 5)
 collision_mask = 14
 script = ExtResource("1_2yc7x")
@@ -248,7 +247,6 @@ texture = ExtResource("2_ibpqx")
 hframes = 6
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.199999, 3.57628e-07)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5jm1h")
@@ -272,7 +270,6 @@ texture = ExtResource("4_qvjx3")
 region_rect = Rect2(978.69, 0, 21.1876, 17.9962)
 
 [node name="ActionableFinder" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
 scale = Vector2(1.86497, 0.777329)

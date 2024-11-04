@@ -3,7 +3,7 @@ extends Node2D
 var transmissor = "false"
 @onready var sprite = $Personagem/Sprite2D2
 signal Fim_de_conversa
-
+signal LUZ
 var Missoes = 0 
 var Texto_missoes
 

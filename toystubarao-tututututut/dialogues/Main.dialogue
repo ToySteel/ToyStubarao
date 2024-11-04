@@ -77,8 +77,11 @@ Pesquisadora: Oque voce quer saber
 	Pesquisadora: Ai aconteceu este problemão e me designaram para auxiliar a cobai.. digo MERGULHADOR hehehe, MERGULHADOR heheheh.
 	=> perguntas_pos_transmissor
 - Nao quero saber mais nada.
-	OK, entendi oque deve ser feito, la vou eu
+	Mergulhador: OK, entendi oque deve ser feito, la vou eu
 	do emit_signal("Fim_de_conversa")
 	=> END
 ~ cutscene1
-aaaaaaaaaaaaaaaaa
+Mergulhador: Ok agora e hora de usar isso daqui.
+INICIANDO...........ATIVAR
+do emit_signal("LUZ")
+=> END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://phoq2ht71cmx"]
+[gd_scene load_steps=51 format=3 uid="uid://phoq2ht71cmx"]
 
 [ext_resource type="PackedScene" uid="uid://tamfe7i06m3h" path="res://Tcns/personagem.tscn" id="1_nwxbq"]
 [ext_resource type="Script" path="res://scripts/Globals.gd" id="1_rjopc"]
@@ -13,18 +13,6 @@
 [ext_resource type="Script" path="res://Tcns/control.gd" id="8_indgu"]
 [ext_resource type="FontFile" uid="uid://dxt8e6oeublyr" path="res://dialogues/at01.ttf" id="8_l6em0"]
 [ext_resource type="Texture2D" uid="uid://cd21hkxl8uiqh" path="res://Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="8_qmgb8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2cgk"]
-size = Vector2(14.1501, 96.8944)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13ipf"]
-size = Vector2(61, 278)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6rip"]
-size = Vector2(20, 14.5252)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhgh4"]
-size = Vector2(94.9007, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpwvu"]
 size = Vector2(158.643, 139.329)
@@ -314,6 +302,91 @@ sources/2 = SubResource("TileSetAtlasSource_aa1r0")
 sources/3 = SubResource("TileSetAtlasSource_cuifc")
 sources/4 = SubResource("TileSetAtlasSource_00dhg")
 
+[sub_resource type="Animation" id="Animation_y6yy6"]
+resource_name = "CUTSCENE"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem/Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.596078, 0.596078, 0.596078, 0.145098), Color(0.596078, 0.596078, 0.596078, 0.145098), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Personagem/PointLight2D:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.5, 0.8, 0.5, 1.0, 0.5, 0.3, 0.1, 0.1, 2.0, 50.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Personagem/PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 3.0, 2.0, 2.5, 2.0, 1.5, 1.0, 1.0, 8.0, 16.0]
+}
+
+[sub_resource type="Animation" id="Animation_r2fmg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem/Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.596078, 0.596078, 0.596078, 0.145098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Personagem/PointLight2D:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Personagem/PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hx3ws"]
+_data = {
+"CUTSCENE": SubResource("Animation_y6yy6"),
+"RESET": SubResource("Animation_r2fmg")
+}
+
 [node name="word tutubarao" type="Node2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_rjopc")
@@ -323,6 +396,7 @@ script = ExtResource("1_rjopc")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="BG"]
 position = Vector2(2571, -241)
 rotation = -0.436332
+energy = 2.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 1
@@ -341,39 +415,6 @@ centered = false
 
 [node name="Profundidade" type="Node2D" parent="."]
 script = ExtResource("3_w2kqe")
-
-[node name="AREAS DE LUZ" type="Node2D" parent="Profundidade"]
-
-[node name="escuridao sala" type="Area2D" parent="Profundidade/AREAS DE LUZ"]
-position = Vector2(2434, 346)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Profundidade/AREAS DE LUZ/escuridao sala"]
-position = Vector2(44, 138.932)
-scale = Vector2(-4.10847, 1.89391)
-shape = SubResource("RectangleShape2D_x2cgk")
-
-[node name="claridade sala" type="Area2D" parent="Profundidade/AREAS DE LUZ"]
-position = Vector2(2600, 352)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Profundidade/AREAS DE LUZ/claridade sala"]
-position = Vector2(-11, 136)
-shape = SubResource("RectangleShape2D_13ipf")
-
-[node name="claridade caverna" type="Area2D" parent="Profundidade/AREAS DE LUZ"]
-position = Vector2(3593, 1095)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Profundidade/AREAS DE LUZ/claridade caverna"]
-position = Vector2(153, 16)
-scale = Vector2(18.1068, 3.3207)
-shape = SubResource("RectangleShape2D_v6rip")
-
-[node name="escuridao caverna" type="Area2D" parent="Profundidade/AREAS DE LUZ"]
-position = Vector2(3609, 1495)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Profundidade/AREAS DE LUZ/escuridao caverna"]
-position = Vector2(178.649, 0)
-scale = Vector2(4.77028, 1.55871)
-shape = SubResource("RectangleShape2D_lhgh4")
 
 [node name="Area2D" type="Area2D" parent="Profundidade"]
 position = Vector2(1, 2408)
@@ -482,9 +523,10 @@ layer_1/tile_data = PackedInt32Array(65535, 196610, 1, 131071, 196610, 1, 196607
 
 [node name="Personagem" parent="." instance=ExtResource("1_nwxbq")]
 modulate = Color(0.431373, 0.415686, 1, 1)
-position = Vector2(388, 518)
+position = Vector2(3518, 11996)
 
 [node name="PointLight2D" type="PointLight2D" parent="Personagem"]
+position = Vector2(0, 0.200005)
 energy = 2.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
@@ -539,12 +581,14 @@ theme_override_font_sizes/font_size = 50
 text = "MISSOES:
 AAAA"
 
+[node name="ANIMAÇAO DO MUNDO" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hx3ws")
+}
+
 [connection signal="Fim_de_conversa" from="." to="." method="_on_fim_de_conversa"]
 [connection signal="Fim_de_conversa" from="." to="Personagem" method="_on_word_tutubarao_fim_de_conversa"]
-[connection signal="body_entered" from="Profundidade/AREAS DE LUZ/escuridao sala" to="Profundidade" method="_on_escuridao_sala_body_entered"]
-[connection signal="body_entered" from="Profundidade/AREAS DE LUZ/claridade sala" to="Profundidade" method="_on_claridade_sala_body_entered"]
-[connection signal="body_entered" from="Profundidade/AREAS DE LUZ/claridade caverna" to="Profundidade" method="_on_claridade_caverna_body_entered"]
-[connection signal="body_entered" from="Profundidade/AREAS DE LUZ/escuridao caverna" to="Profundidade" method="_on_escuridao_caverna_body_entered"]
+[connection signal="LUZ" from="." to="Cutscene Area" method="_on_word_tutubarao_luz"]
 [connection signal="body_entered" from="Profundidade/Area2D" to="Profundidade" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_2_body_entered"]

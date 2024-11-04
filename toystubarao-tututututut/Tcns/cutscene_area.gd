@@ -1,6 +1,7 @@
 extends Area2D
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
+@onready var anima: AnimationPlayer = $"../ANIMAÇAO DO MUNDO"
 signal Cutscene
 #INICIADOR DE CUTSCENE
 func _on_body_entered(body):
@@ -8,3 +9,6 @@ func _on_body_entered(body):
 	emit_signal("Cutscene")
 func _on_cutscene():
 	pass # Replace with function body.
+
+func _on_word_tutubarao_luz() -> void:
+	anima.set_current_animation("CUTSCENE")
