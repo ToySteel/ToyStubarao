@@ -273,7 +273,7 @@ shape = SubResource("CapsuleShape2D_jhafx")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oaliq")
-animation = &"desligando"
+animation = &"Ligado"
 autoplay = "Start"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

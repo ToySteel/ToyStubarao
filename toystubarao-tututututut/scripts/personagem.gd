@@ -28,10 +28,11 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_up"):
 			player.scale.x = 1
 			$Colisao.scale.x = 1
+			$LightOccluder2D.scale.x = 1
 		if Input.is_action_pressed("ui_down"):
 			player.scale.x = -1
 			$Colisao.scale.x = -1
-
+			$LightOccluder2D.scale.x = -1
 func stade():
 	if Input.is_action_just_pressed("ui_up"):
 		anim.set_current_animation("Nadano")
