@@ -260,7 +260,6 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 6960
 
 [node name="Shader" type="Sprite2D" parent="."]
 visible = false

@@ -6,6 +6,8 @@ signal Fim_de_cutscene
 signal Cutscene
 #INICIADOR DE CUTSCENE
 func _on_body_entered(body):
+	$"../Personagem".position.x == 3527
+	$"../Personagem".position.y == 12382
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	emit_signal("Cutscene")
 func _on_cutscene():

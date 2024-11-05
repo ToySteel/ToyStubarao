@@ -9,7 +9,9 @@ var rotation_direction = 0
 var direçao = true
 var em_dialgo = false
 
-
+func _ready():
+	position.x == 390
+	position.y == 515
 func get_input():
 	rotation_direction = Input.get_axis("ui_left", "ui_right")
 	velocity = transform.x * Input.get_axis("ui_down", "ui_up") * speed
@@ -50,6 +52,8 @@ func _on_word_tutubarao_fim_de_conversa():
 	Globals.Missoes += 1
 func _on_cutscene_area_cutscene():
 	anim.set_current_animation("Cima ou baixo")
+	position.x == 3527
+	position.y == 12382
 	em_dialgo = true
 func _on_cutscene_area_fim_de_cutscene():
 	em_dialgo = false
