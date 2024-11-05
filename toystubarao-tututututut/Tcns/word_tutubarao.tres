@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://bg2if8lcelk5q"]
+[gd_resource type="TileSet" load_steps=37 format=3 uid="uid://bg2if8lcelk5q"]
 
 [ext_resource type="Texture2D" uid="uid://d1paqpiq5swc6" path="res://Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_m6nvk"]
 [ext_resource type="Texture2D" uid="uid://bup844q7cmb07" path="res://Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_agftf"]
 [ext_resource type="Texture2D" uid="uid://cd21hkxl8uiqh" path="res://Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="3_gurej"]
+[ext_resource type="Texture2D" uid="uid://d32acd1wd7otq" path="res://Assests/Seasonal Tilesets/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="4_142ra"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_abfs4"]
 polygon = PackedVector2Array(8, -6.96875, 2.02344, -7, 1.96094, -5.96875, 0.0234375, -5.9375, 0.0234375, -6.9375, -5.00781, -6.9375, -5.00781, -6, -5.97656, -5.9375, -5.97656, -4.96875, -7.00781, -4.9375, -7.00781, 3.03125, -6.00781, 3, -6.00781, 5, -6.94531, 5, -7.00781, 8, 8, 8)
@@ -221,7 +222,10 @@ texture = ExtResource("2_agftf")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/next_alternative_id = 2
 4:1/0 = 0
+4:1/1 = 1
+4:1/1/modulate = Color(0, 0, 0, 1)
 5:1/0 = 0
 7:1/0 = 0
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -231,9 +235,12 @@ texture = ExtResource("2_agftf")
 1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/next_alternative_id = 2
 4:3/0 = 0
 4:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_87jo1")
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/1 = 1
+4:3/1/modulate = Color(0, 0, 0, 1)
 1:4/0 = 0
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:4/0 = 0
@@ -276,6 +283,10 @@ texture = ExtResource("3_gurej")
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yc0pb"]
+texture = ExtResource("4_142ra")
+0:0/0 = 0
+
 [resource]
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 2
@@ -284,3 +295,4 @@ sources/1 = SubResource("TileSetAtlasSource_suvv2")
 sources/2 = SubResource("TileSetAtlasSource_aa1r0")
 sources/3 = SubResource("TileSetAtlasSource_cuifc")
 sources/4 = SubResource("TileSetAtlasSource_00dhg")
+sources/5 = SubResource("TileSetAtlasSource_yc0pb")

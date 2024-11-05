@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cnvhjtwvbwy1k" path="res://Assests/light2D-pixel.png" id="6_b7p4y"]
 [ext_resource type="Script" path="res://Tcns/control.gd" id="8_indgu"]
 [ext_resource type="FontFile" uid="uid://dxt8e6oeublyr" path="res://dialogues/at01.ttf" id="8_l6em0"]
-[ext_resource type="Texture2D" uid="uid://bup844q7cmb07" path="res://Assests/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="11_j7hdr"]
+[ext_resource type="Texture2D" uid="uid://bup844q7cmb07" path="res://Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="11_j7hdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpwvu"]
 size = Vector2(158.643, 139.329)
@@ -439,8 +439,8 @@ texture_scale = 1.5
 [connection signal="Fim_de_conversa" from="." to="Personagem" method="_on_word_tutubarao_fim_de_conversa"]
 [connection signal="LUZ" from="." to="Cutscene Area" method="_on_word_tutubarao_luz"]
 [connection signal="body_entered" from="Profundidade/Area2D" to="Profundidade" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D3" to="Profundidade" method="_on_area_2d_3_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D5" to="Profundidade" method="_on_area_2d_5_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D7" to="Profundidade" method="_on_area_2d_7_body_entered"]
@@ -448,6 +448,7 @@ texture_scale = 1.5
 [connection signal="body_entered" from="Profundidade/Area2D10" to="Profundidade" method="_on_area_2d_10_body_entered"]
 [connection signal="Cutscene" from="Cutscene Area" to="Cutscene Area" method="_on_cutscene"]
 [connection signal="Cutscene" from="Cutscene Area" to="Personagem" method="_on_cutscene_area_cutscene"]
+[connection signal="Fim_de_cutscene" from="Cutscene Area" to="Personagem" method="_on_cutscene_area_fim_de_cutscene"]
 [connection signal="body_entered" from="Cutscene Area" to="Cutscene Area" method="_on_body_entered"]
 [connection signal="Holograma_conversas" from="StaticBody2D" to="Personagem" method="_on_static_body_2d_holograma_conversas"]
 [connection signal="animation_finished" from="ANIMAÇAO DO MUNDO" to="Cutscene Area" method="_on_animaçao_do_mundo_animation_finished"]
