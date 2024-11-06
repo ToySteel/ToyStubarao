@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d1paqpiq5swc6" path="res://Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_m6nvk"]
 [ext_resource type="Texture2D" uid="uid://bup844q7cmb07" path="res://Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_agftf"]
 [ext_resource type="Texture2D" uid="uid://cd21hkxl8uiqh" path="res://Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="3_gurej"]
-[ext_resource type="Texture2D" uid="uid://d32acd1wd7otq" path="res://Assests/Seasonal Tilesets/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="4_142ra"]
+[ext_resource type="Texture2D" uid="uid://d32acd1wd7otq" path="res://Seasonal Tilesets/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="4_142ra"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_abfs4"]
 polygon = PackedVector2Array(8, -6.96875, 2.02344, -7, 1.96094, -5.96875, 0.0234375, -5.9375, 0.0234375, -6.9375, -5.00781, -6.9375, -5.00781, -6, -5.97656, -5.9375, -5.97656, -4.96875, -7.00781, -4.9375, -7.00781, 3.03125, -6.00781, 3, -6.00781, 5, -6.94531, 5, -7.00781, 8, 8, 8)
