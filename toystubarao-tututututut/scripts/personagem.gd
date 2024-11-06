@@ -5,13 +5,11 @@ extends CharacterBody2D
 @export var rotation_speed = 1.7
 @onready var anim = $AnimationPlayer
 @onready var remote_transform := $remote as RemoteTransform2D
+
 var rotation_direction = 0
 var direçao = true
 var em_dialgo = false
 
-func _ready():
-	position.x == 390
-	position.y == 515
 func get_input():
 	rotation_direction = Input.get_axis("ui_left", "ui_right")
 	velocity = transform.x * Input.get_axis("ui_down", "ui_up") * speed
