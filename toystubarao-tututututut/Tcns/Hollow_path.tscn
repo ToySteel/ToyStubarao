@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://ms5h2rcyfva1"]
 
-[ext_resource type="Script" path="res://Hollow_path4.gd" id="1_5mrot"]
+[ext_resource type="Script" path="res://scripts/Hollow_path4.gd" id="1_5mrot"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="1_ru85q"]
 [ext_resource type="PackedScene" uid="uid://tamfe7i06m3h" path="res://Tcns/personagem.tscn" id="2_bm4vb"]
 [ext_resource type="Texture2D" uid="uid://cg5ou2lmkssfx" path="res://Assests/Parallax_Backgrounds_Cave/7.png" id="2_ce85t"]
@@ -140,9 +140,9 @@ shader_parameter/type = 0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ky0ce"]
 size = Vector2(82, 613)
 
-[node name="Node2D" type="Node2D"]
+[node name="Hollow_path" type="Node2D"]
 script = ExtResource("1_5mrot")
-path = "res://Tcns/word_tutubarao.tscn"
+path = "res://Tcns/Main_world.tscn"
 
 [node name="BG" type="Node2D" parent="."]
 
