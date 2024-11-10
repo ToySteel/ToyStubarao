@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bafn14jst357w"]
+
+[ext_resource type="Script" path="res://scripts/pathway.gd" id="1_ykl1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xro68"]
+size = Vector2(20, 15.0678)
+
+[node name="pathway" type="Area2D"]
+position = Vector2(1043, 11835)
+script = ExtResource("1_ykl1r")
+
+[node name="colision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 247.401)
+rotation = 3.14159
+scale = Vector2(7.33846, -49.1908)
+shape = SubResource("RectangleShape2D_xro68")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

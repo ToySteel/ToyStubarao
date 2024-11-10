@@ -1,8 +1,8 @@
 extends Node2D
 #onready var's
-@onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var Bau: Sprite2D = $Bau/Sprite2D
-@onready var bolha: Area2D = $bolha
+@onready var anim = $"Area Navio/AnimationPlayer"
+@onready var Bau = $"Area Navio/Bau/Sprite2D"
+@onready var bolha = $"Area Navio/bolha"
 @onready var personagem = $Personagem
 @onready var transition = $transition
 @export var path = ""
@@ -25,6 +25,3 @@ func _on_caverna_body_entered(body):
 	transition.change_scene(false ,path, 1778, 2107)
 func _on_saida_da_caverna_body_entered(body):
 	transition.change_scene(false ,path, 13918, 2531)
-func _on_area_principal_body_entered(body: Node2D) -> void:
-	Globals.from_world = get_parent().name
-	transition.change_scene(true ,path, 1691, 12128)

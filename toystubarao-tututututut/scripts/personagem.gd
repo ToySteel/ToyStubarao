@@ -10,6 +10,7 @@ var rotation_direction = 0
 var direçao = true
 var em_dialgo = false
 #verificador de direçao movimento
+
 func get_input():
 	rotation_direction = Input.get_axis("ui_left", "ui_right")
 	velocity = transform.x * Input.get_axis("ui_down", "ui_up") * speed
