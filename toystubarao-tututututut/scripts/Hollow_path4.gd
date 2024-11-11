@@ -6,6 +6,10 @@ extends Node2D
 @onready var personagem = $Personagem
 @onready var transition = $transition
 @export var path = ""
+@onready var mato = $Hollow_path/Mato
+@onready var mato_anima = $"mato animaçoes"
+@onready var Mato_luzes = $"Area Mato/LightOccluder2D"
+
 #iniciar transiçao ao entrar na faze
 func _ready() -> void:
 	transition.des_transition()
@@ -25,3 +29,11 @@ func _on_caverna_body_entered(body):
 	transition.change_scene(false ,path, 1778, 2107)
 func _on_saida_da_caverna_body_entered(body):
 	transition.change_scene(false ,path, 13918, 2531)
+################################################################################
+#Area mato
+func _on_area_mato_body_entered(body):
+	mato_anima.set_current_animation("transiçao apagar")
+	Mato_luzes.visible = false
+func _on_area_mato_body_exited(body):
+	mato_anima.set_current_animation("transiçao ligar")
+	Mato_luzes.visible = true
