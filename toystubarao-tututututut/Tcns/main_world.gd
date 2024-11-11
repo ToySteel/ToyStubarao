@@ -1,6 +1,7 @@
 extends Node2D
 @onready var personagem = $Personagem
-
+signal Fim_de_conversa
+signal LUZ
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

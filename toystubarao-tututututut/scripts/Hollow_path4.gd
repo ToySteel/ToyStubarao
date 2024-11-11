@@ -25,3 +25,7 @@ func _on_caverna_body_entered(body):
 	transition.change_scene(false ,path, 1778, 2107)
 func _on_saida_da_caverna_body_entered(body):
 	transition.change_scene(false ,path, 13918, 2531)
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

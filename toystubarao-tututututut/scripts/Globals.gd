@@ -5,8 +5,7 @@ var from_world
 var Missoes = 0 
 var Texto_missoes
 var transmissor = "false"
-signal Fim_de_conversa
-signal LUZ
+
 #Misso
 func _process(delta):
 	if Missoes == 0:

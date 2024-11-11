@@ -56,7 +56,7 @@ func stade():
 #areas 2d
 func _on_static_body_2d_holograma_conversas():
 	em_dialgo = true
-func _on_word_tutubarao_fim_de_conversa():
+func _on_main_world_fim_de_conversa() -> void:
 	em_dialgo = false
 	Globals.Missoes += 1
 func _on_cutscene_area_cutscene():

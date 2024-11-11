@@ -1,5 +1,4 @@
 ~ start
-set transmissor == "false"
 Pesquisadora: Oi Mergulhador, como é bom te ver! Você tem muito trabalho a fazer, sabia?
 Pesquisadora: Existem mergulhadores perdidos nas profundezas e você tem que ajudá-los.
 Mergulhador: Como assim? Não estou te entendendo, acho que desmaiei pela mudança de pressão e me esqueci.
@@ -25,7 +24,6 @@ Pesquisadora: Oque voce quer saber
 	Pesquisadora: Com estas lanternas você conseguirá saber para qual direção você deve ir para achá los
 	Pesquisadora: Então você também receberá um.
 	VOCÊ RECEBEU "TRANSMISSOR DE LUZ TOY STEEL"
-	set transmissor == "true"
 	Pesquisadora: Quando achar que e a hora certa, ative seu transmissor e voce ira saber para qual direçao ir
 	Pesquisadora: Tem algo mais que queira saber?
 	- COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????
@@ -62,7 +60,6 @@ Pesquisadora: Oque voce quer saber
 	Pesquisadora: Com estas lanternas você conseguirá saber para qual direção você deve ir para achá los
 	Pesquisadora: Então você também receberá um.
 	VOCÊ RECEBEU "TRANSMISSOR DE LUZ TOY STEEL"
-	set transmissor == "true"
 	Pesquisadora: Quando achar que e a hora certa, ative seu transmissor e voce ira saber para qual direçao ir
 	Pesquisadora: Tem algo mais que queira saber?
 	- COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????

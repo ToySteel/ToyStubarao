@@ -222,14 +222,18 @@ texture = ExtResource("2_j6rvw")
 2:3/0 = 0
 4:3/0 = 0
 4:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_e6qjm")
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:4/0 = 0
 2:4/0 = 0
 4:4/0 = 0
 4:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kf8lb")
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
 6:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ir2uf")
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:4/0 = 0
 7:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_f48vv")
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cuifc"]

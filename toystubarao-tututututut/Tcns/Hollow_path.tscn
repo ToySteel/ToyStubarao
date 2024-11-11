@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ms5h2rcyfva1"]
+[gd_scene load_steps=39 format=4 uid="uid://ms5h2rcyfva1"]
 
 [ext_resource type="Script" path="res://scripts/Hollow_path4.gd" id="1_5mrot"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="1_ru85q"]
@@ -131,6 +131,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt2mn"]
 size = Vector2(20, 106.969)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5bpk"]
+size = Vector2(1416, 932)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bs5ul"]
+polygon = PackedVector2Array(12845, 1373, 14265, 1374, 14267, 2305, 12847, 2308)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moh52"]
 size = Vector2(224.6, 20)
 
@@ -148,6 +154,60 @@ shader_parameter/pixel_size = 15.0
 shader_parameter/circle_size = 1.5
 shader_parameter/curtains = 1.0
 shader_parameter/type = 0
+
+[sub_resource type="Animation" id="Animation_idmfd"]
+resource_name = "mato sumindo"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/TileMapLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.19368, 0.1836, 0.27, 1), Color(0.192157, 0.184314, 0.270588, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vx5x4"]
+resource_name = "mato aparecendo"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/TileMapLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.192157, 0.184314, 0.270588, 0), Color(0.192157, 0.184314, 0.270588, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_agyl1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/TileMapLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.19368, 0.1836, 0.27, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgh65"]
+_data = {
+"RESET": SubResource("Animation_agyl1"),
+"mato aparecendo": SubResource("Animation_vx5x4"),
+"mato sumindo": SubResource("Animation_idmfd")
+}
 
 [node name="Hollow_path" type="Node2D"]
 script = ExtResource("1_5mrot")
@@ -317,6 +377,22 @@ layer_2/name = "Layer MATO"
 layer_2/enabled = false
 layer_2/tile_data = PackedInt32Array(1179606, 262150, 1, 1179607, 262150, 1, 1179605, 262145, 1, 1179608, 196614, 3, 1114072, 196614, 2, 1245141, 262150, 2, 1245142, 262150, 2, 1245143, 262150, 2, 1245144, 262150, 2, 1245145, 262150, 2, 1179609, 262150, 2, 1114073, 262150, 2, 1114074, 262150, 2, 1179610, 262150, 2, 1245146, 262150, 2, 1245147, 262150, 2, 1179611, 262150, 2, 1114075, 262150, 2, 1114076, 262150, 2, 1179612, 262150, 2, 1245148, 262150, 2, 1245149, 262150, 2, 1179613, 262150, 2, 1114077, 262150, 2, 1114078, 262150, 2, 1048542, 262150, 2, 1048541, 262150, 2, 1048540, 262150, 2, 983006, 262150, 2, 983005, 262150, 2, 983007, 262150, 2, 917471, 262150, 2, 917472, 262150, 2, 917473, 262150, 2, 983009, 262150, 2, 983008, 262150, 2, 1048543, 262150, 2, 1114079, 262150, 2, 1114080, 262150, 2, 1048544, 262150, 2, 1048545, 262150, 2, 1114081, 262150, 2, 1179617, 262150, 2, 1179616, 262150, 2, 1179615, 262150, 2, 1245153, 262150, 2, 1245152, 262150, 2, 1245151, 262150, 2, 1245150, 262150, 2, 1310689, 262150, 2, 1310688, 262150, 2, 1310687, 262150, 2, 1310686, 262150, 2, 1310685, 262150, 2, 1310684, 262150, 2, 1310683, 262150, 2, 1310681, 262150, 2, 1310680, 262150, 2, 1310679, 262150, 2, 1310678, 262150, 2, 1310682, 262150, 2, 1376214, 262150, 2, 1376215, 262150, 2, 1376216, 262150, 2, 1376217, 262150, 2, 1376218, 262150, 2, 1376219, 262150, 2, 1376220, 262150, 2, 1376221, 262150, 2, 1376222, 262150, 2, 1376223, 262150, 2, 1376224, 262150, 2, 1376225, 262150, 2, 1441752, 262150, 2, 1441753, 262150, 2, 1441754, 262150, 2, 1441755, 262150, 2, 1441756, 262150, 2, 1441757, 262150, 2, 1441758, 262150, 2, 1441759, 262150, 2, 1441761, 262150, 2, 1441760, 262150, 2, 1507297, 262150, 2, 1507296, 262150, 2, 1507295, 262150, 2, 1507294, 262150, 2, 1507293, 262150, 2, 1507292, 262150, 2, 1507291, 262150, 2, 1507290, 262150, 2, 1572826, 262150, 2, 1572827, 262150, 2, 1572828, 262150, 2, 1572829, 262150, 2, 1572830, 262150, 2, 1572831, 262150, 2, 1572832, 262150, 2, 1572833, 262150, 2, 1572834, 262150, 2, 1507298, 262150, 2, 1507299, 262150, 2, 1572835, 262150, 2, 1638371, 262150, 2, 1638370, 262150, 2, 1638369, 262150, 2, 1638368, 262150, 2, 1638367, 262150, 2, 1638366, 262150, 2, 1638365, 262150, 2, 1638364, 262150, 2, 1638363, 262150, 2, 1638362, 262150, 2, 1703898, 262150, 2, 1703899, 262150, 2, 1703900, 262150, 2, 1703901, 262150, 2, 1703902, 262150, 2, 1703903, 262150, 2, 1703904, 262150, 2, 1703905, 262150, 2, 1703906, 262150, 2, 1703907, 262150, 2, 1769443, 262150, 2, 1769442, 262150, 2, 1769441, 262150, 2, 1769440, 262150, 2, 1769439, 262150, 2, 1769438, 262150, 2, 1769437, 262150, 2, 1769436, 262150, 2, 1769435, 262150, 2, 1769434, 262150, 2, 1769433, 262150, 2, 1834969, 262150, 2, 1834970, 262150, 2, 1834971, 262150, 2, 1834972, 262150, 2, 1834973, 262150, 2, 1834974, 262150, 2, 1834975, 262150, 2, 1834976, 262150, 2, 1834977, 262150, 2, 1834978, 262150, 2, 1834979, 262150, 2, 1900515, 262150, 2, 1900514, 262150, 2, 1900513, 262150, 2, 1900512, 262150, 2, 1900511, 262150, 2, 1900510, 262150, 2, 1900509, 262150, 2, 1900508, 262150, 2, 1900507, 262150, 2, 1900506, 262150, 2, 1900505, 262150, 2, 1900516, 262150, 2, 1834980, 262150, 2)
 
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
+modulate = Color(0.19368, 0.1836, 0.27, 1)
+tile_map_data = PackedByteArray("AADW/xEABgAEAAEAAADX/xEABgAEAAEAAADY/xEABgAEAAMAAADV/xEAAQACAAMAAADY/xAABgADAAIAAADZ/xAABgAEAAMAAADa/xAABgAEAAMAAADb/xAABgAEAAMAAADc/xAABgAEAAMAAADd/xAABgAEAAMAAADd/w8ABgAEAAMAAADc/w8ABgAEAAMAAADe/w8ABgAEAAMAAADe/w4ABgAEAAMAAADd/w4ABgAEAAMAAADf/w4ABgAEAAMAAADf/w8ABgAEAAMAAADg/w8ABgAEAAMAAADh/w4ABgAEAAMAAADg/w0ABgAEAAMAAADf/w0ABgAEAAMAAADh/w0ABgAEAAMAAADg/w4ABgAEAAMAAADh/w8ABgAEAAMAAADg/xAABgAEAAMAAADf/xAABgAEAAMAAADe/xAABgAEAAMAAADh/xAABgAEAAMAAADh/xEABgAEAAMAAADg/xEABgAEAAMAAADg/xIABgAEAAMAAADh/xIABgAEAAMAAADg/xMABgAEAAMAAADh/xMABgAEAAMAAADf/xIABgAEAAMAAADf/xMABgAEAAMAAADe/xMABgAEAAMAAADd/xMABgAEAAMAAADd/xIABgAEAAMAAADe/xIABgAEAAMAAADd/xEABgAEAAMAAADf/xEABgAEAAMAAADc/xMABgAEAAMAAADb/xMABgAEAAMAAADb/xIABgAEAAMAAADa/xIABgAEAAMAAADZ/xIABgAEAAMAAADZ/xMABgAEAAMAAADY/xMABgAEAAMAAADX/xMABgAEAAMAAADX/xIABgAEAAMAAADW/xIABgAEAAMAAADW/xMABgAEAAMAAADV/xMABgAEAAMAAADV/xIABgAEAAMAAADY/xIABgAEAAMAAADa/xMABgAEAAMAAADa/xQABgAEAAMAAADb/xQABgAEAAMAAADa/xEABgAEAAMAAADZ/xEABgAEAAMAAADb/xEABgAEAAMAAADc/xEABgAEAAMAAADc/xIABgAEAAMAAADZ/xQABgAEAAMAAADY/xQABgAEAAMAAADX/xQABgAEAAMAAADW/xQABgAEAAMAAADY/xUABgAEAAMAAADZ/xUABgAEAAMAAADa/xUABgAEAAMAAADb/xUABgAEAAMAAADc/xUABgAEAAMAAADc/xQABgAEAAMAAADd/xQABgAEAAMAAADe/xQABgAEAAMAAADf/xQABgAEAAMAAADg/xQABgAEAAMAAADg/xUABgAEAAMAAADh/xQABgAEAAMAAADh/xUABgAEAAMAAADh/xYABgAEAAMAAADh/xcABgAEAAMAAADg/xYABgAEAAMAAADf/xUABgAEAAMAAADe/xUABgAEAAMAAADd/xUABgAEAAMAAADZ/xYABgAEAAMAAADa/xYABgAEAAMAAADb/xYABgAEAAMAAADc/xYABgAEAAMAAADd/xYABgAEAAMAAADe/xYABgAEAAMAAADe/xcABgAEAAMAAADf/xcABgAEAAMAAADg/xcABgAEAAMAAADf/xYABgAEAAMAAADi/xcABgAEAAMAAADi/xYABgAEAAMAAADj/xcABgAEAAMAAADk/xcABgAEAAMAAADj/xYABgAEAAMAAADj/xgABgAEAAMAAADi/xgABgAEAAMAAADf/xgABgAEAAMAAADg/xgABgAEAAMAAADh/xgABgAEAAMAAADe/xgABgAEAAMAAADd/xgABgAEAAMAAADc/xgABgAEAAMAAADb/xgABgAEAAMAAADa/xgABgAEAAMAAADa/xcABgAEAAMAAADb/xcABgAEAAMAAADc/xcABgAEAAMAAADd/xcABgAEAAMAAADc/xkABgAEAAMAAADb/xkABgAEAAMAAADa/xkABgAEAAMAAADd/xkABgAEAAMAAADe/xkABgAEAAMAAADf/xkABgAEAAMAAADg/xkABgAEAAMAAADh/xkABgAEAAMAAADi/xkABgAEAAMAAADj/xkABgAEAAMAAADk/xkABgAEAAMAAADj/xoABgAEAAMAAADj/xsABgAEAAMAAADi/xsABgAEAAMAAADi/xoABgAEAAMAAADh/xoABgAEAAMAAADg/xoABgAEAAMAAADf/xoABgAEAAMAAADe/xoABgAEAAMAAADd/xoABgAEAAMAAADc/xoABgAEAAMAAADb/xoABgAEAAMAAADa/xoABgAEAAMAAADa/xsABgAEAAMAAADZ/xsABgAEAAMAAADZ/xoABgAEAAMAAADZ/xwABgAEAAMAAADa/xwABgAEAAMAAADb/xwABgAEAAMAAADc/xwABgAEAAMAAADd/xwABgAEAAMAAADe/xwABgAEAAMAAADg/xwABgAEAAYAAADh/xwABgAEAAYAAADi/xwABgAEAAYAAADj/xwABgAEAAYAAADk/xwABgAEAAYAAADh/xsABgAEAAMAAADd/xsABgAEAAMAAADc/xsABgAEAAMAAADb/xsABgAEAAMAAADe/xsABgAEAAMAAADf/xsABgAEAAMAAADg/xsABgAEAAMAAADf/xwABgAFAAQAAAA=")
+tile_set = ExtResource("1_ru85q")
+collision_enabled = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13557, 1842)
+shape = SubResource("RectangleShape2D_k5bpk")
+debug_color = Color(0, 0.595, 0.7, 0.0627451)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D"]
+occluder = SubResource("OccluderPolygon2D_bs5ul")
+
 [node name="saida da caverna" type="Area2D" parent="."]
 position = Vector2(1366, 799)
 scale = Vector2(5, 5)
@@ -342,7 +418,7 @@ scale = Vector2(5, -5)
 
 [node name="PointLight2D" type="PointLight2D" parent="Personagem"]
 position = Vector2(0, 0.200005)
-energy = 2.0
+energy = 2.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("14_dcfha")
@@ -370,7 +446,14 @@ color = Color(0.462745, 0.52549, 0.772549, 1)
 [node name="Main_world" parent="." instance=ExtResource("18_508xj")]
 position = Vector2(15434, 758)
 
+[node name="animaçao do mundo" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cgh65")
+}
+
 [connection signal="body_entered" from="Area Navio/bolha" to="." method="_on_bolha_body_entered"]
 [connection signal="body_entered" from="Area Navio/Bau" to="." method="_on_bau_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="saida da caverna" to="." method="_on_saida_da_caverna_body_entered"]
 [connection signal="body_entered" from="Caverna" to="." method="_on_caverna_body_entered"]

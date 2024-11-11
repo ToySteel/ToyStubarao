@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+MainWorld="*res://Tcns/main_world.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Globals="*res://scripts/Globals.gd"
 
