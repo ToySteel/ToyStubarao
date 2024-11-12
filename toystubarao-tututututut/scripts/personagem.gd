@@ -69,3 +69,4 @@ func _on_cutscene_area_fim_de_cutscene():
 	Globals.Missoes += 1
 func _on_nadador_1_cutscene() -> void:
 	anim.set_current_animation("Idle")
+	$nadador.frame = 2

@@ -263,6 +263,9 @@ tracks/0/keys = {
 "values": [Color(0.19368, 0.1836, 0.27, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_437f8"]
+resource_name = "cutscene"
+
 [sub_resource type="Animation" id="Animation_vx5x4"]
 resource_name = "mato aparecendo"
 length = 0.5
@@ -294,9 +297,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.19368, 0.1836, 0.27, 1), Color(0.192157, 0.184314, 0.270588, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_437f8"]
-resource_name = "cutscene"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgh65"]
 _data = {
@@ -552,7 +552,6 @@ position = Vector2(15049, 4104)
 
 [node name="PointLight2D" type="PointLight2D" parent="Personagem"]
 position = Vector2(0, 0.200012)
-scale = Vector2(1, 1)
 energy = 2.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
@@ -587,13 +586,11 @@ libraries = {
 }
 
 [node name="Nadador_1" parent="." instance=ExtResource("21_to54d")]
-modulate = Color(0.431373, 0.415686, 1, 1)
 position = Vector2(15653, 4087)
 scale = Vector2(-5, 5)
 
 [node name="PointLight2D2" type="PointLight2D" parent="Nadador_1"]
 position = Vector2(0, 0.200005)
-scale = Vector2(1, 1)
 energy = 2.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)

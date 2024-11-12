@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://c1058ogfmb1eh"]
 
-[ext_resource type="Script" path="res://scripts/Nadadores.gd" id="1_gr37x"]
+[ext_resource type="Script" path="res://scripts/Nadador 1.gd" id="1_gr37x"]
 [ext_resource type="Texture2D" uid="uid://crxm0j7uqvlgp" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 1.png" id="1_um55m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mm2ul"]

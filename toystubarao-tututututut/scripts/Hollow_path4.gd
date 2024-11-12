@@ -55,4 +55,4 @@ func _on_nadador_1_cutscene() -> void:
 	personagem.global_position = $Marker2D.global_position
 	personagem.rotation = 0
 	personagem.em_dialgo = true
-																																																																																																																																																																																																																																																																			 
+	 
