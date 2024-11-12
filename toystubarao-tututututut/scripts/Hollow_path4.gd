@@ -49,3 +49,10 @@ func _on_actionable_body_entered(body):
 		anima_porta.play("porta explodindo")
 		await anima_porta.animation_finished
 		porta.queue_free() 
+#######################################################################################
+#cutscene
+func _on_nadador_1_cutscene() -> void:
+	personagem.global_position = $Marker2D.global_position
+	personagem.rotation = 0
+	personagem.em_dialgo = true
+																																																																																																																																																																																																																																																																			 

@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://tamfe7i06m3h"]
+[gd_scene load_steps=19 format=3 uid="uid://tamfe7i06m3h"]
 
 [ext_resource type="Script" path="res://scripts/personagem.gd" id="1_2yc7x"]
 [ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="2_ibpqx"]
 [ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="3_vpu4e"]
 [ext_resource type="Texture2D" uid="uid://dji6m80ckwukv" path="res://Assests/free-swimming-characters-animation-pixel-art/2 GraveRobber/shader.png" id="4_qvjx3"]
-[ext_resource type="Texture2D" uid="uid://wswlkpr7ftx4" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 3.png" id="7_2ruvk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jm1h"]
 radius = 7.0
@@ -80,7 +79,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_2ruvk")]
+"values": [ExtResource("2_ibpqx")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -174,7 +173,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_2ruvk")]
+"values": [ExtResource("2_ibpqx")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -243,17 +242,16 @@ scale = Vector2(5, 5)
 collision_mask = 14
 script = ExtResource("1_2yc7x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ibpqx")
-hframes = 6
-frame = 2
-
 [node name="Colisao" type="CollisionShape2D" parent="."]
 position = Vector2(0.199999, 3.57628e-07)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5jm1h")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="nadador" type="Sprite2D" parent="."]
+texture = ExtResource("2_ibpqx")
+hframes = 6
+
+[node name="Animation personagem" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2g61k")
 }

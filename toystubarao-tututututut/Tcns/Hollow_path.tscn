@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://ms5h2rcyfva1"]
+[gd_scene load_steps=57 format=4 uid="uid://ms5h2rcyfva1"]
 
 [ext_resource type="Script" path="res://scripts/Hollow_path4.gd" id="1_5mrot"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="1_ru85q"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://scripts/transition.gd" id="15_jtowh"]
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="16_fherh"]
 [ext_resource type="PackedScene" uid="uid://bafn14jst357w" path="res://Tcns/pathway.tscn" id="18_508xj"]
-[ext_resource type="Texture2D" uid="uid://cxccy5tfrnnv6" path="res://Assests/free-swimming-characters-animation-pixel-art/1 Woodcutter/Swim.png" id="21_s4kpx"]
+[ext_resource type="PackedScene" uid="uid://c1058ogfmb1eh" path="res://Tcns/nadador_1.tscn" id="21_to54d"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gdjwa"]
 polygon = PackedVector2Array(-218.925, 98.6407, -148.756, 97.9725, -128.746, 119.956, -102.225, 97.078, -54.9152, 97.814, -55.3132, 173.298, 18.1859, 173.943, 40.9607, 195.006, 44.0682, 275.524, 50.5175, 276.449, 48.1195, 194.691, 63.5464, 175.209, 72.6899, 174.647, 99.3416, 171.332, 96.0192, 278.85, 98.2542, 336.155, 105.334, 349.095, 104.636, 392.081, 8.38574, 391.388, -72.0771, 360.226, -136.431, 294.238, -136.844, 212.233, -218.99, 211.512)
@@ -295,9 +295,13 @@ tracks/0/keys = {
 "values": [Color(0.19368, 0.1836, 0.27, 1), Color(0.192157, 0.184314, 0.270588, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_437f8"]
+resource_name = "cutscene"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgh65"]
 _data = {
 "RESET": SubResource("Animation_agyl1"),
+"cutscene": SubResource("Animation_437f8"),
 "mato aparecendo": SubResource("Animation_vx5x4"),
 "mato sumindo": SubResource("Animation_idmfd")
 }
@@ -544,12 +548,11 @@ shape = SubResource("RectangleShape2D_6qs4q")
 debug_color = Color(0.67451, 0.505882, 0, 0.113725)
 
 [node name="Personagem" parent="." instance=ExtResource("2_bm4vb")]
-position = Vector2(14680, 919)
-rotation = 3.14159
-scale = Vector2(5, -5)
+position = Vector2(15049, 4104)
 
 [node name="PointLight2D" type="PointLight2D" parent="Personagem"]
-position = Vector2(0, 0.200005)
+position = Vector2(0, 0.200012)
+scale = Vector2(1, 1)
 energy = 2.5
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
@@ -583,9 +586,24 @@ libraries = {
 "": SubResource("AnimationLibrary_cgh65")
 }
 
-[node name="Swim" type="Sprite2D" parent="."]
-position = Vector2(14820, 4405)
-texture = ExtResource("21_s4kpx")
+[node name="Nadador_1" parent="." instance=ExtResource("21_to54d")]
+modulate = Color(0.431373, 0.415686, 1, 1)
+position = Vector2(15653, 4087)
+scale = Vector2(-5, 5)
+
+[node name="PointLight2D2" type="PointLight2D" parent="Nadador_1"]
+position = Vector2(0, 0.200005)
+scale = Vector2(1, 1)
+energy = 2.5
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("14_dcfha")
+texture_scale = 0.5
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(15306, 4080)
+rotation = 3.14159
+scale = Vector2(5, -5)
 
 [connection signal="body_entered" from="Area Navio/bolha" to="." method="_on_bolha_body_entered"]
 [connection signal="body_entered" from="Area Navio/Bau" to="." method="_on_bau_body_entered"]
@@ -594,3 +612,5 @@ texture = ExtResource("21_s4kpx")
 [connection signal="body_entered" from="porta/actionable" to="." method="_on_actionable_body_entered"]
 [connection signal="body_entered" from="saida da caverna" to="." method="_on_saida_da_caverna_body_entered"]
 [connection signal="body_entered" from="Caverna" to="." method="_on_caverna_body_entered"]
+[connection signal="Cutscene" from="Nadador_1" to="." method="_on_nadador_1_cutscene"]
+[connection signal="Cutscene" from="Nadador_1" to="Personagem" method="_on_nadador_1_cutscene"]

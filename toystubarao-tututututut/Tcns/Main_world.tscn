@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://phoq2ht71cmx"]
 
-[ext_resource type="Script" path="res://Tcns/main_world.gd" id="1_3hqxj"]
+[ext_resource type="Script" path="res://scripts/main_world.gd" id="1_3hqxj"]
 [ext_resource type="Texture2D" uid="uid://xc8cfdsbjpfp" path="res://Assests/Sprite-0003.png" id="2_dwjqc"]
 [ext_resource type="Script" path="res://scripts/profundidade.gd" id="3_xpdgp"]
 [ext_resource type="Script" path="res://scripts/cutscene_area.gd" id="4_yeapq"]

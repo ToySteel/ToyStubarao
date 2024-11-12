@@ -1,10 +1,10 @@
 extends CharacterBody2D
 #Onready var's
 @onready var actionable_finder = $ActionableFinder
-@onready var player = $Sprite2D
+@onready var player = $nadador
 @export var speed = 100
 @export var rotation_speed = 1.7
-@onready var anim = $AnimationPlayer
+@onready var anim = $"Animation personagem"
 #var's
 var rotation_direction = 0
 var direçao = true
@@ -67,3 +67,5 @@ func _on_cutscene_area_cutscene():
 func _on_cutscene_area_fim_de_cutscene():
 	em_dialgo = false
 	Globals.Missoes += 1
+func _on_nadador_1_cutscene() -> void:
+	anim.set_current_animation("Idle")

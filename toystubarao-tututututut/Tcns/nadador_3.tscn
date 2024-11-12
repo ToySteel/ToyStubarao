@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdu26337ugmrf"]
+[gd_scene load_steps=17 format=3 uid="uid://cdu26337ugmrf"]
 
 [ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="1_jr7q2"]
 [ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="2_0u70o"]
 [ext_resource type="Texture2D" uid="uid://wswlkpr7ftx4" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 3.png" id="3_7o1ds"]
-[ext_resource type="Texture2D" uid="uid://dj6sdv833fuqs" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 2.png" id="4_boc35"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mm2ul"]
 radius = 7.0
@@ -173,7 +172,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_boc35")]
+"values": [ExtResource("3_7o1ds")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -233,6 +232,7 @@ _data = {
 }
 
 [node name="Nadador 3" type="CharacterBody2D"]
+modulate = Color(0.431373, 0.415686, 1, 1)
 scale = Vector2(5, 5)
 collision_layer = 4
 collision_mask = 0
