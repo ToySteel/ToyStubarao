@@ -1,21 +1,23 @@
-[gd_scene load_steps=20 format=3 uid="uid://tamfe7i06m3h"]
+[gd_scene load_steps=18 format=3 uid="uid://cdu26337ugmrf"]
 
-[ext_resource type="Script" path="res://scripts/personagem.gd" id="1_2yc7x"]
-[ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="2_ibpqx"]
-[ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="3_vpu4e"]
-[ext_resource type="Texture2D" uid="uid://dji6m80ckwukv" path="res://Assests/free-swimming-characters-animation-pixel-art/2 GraveRobber/shader.png" id="4_qvjx3"]
-[ext_resource type="Texture2D" uid="uid://wswlkpr7ftx4" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 3.png" id="7_2ruvk"]
+[ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="1_jr7q2"]
+[ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="2_0u70o"]
+[ext_resource type="Texture2D" uid="uid://wswlkpr7ftx4" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 3.png" id="3_7o1ds"]
+[ext_resource type="Texture2D" uid="uid://dj6sdv833fuqs" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 2.png" id="4_boc35"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jm1h"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mm2ul"]
 radius = 7.0
 height = 19.6
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pwt0q"]
+polygon = PackedVector2Array(2, -6.8, 3, -6.8, 3, -7.8, 4, -7.8, 4, -8.8, 8, -8.8, 8, -7.8, 9, -7.8, 9, -4.8, 10, -4.8, 10, -0.799999, 9, -0.799999, 9, 0.200001, 13.2, 0.200001, 13, -0.799999, 18, -0.799999, 18, 2.2, 17, 2.2, 16.8, 3.2, 11, 3.2, 11, 4.2, 6, 4.2, 6, 5.2, 4, 5.2, 4, 6.2, -1, 6.2, -1, 7.2, -20, 7.2, -20, 8.2, -24, 8.2, -24, 6, -23.2, 6.2, -23, 5.2, -21, 5.2, -21, 4.2, -19, 4.2, -19, 2.2, -20, 2.2, -20, 1.2, -21, 1.2, -21, 0.200001, -22, 0.200001, -22, -3.8, -19, -3.8, -19, -2.8, -18, -2.8, -18, -1.8, -17, -1.8, -17, -0.799999, -15, -0.599999, -15, -5.8, -14, -5.6, -14, -6.8, -1, -6.8, -1, -6, 0, -5.8, 0, -3.8, 1.2, -3.8, 1, -4.8, 2, -4.8)
 
 [sub_resource type="Animation" id="Animation_wq0a5"]
 resource_name = "Cima ou baixo"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("nadador:frame")
+tracks/0/path = NodePath("Sprite 2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,18 +29,15 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = false
-tracks/1/path = NodePath("nadador:texture")
+tracks/1/path = NodePath("Sprite 2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_vpu4e")]
+"values": [ExtResource("2_0u70o")]
 }
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pwt0q"]
-polygon = PackedVector2Array(2, -6.8, 3, -6.8, 3, -7.8, 4, -7.8, 4, -8.8, 8, -8.8, 8, -7.8, 9, -7.8, 9, -4.8, 10, -4.8, 10, -0.799999, 9, -0.799999, 9, 0.200001, 13.2, 0.200001, 13, -0.799999, 18, -0.799999, 18, 2.2, 17, 2.2, 16.8, 3.2, 11, 3.2, 11, 4.2, 6, 4.2, 6, 5.2, 4, 5.2, 4, 6.2, -1, 6.2, -1, 7.2, -20, 7.2, -20, 8.2, -24, 8.2, -24, 6, -23.2, 6.2, -23, 5.2, -21, 5.2, -21, 4.2, -19, 4.2, -19, 2.2, -20, 2.2, -20, 1.2, -21, 1.2, -21, 0.200001, -22, 0.200001, -22, -3.8, -19, -3.8, -19, -2.8, -18, -2.8, -18, -1.8, -17, -1.8, -17, -0.799999, -15, -0.599999, -15, -5.8, -14, -5.6, -14, -6.8, -1, -6.8, -1, -6, 0, -5.8, 0, -3.8, 1.2, -3.8, 1, -4.8, 2, -4.8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u53dq"]
 polygon = PackedVector2Array(4, -8.8, 8, -8.8, 8, -7.8, 9, -7.8, 9, -4.6, 10, -4.8, 10, -0.799999, 9, -0.799999, 9, 0.200001, 8, 0.200001, 8, 2.2, 7, 2.2, 7, 4.2, 9, 4.2, 9, 7.2, 8, 7.2, 8, 8.2, 4, 8.2, 4, 7.2, -13, 7.2, -13, 8.2, -20, 8.2, -20, 9.2, -24, 9.2, -24, 7.2, -23, 7.2, -23, 6.2, -21, 6.2, -21, 5.2, -19, 5.2, -19, 4.2, -18, 4.2, -18, 2.4, -19, 2.2, -19, 1.2, -20, 1.2, -20.8, 7.59959e-07, -21.8, -0.799999, -22, -4.8, -19, -4.8, -19, -3.8, -18, -3.8, -18, -2.8, -17, -2.8, -17, -1.8, -15, -1.8, -15, -5.8, -14, -5.8, -14, -6.8, -1, -6.8, -1, -5.8, 0, -5.8, 0, -3.8, 1, -3.8, 1, -4.8, 2, -4.8, 2, -6.8, 3, -6.8, 3, -7.8, 4, -7.8)
@@ -61,7 +60,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("nadador:frame")
+tracks/0/path = NodePath("Sprite 2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -73,14 +72,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("nadador:texture")
+tracks/1/path = NodePath("Sprite 2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_2ruvk")]
+"values": [ExtResource("3_7o1ds")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -100,7 +99,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("nadador:frame")
+tracks/0/path = NodePath("Sprite 2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -112,7 +111,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("nadador:position")
+tracks/1/path = NodePath("Sprite 2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -124,14 +123,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("nadador:texture")
+tracks/2/path = NodePath("Sprite 2D:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_ibpqx")]
+"values": [ExtResource("1_jr7q2")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -167,19 +166,19 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("nadador:texture")
+tracks/0/path = NodePath("Sprite 2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_2ruvk")]
+"values": [ExtResource("4_boc35")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("nadador:frame")
+tracks/1/path = NodePath("Sprite 2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -191,7 +190,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("nadador:position")
+tracks/2/path = NodePath("Sprite 2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -233,51 +232,27 @@ _data = {
 "idle": SubResource("Animation_k8clq")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eg1vh"]
-radius = 12.0
-height = 25.2
-
-[node name="Personagem" type="CharacterBody2D"]
-modulate = Color(0.430667, 0.414418, 0.999996, 1)
+[node name="Nadador 3" type="CharacterBody2D"]
 scale = Vector2(5, 5)
-collision_mask = 14
-script = ExtResource("1_2yc7x")
+collision_layer = 4
+collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ibpqx")
+[node name="Sprite 2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jr7q2")
 hframes = 6
-frame = 2
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
 position = Vector2(0.199999, 3.57628e-07)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_5jm1h")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_2g61k")
-}
-autoplay = "idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-
-[node name="Shader" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0, 0, 0, 0.27451)
-scale = Vector2(5, 5)
-texture = ExtResource("4_qvjx3")
-region_rect = Rect2(978.69, 0, 21.1876, 17.9962)
-
-[node name="ActionableFinder" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
-scale = Vector2(1.86497, 0.777329)
-shape = SubResource("CapsuleShape2D_eg1vh")
-debug_color = Color(0.800039, 0.42077, 0, 0.42)
+shape = SubResource("CapsuleShape2D_mm2ul")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(0, -0.2)
 occluder = SubResource("OccluderPolygon2D_pwt0q")
 occluder_light_mask = 2
+
+[node name="anima p 3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2g61k")
+}
+autoplay = "idle"

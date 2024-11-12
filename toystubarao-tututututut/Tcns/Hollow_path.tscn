@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://ms5h2rcyfva1"]
+[gd_scene load_steps=56 format=4 uid="uid://ms5h2rcyfva1"]
 
 [ext_resource type="Script" path="res://scripts/Hollow_path4.gd" id="1_5mrot"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="1_ru85q"]
@@ -13,11 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://csjmgkiw81vq4" path="res://Assests/Parallax_Backgrounds_Cave/3.png" id="6_v25a3"]
 [ext_resource type="Texture2D" uid="uid://b2mb4m21t5yei" path="res://Assests/Parallax_Backgrounds_Cave/2.png" id="7_0uf61"]
 [ext_resource type="Texture2D" uid="uid://nukxn3vrbdqa" path="res://Assests/Parallax_Backgrounds_Cave/1.png" id="8_a2808"]
+[ext_resource type="Texture2D" uid="uid://vxka0b4girys" path="res://Assests/Porta.png" id="13_ru6wi"]
 [ext_resource type="Texture2D" uid="uid://cnvhjtwvbwy1k" path="res://Assests/light2D-pixel.png" id="14_dcfha"]
+[ext_resource type="Texture2D" uid="uid://50wxtpivxbj2" path="res://Assests/porta explode.png" id="14_hpopk"]
 [ext_resource type="Shader" uid="uid://buhlkq13lcs8n" path="res://scripts/Shaders_Transition.tres" id="15_ehtnu"]
 [ext_resource type="Script" path="res://scripts/transition.gd" id="15_jtowh"]
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="16_fherh"]
 [ext_resource type="PackedScene" uid="uid://bafn14jst357w" path="res://Tcns/pathway.tscn" id="18_508xj"]
+[ext_resource type="Texture2D" uid="uid://cxccy5tfrnnv6" path="res://Assests/free-swimming-characters-animation-pixel-art/1 Woodcutter/Swim.png" id="21_s4kpx"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gdjwa"]
 polygon = PackedVector2Array(-218.925, 98.6407, -148.756, 97.9725, -128.746, 119.956, -102.225, 97.078, -54.9152, 97.814, -55.3132, 173.298, 18.1859, 173.943, 40.9607, 195.006, 44.0682, 275.524, 50.5175, 276.449, 48.1195, 194.691, 63.5464, 175.209, 72.6899, 174.647, 99.3416, 171.332, 96.0192, 278.85, 98.2542, 336.155, 105.334, 349.095, 104.636, 392.081, 8.38574, 391.388, -72.0771, 360.226, -136.431, 294.238, -136.844, 212.233, -218.99, 211.512)
@@ -137,6 +140,96 @@ size = Vector2(1416, 932)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bs5ul"]
 polygon = PackedVector2Array(12845, 1373, 14265, 1374, 14267, 2305, 12847, 2308)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fnupx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un0s5"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4mam"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iev7c"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbvbx"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8hfd"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04eec"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj4sy"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41uu1"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb6ra"]
+atlas = ExtResource("14_hpopk")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxg7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ru6wi")
+}],
+"loop": true,
+"name": &"porta",
+"speed": 64.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un0s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4mam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iev7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbvbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8hfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04eec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj4sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41uu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb6ra")
+}],
+"loop": false,
+"name": &"porta explodindo",
+"speed": 16.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x5xwk"]
+polygon = PackedVector2Array(185, 0, 265, 0, 265, 67, 260, 67, 260, 135, 265, 135, 265, 202, 261, 202, 260, 270, 265, 270, 265, 339, 186, 338)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux8x2"]
+size = Vector2(80, 338)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsr33"]
+size = Vector2(151.516, 192.132)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moh52"]
 size = Vector2(224.6, 20)
 
@@ -155,9 +248,8 @@ shader_parameter/circle_size = 1.5
 shader_parameter/curtains = 1.0
 shader_parameter/type = 0
 
-[sub_resource type="Animation" id="Animation_idmfd"]
-resource_name = "mato sumindo"
-length = 0.5
+[sub_resource type="Animation" id="Animation_agyl1"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,10 +257,10 @@ tracks/0/path = NodePath("TileMap/TileMapLayer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.19368, 0.1836, 0.27, 1), Color(0.192157, 0.184314, 0.270588, 0)]
+"values": [Color(0.19368, 0.1836, 0.27, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_vx5x4"]
@@ -187,8 +279,9 @@ tracks/0/keys = {
 "values": [Color(0.192157, 0.184314, 0.270588, 0), Color(0.192157, 0.184314, 0.270588, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_agyl1"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_idmfd"]
+resource_name = "mato sumindo"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -196,10 +289,10 @@ tracks/0/path = NodePath("TileMap/TileMapLayer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.19368, 0.1836, 0.27, 1)]
+"values": [Color(0.19368, 0.1836, 0.27, 1), Color(0.192157, 0.184314, 0.270588, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgh65"]
@@ -321,6 +414,7 @@ collision_layer = 2
 position = Vector2(2, -579)
 scale = Vector2(10.1623, 9.12969)
 shape = SubResource("CircleShape2D_kjao8")
+debug_color = Color(0.560784, 0.607843, 0.788235, 0.0823529)
 
 [node name="Bolha" type="Sprite2D" parent="Area Navio/bolha"]
 position = Vector2(3, -530)
@@ -356,11 +450,13 @@ physics_material_override = SubResource("PhysicsMaterial_gmrjv")
 position = Vector2(-407, 595.261)
 scale = Vector2(11.4083, 9.89562)
 shape = SubResource("RectangleShape2D_lt2mn")
+debug_color = Color(1, 0, 0, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area Navio/StaticBody2D"]
 position = Vector2(491, 802)
 scale = Vector2(11.4083, 9.89562)
 shape = SubResource("RectangleShape2D_lt2mn")
+debug_color = Color(0.992157, 0, 0, 0.0392157)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(16316, 0)
@@ -383,15 +479,48 @@ tile_map_data = PackedByteArray("AADW/xEABgAEAAEAAADX/xEABgAEAAEAAADY/xEABgAEAAM
 tile_set = ExtResource("1_ru85q")
 collision_enabled = false
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Mato" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mato"]
 position = Vector2(13557, 1842)
 shape = SubResource("RectangleShape2D_k5bpk")
 debug_color = Color(0, 0.595, 0.7, 0.0627451)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Mato"]
 occluder = SubResource("OccluderPolygon2D_bs5ul")
+
+[node name="porta" type="StaticBody2D" parent="."]
+position = Vector2(10564, 871)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_fnupx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="porta"]
+position = Vector2(183, 168)
+rotation = 3.14159
+scale = Vector2(5, -4.401)
+sprite_frames = SubResource("SpriteFrames_wxg7m")
+animation = &"porta explodindo"
+autoplay = "porta"
+frame = 8
+frame_progress = 1.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="porta"]
+occluder = SubResource("OccluderPolygon2D_x5xwk")
+
+[node name="colisao" type="CollisionShape2D" parent="porta"]
+position = Vector2(225, 169)
+shape = SubResource("RectangleShape2D_ux8x2")
+debug_color = Color(0.92549, 0.580392, 0.709804, 0.101961)
+
+[node name="actionable" type="Area2D" parent="porta"]
+position = Vector2(297, -9)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porta/actionable"]
+position = Vector2(23.6074, 159)
+scale = Vector2(0.612386, 2.35255)
+shape = SubResource("RectangleShape2D_rsr33")
+debug_color = Color(0.528249, 0.414473, 1, 0.101961)
 
 [node name="saida da caverna" type="Area2D" parent="."]
 position = Vector2(1366, 799)
@@ -401,6 +530,8 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saida da caverna"]
 position = Vector2(91.6, 148)
 shape = SubResource("RectangleShape2D_moh52")
+one_way_collision_margin = 0.0
+debug_color = Color(0.760784, 1, 0, 0.0745098)
 
 [node name="Caverna" type="Area2D" parent="."]
 position = Vector2(13704, 3032)
@@ -410,6 +541,7 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Caverna"]
 position = Vector2(37.4001, 32.4)
 shape = SubResource("RectangleShape2D_6qs4q")
+debug_color = Color(0.67451, 0.505882, 0, 0.113725)
 
 [node name="Personagem" parent="." instance=ExtResource("2_bm4vb")]
 position = Vector2(14680, 919)
@@ -451,9 +583,14 @@ libraries = {
 "": SubResource("AnimationLibrary_cgh65")
 }
 
+[node name="Swim" type="Sprite2D" parent="."]
+position = Vector2(14820, 4405)
+texture = ExtResource("21_s4kpx")
+
 [connection signal="body_entered" from="Area Navio/bolha" to="." method="_on_bolha_body_entered"]
 [connection signal="body_entered" from="Area Navio/Bau" to="." method="_on_bau_body_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Mato" to="." method="_on_mato_body_entered"]
+[connection signal="body_exited" from="Mato" to="." method="_on_mato_body_exited"]
+[connection signal="body_entered" from="porta/actionable" to="." method="_on_actionable_body_entered"]
 [connection signal="body_entered" from="saida da caverna" to="." method="_on_saida_da_caverna_body_entered"]
 [connection signal="body_entered" from="Caverna" to="." method="_on_caverna_body_entered"]

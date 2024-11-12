@@ -14,5 +14,6 @@ position = Vector2(0, 247.401)
 rotation = 3.14159
 scale = Vector2(7.33846, -49.1908)
 shape = SubResource("RectangleShape2D_xro68")
+debug_color = Color(0.870588, 0.34902, 0, 0.156863)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

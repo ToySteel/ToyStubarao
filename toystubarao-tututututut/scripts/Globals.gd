@@ -5,6 +5,7 @@ var from_world
 var Missoes = 0 
 var Texto_missoes
 var transmissor = "false"
+var chave_hollow_path = false
 
 #Misso
 func _process(delta):

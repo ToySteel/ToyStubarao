@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1058ogfmb1eh"]
+
+[ext_resource type="Texture2D" uid="uid://crxm0j7uqvlgp" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 1.png" id="1_um55m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mm2ul"]
+radius = 7.0
+height = 19.6
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pwt0q"]
+polygon = PackedVector2Array(2, -6.8, 3, -6.8, 3, -7.8, 4, -7.8, 4, -8.8, 8, -8.8, 8, -7.8, 9, -7.8, 9, -4.8, 10, -4.8, 10, -0.799999, 9, -0.799999, 9, 0.200001, 13.2, 0.200001, 13, -0.799999, 18, -0.799999, 18, 2.2, 17, 2.2, 16.8, 3.2, 11, 3.2, 11, 4.2, 6, 4.2, 6, 5.2, 4, 5.2, 4, 6.2, -1, 6.2, -1, 7.2, -20, 7.2, -20, 8.2, -24, 8.2, -24, 6, -23.2, 6.2, -23, 5.2, -21, 5.2, -21, 4.2, -19, 4.2, -19, 2.2, -20, 2.2, -20, 1.2, -21, 1.2, -21, 0.200001, -22, 0.200001, -22, -3.8, -19, -3.8, -19, -2.8, -18, -2.8, -18, -1.8, -17, -1.8, -17, -0.799999, -15, -0.599999, -15, -5.8, -14, -5.6, -14, -6.8, -1, -6.8, -1, -6, 0, -5.8, 0, -3.8, 1.2, -3.8, 1, -4.8, 2, -4.8)
+
+[node name="Nadador 1" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+collision_layer = 4
+collision_mask = 0
+
+[node name="nadador 1" type="Sprite2D" parent="."]
+texture = ExtResource("1_um55m")
+hframes = 6
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(0.199999, 3.57628e-07)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mm2ul")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -0.2)
+occluder = SubResource("OccluderPolygon2D_pwt0q")
+occluder_light_mask = 2

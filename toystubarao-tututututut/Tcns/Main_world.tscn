@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://phoq2ht71cmx"]
+[gd_scene load_steps=28 format=3 uid="uid://phoq2ht71cmx"]
 
 [ext_resource type="Script" path="res://Tcns/main_world.gd" id="1_3hqxj"]
 [ext_resource type="Texture2D" uid="uid://xc8cfdsbjpfp" path="res://Assests/Sprite-0003.png" id="2_dwjqc"]
@@ -12,7 +12,10 @@
 [ext_resource type="Script" path="res://scripts/control.gd" id="11_qsmvw"]
 [ext_resource type="FontFile" uid="uid://dxt8e6oeublyr" path="res://dialogues/at01.ttf" id="12_gxnp8"]
 [ext_resource type="PackedScene" uid="uid://1727tn6txvgu" path="res://Tcns/transition.tscn" id="13_kdhcd"]
+[ext_resource type="PackedScene" uid="uid://c1058ogfmb1eh" path="res://Tcns/nadador_1.tscn" id="14_2iddt"]
 [ext_resource type="PackedScene" uid="uid://bafn14jst357w" path="res://Tcns/pathway.tscn" id="14_s11gg"]
+[ext_resource type="PackedScene" uid="uid://bxk186dlf4jh5" path="res://Tcns/nadador_2.tscn" id="15_unv5d"]
+[ext_resource type="PackedScene" uid="uid://cdu26337ugmrf" path="res://Tcns/nadador_3.tscn" id="16_ne4a5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpwvu"]
 size = Vector2(158.643, 139.329)
@@ -230,6 +233,7 @@ collision_layer = 2
 position = Vector2(3473, 755)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(1, 1, 1, 0.133333)
 
 [node name="Area2D2" type="Area2D" parent="Profundidade"]
 position = Vector2(24, 63)
@@ -247,6 +251,7 @@ position = Vector2(0, 4502)
 position = Vector2(3473, 755)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0.690196, 0.690196, 0.690196, 0.113725)
 
 [node name="Area2D5" type="Area2D" parent="Profundidade"]
 position = Vector2(0, 6693)
@@ -255,6 +260,7 @@ position = Vector2(0, 6693)
 position = Vector2(3473, 755)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0.592157, 0.592157, 0.592157, 0.0901961)
 
 [node name="Area2D7" type="Area2D" parent="Profundidade"]
 position = Vector2(0, 8861)
@@ -263,6 +269,7 @@ position = Vector2(0, 8861)
 position = Vector2(3474, 0)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0.298039, 0.298039, 0.298039, 0.156863)
 
 [node name="Area2D9" type="Area2D" parent="Profundidade"]
 position = Vector2(0, 10889)
@@ -271,6 +278,7 @@ position = Vector2(0, 10889)
 position = Vector2(3474, -543)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0.294118, 0.294118, 0.294118, 0.145098)
 
 [node name="Area2D10" type="Area2D" parent="Profundidade"]
 position = Vector2(0, 11425)
@@ -279,6 +287,7 @@ position = Vector2(0, 11425)
 position = Vector2(3497, 520)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0.235294, 0.235294, 0.235294, 0.180392)
 
 [node name="Area2D11" type="Area2D" parent="Profundidade"]
 position = Vector2(0, 13068)
@@ -287,6 +296,7 @@ position = Vector2(0, 13068)
 position = Vector2(3473, 755)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0.192157, 0.192157, 0.192157, 0.0941176)
 
 [node name="Area2D12" type="Area2D" parent="Profundidade"]
 position = Vector2(0, 14179)
@@ -295,6 +305,7 @@ position = Vector2(0, 14179)
 position = Vector2(3473, 755)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0.0196078, 0.0196078, 0.0196078, 0.0901961)
 
 [node name="Area2D13" type="Area2D" parent="Profundidade"]
 position = Vector2(0, 15265)
@@ -303,6 +314,7 @@ position = Vector2(0, 15265)
 position = Vector2(3473, 755)
 scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
+debug_color = Color(0, 0, 0, 0.0901961)
 
 [node name="Cutscene Area" type="Area2D" parent="."]
 position = Vector2(3527, 12624)
@@ -315,6 +327,7 @@ dialogue_start = "cutscene1"
 position = Vector2(-6.70001, -8.06641)
 scale = Vector2(2.19496, -0.786793)
 shape = SubResource("RectangleShape2D_mamlr")
+debug_color = Color(0.105882, 0.647059, 0, 0.133333)
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0.470588, 0.47451, 1, 1)
@@ -355,6 +368,7 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(41.5, 55)
 shape = SubResource("RectangleShape2D_4qys7")
+debug_color = Color(0.983873, 0, 0.353345, 0.133333)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(46, 38)
@@ -448,6 +462,7 @@ texture_scale = 1.5
 [node name="transition" parent="." instance=ExtResource("13_kdhcd")]
 
 [node name="Hollow_path" parent="." instance=ExtResource("14_s11gg")]
+scale = Vector2(1, 1.4)
 collision_layer = 2
 
 [node name="Hollow_pathPos" type="Marker2D" parent="."]
@@ -466,11 +481,22 @@ physics_material_override = SubResource("PhysicsMaterial_8ui0g")
 position = Vector2(114, 544.5)
 scale = Vector2(2.71062, -14.176)
 shape = SubResource("RectangleShape2D_gyjdp")
+debug_color = Color(1, 0, 0, 0.0392157)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="barreira cutscene"]
 position = Vector2(997, 523)
 scale = Vector2(2.71062, -14.176)
 shape = SubResource("RectangleShape2D_vvpeh")
+debug_color = Color(1, 0, 0, 0.0509804)
+
+[node name="Nadador 1" parent="." instance=ExtResource("14_2iddt")]
+position = Vector2(743, 106)
+
+[node name="Nadador 2" parent="." instance=ExtResource("15_unv5d")]
+position = Vector2(452, 109)
+
+[node name="Nadador 3" parent="." instance=ExtResource("16_ne4a5")]
+position = Vector2(216, 114)
 
 [connection signal="Fim_de_conversa" from="." to="Personagem" method="_on_main_world_fim_de_conversa"]
 [connection signal="LUZ" from="." to="Cutscene Area" method="_on_main_world_luz"]
