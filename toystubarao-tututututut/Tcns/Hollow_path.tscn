@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://ms5h2rcyfva1"]
+[gd_scene load_steps=61 format=4 uid="uid://ms5h2rcyfva1"]
 
 [ext_resource type="Script" path="res://scripts/Hollow_path4.gd" id="1_5mrot"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="1_ru85q"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="16_fherh"]
 [ext_resource type="PackedScene" uid="uid://bafn14jst357w" path="res://Tcns/pathway.tscn" id="18_508xj"]
 [ext_resource type="PackedScene" uid="uid://c1058ogfmb1eh" path="res://Tcns/nadador_1.tscn" id="21_to54d"]
+[ext_resource type="Resource" uid="uid://5mnx3157tj2a" path="res://dialogues/Main.dialogue" id="22_kgr3t"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gdjwa"]
 polygon = PackedVector2Array(-218.925, 98.6407, -148.756, 97.9725, -128.746, 119.956, -102.225, 97.078, -54.9152, 97.814, -55.3132, 173.298, 18.1859, 173.943, 40.9607, 195.006, 44.0682, 275.524, 50.5175, 276.449, 48.1195, 194.691, 63.5464, 175.209, 72.6899, 174.647, 99.3416, 171.332, 96.0192, 278.85, 98.2542, 336.155, 105.334, 349.095, 104.636, 392.081, 8.38574, 391.388, -72.0771, 360.226, -136.431, 294.238, -136.844, 212.233, -218.99, 211.512)
@@ -262,6 +263,54 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.19368, 0.1836, 0.27, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nadador_1/PointLight2D2:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Personagem/PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Personagem:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15049, 4104)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nadador_1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15653, 4087)]
+}
 
 [sub_resource type="Animation" id="Animation_437f8"]
 resource_name = "cutscene"
@@ -298,17 +347,98 @@ tracks/0/keys = {
 "values": [Color(0.19368, 0.1836, 0.27, 1), Color(0.192157, 0.184314, 0.270588, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_gt2ud"]
+resource_name = "piscano"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nadador_1/PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5]
+}
+
+[sub_resource type="Animation" id="Animation_tqqx3"]
+resource_name = "conversa_luz"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nadador_1/PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 2, 2.2, 2.4, 2.6, 2.8, 3.6, 3.8, 4, 4.4, 4.6, 4.8, 5, 5.4, 5.6, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 2.5, 20.0, 20.0, 2.5, 2.5, 20.0, 2.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Personagem/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.8, 3, 3.2, 3.4, 3.6, 4, 4.2, 4.4, 4.6, 4.8, 5.2, 5.4, 5.6, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5]
+}
+
+[sub_resource type="Animation" id="Animation_28yin"]
+resource_name = "ANDAR"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15304, 4085), Vector2(14300, 4085)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nadador_1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15653, 4087), Vector2(14291, 4087)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgh65"]
 _data = {
+"ANDAR": SubResource("Animation_28yin"),
 "RESET": SubResource("Animation_agyl1"),
+"conversa_luz": SubResource("Animation_tqqx3"),
 "cutscene": SubResource("Animation_437f8"),
 "mato aparecendo": SubResource("Animation_vx5x4"),
-"mato sumindo": SubResource("Animation_idmfd")
+"mato sumindo": SubResource("Animation_idmfd"),
+"piscano": SubResource("Animation_gt2ud")
 }
 
 [node name="Hollow_path" type="Node2D"]
 script = ExtResource("1_5mrot")
-path = "res://Tcns/Main_world.tscn"
+dialogue_start = "comunicacao_luzes_mergulhador_1"
+dialogue_resource = ExtResource("22_kgr3t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
 
 [node name="BG" type="Node2D" parent="."]
 
@@ -574,7 +704,6 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("16_fherh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.462745, 0.52549, 0.772549, 1)
 
 [node name="Main_world" parent="." instance=ExtResource("18_508xj")]
@@ -588,6 +717,8 @@ libraries = {
 [node name="Nadador_1" parent="." instance=ExtResource("21_to54d")]
 position = Vector2(15653, 4087)
 scale = Vector2(-5, 5)
+dialogue_start = "cutscene_primeiro_nadador"
+dialogue_resource = ExtResource("22_kgr3t")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Nadador_1"]
 position = Vector2(0, 0.200005)
@@ -602,6 +733,13 @@ position = Vector2(15306, 4080)
 rotation = 3.14159
 scale = Vector2(5, -5)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="Inicio_de_conversa_luz" from="." to="." method="_on_inicio_de_conversa_luz"]
+[connection signal="cutscene2" from="." to="." method="_on_cutscene_2"]
+[connection signal="cutscene2" from="." to="Personagem" method="_on_hollow_path_cutscene_2"]
+[connection signal="cutscene2" from="." to="Nadador_1" method="_on_hollow_path_cutscene_2"]
 [connection signal="body_entered" from="Area Navio/bolha" to="." method="_on_bolha_body_entered"]
 [connection signal="body_entered" from="Area Navio/Bau" to="." method="_on_bau_body_entered"]
 [connection signal="body_entered" from="Mato" to="." method="_on_mato_body_entered"]
@@ -611,3 +749,4 @@ scale = Vector2(5, -5)
 [connection signal="body_entered" from="Caverna" to="." method="_on_caverna_body_entered"]
 [connection signal="Cutscene" from="Nadador_1" to="." method="_on_nadador_1_cutscene"]
 [connection signal="Cutscene" from="Nadador_1" to="Personagem" method="_on_nadador_1_cutscene"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

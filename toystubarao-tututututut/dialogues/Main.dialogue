@@ -83,4 +83,26 @@ INICIANDO...........ATIVAR
 do emit_signal("LUZ")
 => END
 ~ cutscene_primeiro_nadador
-
+Mergulhador: Nossa que bom ainda bem que eu te achei
+Mergulhador azul: ...........
+Mergulhador azul: Eh... voce esta bem?
+Mergulhador azul: ...........
+Pesquisadora: O comunicador dele quebrou esqueceu?
+Mergulhador: UE como voce esta aqui?????
+Pesquisadora: Eu estou conectada no seu comunicador
+Mergulhador: E voce nao me ajudou em nada aqui! Quase me perdi igual eles!!!
+Pesquisadora: você não pediu
+Mergulhador: Eh.. ok mas oque eu devo fazer agora entao
+Pesquisadora: Ative o modo comunicador do aparelho e se comunique
+Mergulhador: ok la vamos nos
+do emit_signal("Inicio_de_conversa_luz")
+=> END
+~ comunicacao_luzes_mergulhador_1
+TRADUÇAO EXRAOFICIAL DAS LUZES TOY STEEL PARA O PUBLICO :D
+Mergulhador: Opa tudo bem?
+Mergulhador azul: NOSSA AINDA BEM QUE VOCE ATENDEU ACHEI QUE MORRERIA AQUI
+Mergulhador: Eita acalma meu amigo
+Mergulhador: Me segue eu sei o caminho para voltar
+Mergulhador azul: SIMMMM VAMOSSSSS
+do emit_signal("cutscene2")
+=> END

@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var speed = 100
 @export var rotation_speed = 1.7
 @onready var anim = $"Animation personagem"
+@onready var remote_transform_2d: RemoteTransform2D = $RemoteTransform2D
+
 #var's
 var rotation_direction = 0
 var direçao = true
@@ -68,5 +70,15 @@ func _on_cutscene_area_fim_de_cutscene():
 	em_dialgo = false
 	Globals.Missoes += 1
 func _on_nadador_1_cutscene() -> void:
-	anim.set_current_animation("Idle")
+	anim.set_current_animation("idle")
 	$nadador.frame = 2
+
+func follow_camera(camera):
+	var camera_path = camera.get_path()
+	remote_transform_2d.remote_path = camera_path
+
+func _on_hollow_path_cutscene_2() -> void:
+	player.scale.x = -1
+	$Colisao.scale.x = -1
+	$LightOccluder2D.scale.x = -1
+	anim.set_current_animation("Nadano")

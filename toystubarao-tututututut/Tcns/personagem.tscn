@@ -257,10 +257,6 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-
 [node name="Shader" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 0.27451)
@@ -279,3 +275,5 @@ debug_color = Color(0.800039, 0.42077, 0, 0.42)
 position = Vector2(0, -0.2)
 occluder = SubResource("OccluderPolygon2D_pwt0q")
 occluder_light_mask = 2
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

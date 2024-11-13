@@ -200,6 +200,12 @@ size = Vector2(105.181, 64.8984)
 position = Vector2(0, -8)
 script = ExtResource("1_3hqxj")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1.52588e-05, 0)
+scale = Vector2(1, 1)
+limit_left = 0
+limit_top = 0
+
 [node name="BG" type="Node2D" parent="."]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="BG"]
