@@ -1,96 +1,96 @@
 ~ start
-Pesquisadora: Oi Mergulhador, como é bom te ver! Você tem muito trabalho a fazer, sabia?
+Pesquisadora: olá Mergulhador, como é bom te ver! Você tem muito trabalho a fazer, sabia?
 Pesquisadora: Existem mergulhadores perdidos nas profundezas e você tem que ajudá-los.
 Mergulhador: Como assim? Não estou te entendendo, acho que desmaiei pela mudança de pressão e me esqueci.
-Pesquisadora: Nossa, sério? q paia ze
+Pesquisadora: nossa você deve tomar mais cuidado.
 Pesquisadora: Se quiser eu posso te explicar de novo, o que você quer saber?
 => perguntas
 ~ perguntas
-Pesquisadora: Oque voce quer saber
+Pesquisadora: O que você quer saber
 - Que lugar é esse?
 	Mergulhador: Onde nós estamos?
 	Pesquisadora: Ah, aqui é uma profunda caverna submarina onde estamos pesquisando inovações para ajudar a vida aquática.
-	Pesquisadora: Tem algo mais que queira saber?
+	Pesquisadora: Tem algo a mais que queira saber?
 	=> perguntas
 - Qual é a minha missão?
-	Mergulhador: Você poderia me dizer qual é minha missão?
-	Pesquisadora: Terei que dar um breve contexto para explicar isso
+	Mergulhador: Você poderia me dizer qual é a minha missão?
+	Pesquisadora: Terei que dar um breve contexto para explicar isso.
 	Pesquisadora: A corporação Toy Steel teve a ideia de um projeto de pesquisa sobre a vida nas profundezas, então enviaram 3 mergulhadores para recolher os resultados.
-	Pesquisadora: Porém ocorreu um DESASTRE, os comunicadores falharam, e como estava no escuro não conseguiam se ver
+	Pesquisadora: Porém ocorreu um DESASTRE! Os comunicadores falharam e como estava no escuro não conseguiam se ver.
 	Pesquisadora: Então eles se separaram e se perderam. Agora estão a mercê das águas sem conseguirem voltar
-	Pesquisadora: Seu trabalho é achar esses mergulhadores perdidos e levar eles de volta para cá e assim concluir a missão
+	Pesquisadora: Seu trabalho é achar esses mergulhadores perdidos e levar eles de volta para aqui e assim concluir a missão.
 	Mergulhador: Mas como vou achar eles?
 	Pesquisadora: Eles possuem lanternas de sinais luminosos que iluminam distâncias incríveis!
-	Pesquisadora: Com estas lanternas você conseguirá saber para qual direção você deve ir para achá los
+	Pesquisadora: Com estas lanternas você conseguirá saber para qual direção você deve ir para achá-los
 	Pesquisadora: Então você também receberá um.
-	VOCÊ RECEBEU "TRANSMISSOR DE LUZ TOY STEEL"
-	Pesquisadora: Quando achar que e a hora certa, ative seu transmissor e voce ira saber para qual direçao ir
+	VOCÊ RECEBEU "COMUNICADOR TOY STEEL"
+	Pesquisadora: Quando achar que é a hora certa, ative seu comunicador e você ira saber para qual direçao ir.
 	Pesquisadora: Tem algo mais que queira saber?
-	- COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????
+	- COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE É UM HOLOGRAMA??????????
 		Mergulhador: COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????
 		Pesquisadora: Sabe meu amigo, existem coisas que eu não sei, que voce não presisa saber, e que o Luis nao quer se dar ao trabalho de pensar, então so aceite.
-		Mergulhador: tudo bem faz todo o sentido.
+		Mergulhador: tudo bem faz sentido.
 		=> perguntas_pos_transmissor
 - Quem e você?
-	Mergulhador: Me desculpe pela pergunta mas, quem e voce?
+	Mergulhador: Me desculpe pela pergunta mas, quem é você?
 	Pesquisadora: Nossa você se esqueceu bem viu.
-	Pesquisadora: Eu sou uma esquisadora que estava participando do projeto pelo laboratorio na parte cientifica.
+	Pesquisadora: Eu sou uma esquisadora que estava participando do projeto pelo laboratorio na parte científica.
 	Pesquisadora: Ai aconteceu este problemão e me designaram para auxiliar a cobai.. digo MERGULHADOR hehehe, MERGULHADOR heheheh.
 	=> perguntas
-- Nao quero saber mais nada.
-	Voce ainda tem que perguntar mais coisas.
+- Não quero saber mais nada.
+	Você ainda tem que perguntar mais coisas.
 	=> perguntas
 => END
 ~ perguntas_pos_transmissor
-Pesquisadora: Oque voce quer saber
+Pesquisadora: O que você quer saber
 - Que lugar é esse?
 	Mergulhador: Onde nós estamos?
 	Pesquisadora: Ah, aqui é uma profunda caverna submarina onde estamos pesquisando inovações para ajudar a vida aquática.
-	Pesquisadora: Tem algo mais que queira saber?
+	Pesquisadora: Tem algo a mais que queira saber?
 	=> perguntas_pos_transmissor
 - Qual é a minha missão?
-	Mergulhador: Você poderia me dizer qual é minha missão?
-	Pesquisadora: Terei que dar um breve contexto para explicar isso
+	Mergulhador: Você poderia me dizer qual é a minha missão?
+	Pesquisadora: Terei que dar um breve contexto para explicar isso.
 	Pesquisadora: A corporação Toy Steel teve a ideia de um projeto de pesquisa sobre a vida nas profundezas, então enviaram 3 mergulhadores para recolher os resultados.
-	Pesquisadora: Porém ocorreu um DESASTRE, os comunicadores falharam, e como estava no escuro não conseguiam se ver
+	Pesquisadora: Porém ocorreu um DESASTRE! Os comunicadores falharam e como estava no escuro não conseguiam se ver.
 	Pesquisadora: Então eles se separaram e se perderam. Agora estão a mercê das águas sem conseguirem voltar
-	Pesquisadora: Seu trabalho é achar esses mergulhadores perdidos e levar eles de volta para cá e assim concluir a missão
+	Pesquisadora: Seu trabalho é achar esses mergulhadores perdidos e levar eles de volta para aqui e assim concluir a missão.
 	Mergulhador: Mas como vou achar eles?
 	Pesquisadora: Eles possuem lanternas de sinais luminosos que iluminam distâncias incríveis!
-	Pesquisadora: Com estas lanternas você conseguirá saber para qual direção você deve ir para achá los
+	Pesquisadora: Com estas lanternas você conseguirá saber para qual direção você deve ir para achá-los
 	Pesquisadora: Então você também receberá um.
-	VOCÊ RECEBEU "TRANSMISSOR DE LUZ TOY STEEL"
-	Pesquisadora: Quando achar que e a hora certa, ative seu transmissor e voce ira saber para qual direçao ir
+	VOCÊ RECEBEU "COMUNICADOR TOY STEEL"
+	Pesquisadora: Quando achar que é a hora certa, ative seu comunicador e você ira saber para qual direçao ir.
 	Pesquisadora: Tem algo mais que queira saber?
-	- COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????
+	- COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE É UM HOLOGRAMA??????????
 		Mergulhador: COMO EU PEGUEI ESTE TRANSMISSOR SE VOCE E UM HOLOGRAMA??????????
 		Pesquisadora: Sabe meu amigo, existem coisas que eu não sei, que voce não presisa saber, e que o Luis nao quer se dar ao trabalho de pensar, então so aceite.
-		Mergulhador: tudo bem faz todo o sentido.
+		Mergulhador: tudo bem faz sentido.
 		=> perguntas_pos_transmissor
 - Quem e você?
-	Mergulhador: Me desculpe pela pergunta mas, quem e voce?
+	Mergulhador: Me desculpe pela pergunta mas, quem é você?
 	Pesquisadora: Nossa você se esqueceu bem viu.
-	Pesquisadora: Eu sou uma esquisadora que estava participando do projeto pelo laboratorio na parte cientifica.
-	Pesquisadora: Ai aconteceu este problemão e me designaram para auxiliar a cobai.. digo MERGULHADOR hehehe, MERGULHADOR heheheh.
+	Pesquisadora: Eu sou uma esquisadora que estava participando do projeto pelo laboratorio na parte científica.
+	Pesquisadora: Ai aconteceu este problemão e me designaram para auxiliar a cobai.. digo MERGULHADOR hehehe, MERGULHADOR hehe.
 	=> perguntas_pos_transmissor
-- Nao quero saber mais nada.
-	Mergulhador: OK, entendi oque deve ser feito, la vou eu
+- Não quero saber mais nada.
+	Mergulhador: OK, entendi oque deve ser feito, lá vou eu.
 	do emit_signal("Fim_de_conversa")
 	=> END
 ~ cutscene1
-Mergulhador: Ok agora e hora de usar isso daqui.
+Mergulhador: Ok agora é a hora de usar isto daqui.
 INICIANDO...........ATIVAR
 do emit_signal("LUZ")
 => END
 ~ cutscene_primeiro_nadador
-Mergulhador: Nossa que bom ainda bem que eu te achei
+Mergulhador: Nossa ainda bem que eu te achei!
 Mergulhador azul: ...........
-Mergulhador azul: Eh... voce esta bem?
+Mergulhador azul: Eh... você está bem?
 Mergulhador azul: ...........
 Pesquisadora: O comunicador dele quebrou esqueceu?
-Mergulhador: UE como voce esta aqui?????
-Pesquisadora: Eu estou conectada no seu comunicador
-Mergulhador: E voce nao me ajudou em nada aqui! Quase me perdi igual eles!!!
+Mergulhador: Então como você está aqui?????
+Pesquisadora: Eu estou conectada ao seu comunicador
+Mergulhador: E você não me ajudou em nada aqui! Quase me perdi igual eles!!!
 Pesquisadora: você não pediu
 Mergulhador: Eh.. ok mas oque eu devo fazer agora entao
 Pesquisadora: Ative o modo comunicador do aparelho e se comunique
@@ -106,3 +106,21 @@ Mergulhador: Me segue eu sei o caminho para voltar
 Mergulhador azul: SIMMMM VAMOSSSSS
 do emit_signal("cutscene2")
 => END
+~ comunicacao_pos_hollow_path
+Mergulhador azul: ufa ainda bem que conseguimos sair.
+Mergulhador azul: agora temos que salvar os outros
+Mergulhador: e para onde devemos ir??
+Mergulhador azul: Eu acho que a melhor opçao e a Magma Throth
+Mergulhador: Magma oq?
+Mergulhador azul: Magma Throth, um lugar com varios vulcoes submarinos ativos
+Mergulhador: E porque deveriamos ir apra la primeiro? parece tao perigoso
+Mergulhador azul: E que la no Hollow Path eu achei alguns Toy Ices 
+Mergulhador: Ehhhh.....
+- Oque e Toy Ices?
+	Mergulhador: Oque sao os Toy Ices??
+	Mergulhador azul: Nossa nao te deram nenhum treinamento?
+	Mergulhador azul: Os Toy ices sao cubos de gelo imensamente condensados que conseguem esfriar ate o coraçao de um vulcao
+	Mergulhador azul: vamos usar eles para que passemos com segurança
+- Oque e Hollow path
+
+- para aonde fica Magma throth

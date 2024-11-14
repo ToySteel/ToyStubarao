@@ -1,9 +1,10 @@
-[gd_scene load_steps=61 format=4 uid="uid://ms5h2rcyfva1"]
+[gd_scene load_steps=63 format=4 uid="uid://ms5h2rcyfva1"]
 
 [ext_resource type="Script" path="res://scripts/Hollow_path4.gd" id="1_5mrot"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="1_ru85q"]
 [ext_resource type="PackedScene" uid="uid://tamfe7i06m3h" path="res://Tcns/personagem.tscn" id="2_bm4vb"]
 [ext_resource type="Texture2D" uid="uid://cg5ou2lmkssfx" path="res://Assests/Parallax_Backgrounds_Cave/7.png" id="2_ce85t"]
+[ext_resource type="PackedScene" uid="uid://bh8csibx3uw8q" path="res://Tcns/camera.tscn" id="3_3t83p"]
 [ext_resource type="Texture2D" uid="uid://quttqpbuvnpg" path="res://Assests/Parallax_Backgrounds_Cave/6.png" id="3_5sav4"]
 [ext_resource type="Texture2D" uid="uid://cb6bsd87nm6m4" path="res://Assests/pngwing.com-sheet.png" id="3_ng6d3"]
 [ext_resource type="Texture2D" uid="uid://meeh55munhpj" path="res://Assests/_9C8E5DA8-12CD-44D2-B866-5A2814CCF5F6_-removebg-preview.png" id="4_d83ki"]
@@ -249,6 +250,34 @@ shader_parameter/circle_size = 1.5
 shader_parameter/curtains = 1.0
 shader_parameter/type = 0
 
+[sub_resource type="Animation" id="Animation_28yin"]
+resource_name = "ANDAR"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15304, 4085), Vector2(14300, 4085)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nadador_1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15653, 4087), Vector2(14291, 4087)]
+}
+
 [sub_resource type="Animation" id="Animation_agyl1"]
 length = 0.001
 tracks/0/type = "value"
@@ -312,6 +341,63 @@ tracks/4/keys = {
 "values": [Vector2(15653, 4087)]
 }
 
+[sub_resource type="Animation" id="Animation_tqqx3"]
+resource_name = "conversa_luz"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nadador_1/PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 2, 2.2, 2.4, 2.6, 2.8, 3.6, 3.8, 4, 4.4, 4.6, 4.8, 5, 5.4, 5.6, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 10.0, 2.5, 10.0, 2.5, 2.5, 10.0, 2.5, 10.0, 2.5, 2.5, 10.0, 2.5, 2.5, 10.0, 10.0, 2.5, 2.5, 10.0, 2.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Personagem/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.8, 3, 3.2, 3.4, 3.6, 4, 4.2, 4.4, 4.6, 4.8, 5.2, 5.4, 5.6, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 10.0, 2.5, 10.0, 2.5, 10.0, 2.5, 2.5, 10.0, 2.5, 10.0, 2.5, 2.5, 10.0, 2.5, 10.0, 2.5, 10.0, 2.5, 10.0, 2.5]
+}
+
+[sub_resource type="Animation" id="Animation_qup81"]
+resource_name = "conversando"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Personagem/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 10.0, 2.5, 10.0, 2.5, 10.0, 2.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nadador_1/PointLight2D2:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.5, 10.0, 2.5, 10.0, 2.5, 10.0, 2.5]
+}
+
 [sub_resource type="Animation" id="Animation_437f8"]
 resource_name = "cutscene"
 
@@ -364,67 +450,12 @@ tracks/0/keys = {
 "values": [2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5]
 }
 
-[sub_resource type="Animation" id="Animation_tqqx3"]
-resource_name = "conversa_luz"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Nadador_1/PointLight2D2:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 2, 2.2, 2.4, 2.6, 2.8, 3.6, 3.8, 4, 4.4, 4.6, 4.8, 5, 5.4, 5.6, 5.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 2.5, 20.0, 20.0, 2.5, 2.5, 20.0, 2.5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Personagem/PointLight2D:energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.8, 3, 3.2, 3.4, 3.6, 4, 4.2, 4.4, 4.6, 4.8, 5.2, 5.4, 5.6, 5.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 20.0, 2.5, 2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5, 20.0, 2.5]
-}
-
-[sub_resource type="Animation" id="Animation_28yin"]
-resource_name = "ANDAR"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Personagem:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(15304, 4085), Vector2(14300, 4085)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Nadador_1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(15653, 4087), Vector2(14291, 4087)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgh65"]
 _data = {
 "ANDAR": SubResource("Animation_28yin"),
 "RESET": SubResource("Animation_agyl1"),
 "conversa_luz": SubResource("Animation_tqqx3"),
+"conversando": SubResource("Animation_qup81"),
 "cutscene": SubResource("Animation_437f8"),
 "mato aparecendo": SubResource("Animation_vx5x4"),
 "mato sumindo": SubResource("Animation_idmfd"),
@@ -436,9 +467,7 @@ script = ExtResource("1_5mrot")
 dialogue_start = "comunicacao_luzes_mergulhador_1"
 dialogue_resource = ExtResource("22_kgr3t")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
+[node name="Camera2D" parent="." instance=ExtResource("3_3t83p")]
 
 [node name="BG" type="Node2D" parent="."]
 
@@ -629,6 +658,7 @@ collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_fnupx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="porta"]
+modulate = Color(0.601223, 0.601223, 0.601223, 1)
 position = Vector2(183, 168)
 rotation = 3.14159
 scale = Vector2(5, -4.401)
@@ -704,7 +734,7 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("16_fherh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.462745, 0.52549, 0.772549, 1)
+color = Color(0.501694, 0.563492, 0.800772, 1)
 
 [node name="Main_world" parent="." instance=ExtResource("18_508xj")]
 position = Vector2(15434, 758)
@@ -718,7 +748,6 @@ libraries = {
 position = Vector2(15653, 4087)
 scale = Vector2(-5, 5)
 dialogue_start = "cutscene_primeiro_nadador"
-dialogue_resource = ExtResource("22_kgr3t")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Nadador_1"]
 position = Vector2(0, 0.200005)
@@ -735,6 +764,9 @@ scale = Vector2(5, -5)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(15027, 1020)
 
 [connection signal="Inicio_de_conversa_luz" from="." to="." method="_on_inicio_de_conversa_luz"]
 [connection signal="cutscene2" from="." to="." method="_on_cutscene_2"]

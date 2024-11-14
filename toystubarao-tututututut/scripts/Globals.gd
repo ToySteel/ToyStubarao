@@ -1,6 +1,6 @@
 extends Node2D
 #onready var's
-@onready var camera_2d: Camera2D = $Camera2D
+
 
 #var's
 var from_world
@@ -8,6 +8,8 @@ var Missoes = 0
 var Texto_missoes
 var transmissor = "false"
 var chave_hollow_path = false
+var Game_point = "Start"
+var camera = null
 #func _ready() -> void:
 
 #Missoes
@@ -23,6 +25,9 @@ func _process(delta):
 		Va ate o fundo da caverna[OK]
 		Va atraz de uma das luzes
 		"
-
+	if Input.is_action_just_pressed("ui_end"):
+		from_world = "Hollow_path"
+		Game_point = "Hollow_Path_Pos"
+		
 
 ######################################################

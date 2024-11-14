@@ -12,6 +12,7 @@ extends Node2D
 @onready var ligh_porta = $porta/LightOccluder2D as LightOccluder2D
 @onready var camera = $Camera2D as Camera2D
 @onready var anima_world = $"animaçao do mundo" as AnimationPlayer
+@onready var marker_2d_2: Marker2D = $Marker2D2
 
 #Export var's
 @export var path = "res://Tcns/Main_world.tscn"
@@ -30,6 +31,8 @@ func _ready() -> void:
 	if cutscene == false:
 		personagem.follow_camera(camera)
 	transition.des_transition()
+	Globals.Game_point = "Hollow_Path_entered"
+	personagem.global_position = marker_2d_2.global_position
 #nao faz nada
 func _process(delta: float) -> void:
 	pass
@@ -75,12 +78,14 @@ func _on_inicio_de_conversa_luz() -> void:
 	anima_world.set_current_animation("conversa_luz")
 	await anima_world.animation_finished
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	anima_world.set_current_animation("conversando")
 func _on_cutscene_2() -> void:
 	cutscene = true
 	anima_world.set_current_animation("ANDAR")
 	$Timer.start()
 func _on_timer_timeout() -> void:
 	Globals.from_world = name
+	Globals.Game_point = "Hollow_Path_Pos"
 	transition.change_scene(true ,path, "no", "no")
 ####################################################################################
 #

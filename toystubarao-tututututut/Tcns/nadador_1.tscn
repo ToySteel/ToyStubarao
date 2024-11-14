@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1058ogfmb1eh"]
+[gd_scene load_steps=17 format=3 uid="uid://c1058ogfmb1eh"]
 
 [ext_resource type="Script" path="res://scripts/Nadador 1.gd" id="1_gr37x"]
 [ext_resource type="Texture2D" uid="uid://crxm0j7uqvlgp" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 1.png" id="1_um55m"]
+[ext_resource type="Resource" uid="uid://5mnx3157tj2a" path="res://dialogues/Main.dialogue" id="2_3iymp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mm2ul"]
 radius = 7.0
@@ -210,6 +211,7 @@ scale = Vector2(5, 5)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_gr37x")
+dialogue_resource = ExtResource("2_3iymp")
 
 [node name="nadador 1" type="Sprite2D" parent="."]
 texture = ExtResource("1_um55m")
