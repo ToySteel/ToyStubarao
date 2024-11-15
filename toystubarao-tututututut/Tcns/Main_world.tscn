@@ -30,6 +30,14 @@ size = Vector2(81, 130)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iwg8n"]
 polygon = PackedVector2Array(5, -41, 85, -41, 85, 118, 5, 118)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ui0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyjdp"]
+size = Vector2(61.9784, 60.8775)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvpeh"]
+size = Vector2(105.181, 64.8984)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7y12"]
 
 [sub_resource type="Animation" id="Animation_y6yy6"]
@@ -106,6 +114,21 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(6132, 12392), Vector2(3744, 12415), Vector2(3744, 12415), Vector2(7741, 12655)]
+}
+
+[sub_resource type="Animation" id="Animation_w3s3u"]
+resource_name = "Pedra_hollow_path_cai"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/Pedra_hollow_path:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -121.6), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_r2fmg"]
@@ -207,24 +230,9 @@ tracks/7/keys = {
 "values": [Vector2(-78.9999, 12295)]
 }
 
-[sub_resource type="Animation" id="Animation_w3s3u"]
-resource_name = "Pedra_hollow_path_cai"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TileMap/Pedra_hollow_path:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -121.6), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_auvyk"]
 resource_name = "nadaçoes"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -232,7 +240,7 @@ tracks/0/path = NodePath("Nadador 1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-78.9999, 12295), Vector2(1859, 12295)]
@@ -246,19 +254,9 @@ _data = {
 "nadaçoes": SubResource("Animation_auvyk")
 }
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ui0g"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyjdp"]
-size = Vector2(61.9784, 60.8775)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvpeh"]
-size = Vector2(105.181, 64.8984)
-
 [node name="Main_world" type="Node2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_3hqxj")
-
-[node name="Camera" parent="." instance=ExtResource("2_nkob5")]
 
 [node name="BG" type="Node2D" parent="."]
 
@@ -376,19 +374,6 @@ scale = Vector2(44.1242, 6.30912)
 shape = SubResource("RectangleShape2D_mpwvu")
 debug_color = Color(0, 0, 0, 0.0901961)
 
-[node name="Cutscene Area" type="Area2D" parent="."]
-position = Vector2(3527, 12624)
-scale = Vector2(5, 5)
-script = ExtResource("4_yeapq")
-dialogue_resource = ExtResource("5_wlq0b")
-dialogue_start = "cutscene1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene Area"]
-position = Vector2(-6.70001, -8.06641)
-scale = Vector2(2.19496, -0.786793)
-shape = SubResource("RectangleShape2D_mamlr")
-debug_color = Color(0.105882, 0.647059, 0, 0.133333)
-
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0.470588, 0.47451, 1, 1)
 position = Vector2(-1, 0)
@@ -405,6 +390,9 @@ layer_1/tile_data = PackedInt32Array(65535, 196610, 1, 131071, 196610, 1, 196607
 position = Vector2(0, -121.6)
 tile_map_data = PackedByteArray("AAAOAJMAAAADAAEAAAARAJMAAAAFAAEAAAAQAJMAAAAEAAEAAAAPAJMAAAAEAAEAAAARAJQAAAAFAAIAAAARAJUAAAAFAAIAAAARAJYAAAAFAAIAAAARAJcAAAAFAAIAAAARAJgAAAAFAAIAAAARAJkAAAAFAAIAAAARAJoAAAAFAAIAAAARAJsAAAAFAAYAAAAQAJsAAAAEAAYAAAAPAJsAAAAEAAYAAAAOAJsAAAADAAYAAAAOAJQAAAADAAIAAAAOAJUAAAADAAIAAAAOAJYAAAADAAIAAAAOAJcAAAADAAIAAAAOAJgAAAADAAIAAAAOAJkAAAADAAIAAAAPAJkAAAAEAAIAAAAOAJoAAAADAAIAAAAPAJoAAAAEAAIAAAAPAJgAAAAEAAIAAAAPAJcAAAAEAAIAAAAPAJYAAAAEAAIAAAAPAJUAAAAEAAIAAAAPAJQAAAAEAAIAAAAQAJQAAAAEAAIAAAAQAJUAAAAEAAIAAAAQAJYAAAAEAAIAAAAQAJcAAAAEAAIAAAAQAJgAAAAEAAIAAAAQAJkAAAAEAAIAAAAQAJoAAAAEAAIAAAA=")
 tile_set = ExtResource("6_f37et")
+
+[node name="Camera" parent="." instance=ExtResource("2_nkob5")]
+limit_left = 0
 
 [node name="Personagem" parent="." instance=ExtResource("7_dqxgi")]
 modulate = Color(0.431373, 0.415686, 1, 1)
@@ -426,6 +414,30 @@ texture = ExtResource("2_dwjqc")
 region_enabled = true
 region_rect = Rect2(985.203, 0, 14.7967, 7.30501)
 
+[node name="Cutscene Area" type="Area2D" parent="."]
+position = Vector2(3527, 12624)
+scale = Vector2(5, 5)
+script = ExtResource("4_yeapq")
+dialogue_resource = ExtResource("5_wlq0b")
+dialogue_start = "cutscene1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene Area"]
+position = Vector2(-6.70001, -8.06641)
+scale = Vector2(2.19496, -0.786793)
+shape = SubResource("RectangleShape2D_mamlr")
+debug_color = Color(0.105882, 0.647059, 0, 0.133333)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("10_e3q0e")]
+position = Vector2(1252, 474)
+
+[node name="Hollow_path" parent="." instance=ExtResource("14_s11gg")]
+scale = Vector2(1, 1.4)
+collision_layer = 2
+
+[node name="Magma_throth" parent="." instance=ExtResource("14_s11gg")]
+position = Vector2(5691, 12165)
+collision_layer = 2
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(2475, 442)
 collision_layer = 2
@@ -444,8 +456,67 @@ region_rect = Rect2(63.8945, 48.1083, 16.1893, 31.9433)
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D2"]
 occluder = SubResource("OccluderPolygon2D_iwg8n")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("10_e3q0e")]
-position = Vector2(1252, 474)
+[node name="barreira cutscene" type="StaticBody2D" parent="."]
+position = Vector2(2959, 11820)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_8ui0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barreira cutscene"]
+position = Vector2(114, 544.5)
+scale = Vector2(2.71062, -14.176)
+shape = SubResource("RectangleShape2D_gyjdp")
+debug_color = Color(1, 0, 0, 0.0392157)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="barreira cutscene"]
+position = Vector2(997, 523)
+scale = Vector2(2.71062, -14.176)
+shape = SubResource("RectangleShape2D_vvpeh")
+debug_color = Color(1, 0, 0, 0.0509804)
+
+[node name="Nadador 1" parent="." instance=ExtResource("14_2iddt")]
+position = Vector2(-78.9999, 12295)
+
+[node name="Nadador 2" parent="." instance=ExtResource("15_unv5d")]
+position = Vector2(7168, 12292)
+
+[node name="Nadador 3" parent="." instance=ExtResource("16_ne4a5")]
+position = Vector2(1153, 13825)
+
+[node name="Luz 1" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(3535, 13494)
+texture = ExtResource("8_cw5hi")
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz 1"]
+color = Color(1, 0, 0, 1)
+energy = 2.0
+texture = ExtResource("8_cw5hi")
+texture_scale = 1.5
+
+[node name="Luz 2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(2027, 12292)
+texture = ExtResource("8_cw5hi")
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz 2"]
+color = Color(1, 0, 0, 1)
+energy = 2.0
+texture = ExtResource("8_cw5hi")
+texture_scale = 1.5
+
+[node name="Luz 3" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(6132, 12392)
+texture = ExtResource("8_cw5hi")
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz 3"]
+color = Color(1, 0, 0, 1)
+energy = 2.0
+texture = ExtResource("8_cw5hi")
+texture_scale = 1.5
+
+[node name="Hollow_pathPos" type="Marker2D" parent="."]
+position = Vector2(1861, 12138)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_k7y12")
@@ -486,97 +557,27 @@ theme_override_font_sizes/font_size = 50
 text = "MISSOES:
 AAAA"
 
+[node name="transition" parent="." instance=ExtResource("13_kdhcd")]
+
 [node name="ANIMAÇAO DO MUNDO" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_hx3ws")
 }
 
-[node name="Luz 1" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(3535, 13494)
-texture = ExtResource("8_cw5hi")
-
-[node name="PointLight2D" type="PointLight2D" parent="Luz 1"]
-color = Color(1, 0, 0, 1)
-energy = 2.0
-texture = ExtResource("8_cw5hi")
-texture_scale = 1.5
-
-[node name="Luz 2" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 1, 1)
-position = Vector2(2027, 12292)
-texture = ExtResource("8_cw5hi")
-
-[node name="PointLight2D" type="PointLight2D" parent="Luz 2"]
-color = Color(1, 0, 0, 1)
-energy = 2.0
-texture = ExtResource("8_cw5hi")
-texture_scale = 1.5
-
-[node name="Luz 3" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(6132, 12392)
-texture = ExtResource("8_cw5hi")
-
-[node name="PointLight2D" type="PointLight2D" parent="Luz 3"]
-color = Color(1, 0, 0, 1)
-energy = 2.0
-texture = ExtResource("8_cw5hi")
-texture_scale = 1.5
-
-[node name="transition" parent="." instance=ExtResource("13_kdhcd")]
-
-[node name="Hollow_path" parent="." instance=ExtResource("14_s11gg")]
-scale = Vector2(1, 1.4)
-collision_layer = 2
-
-[node name="Hollow_pathPos" type="Marker2D" parent="."]
-position = Vector2(1861, 12138)
-
-[node name="pathway2" parent="." instance=ExtResource("14_s11gg")]
-position = Vector2(5691, 12165)
-collision_layer = 2
-
-[node name="barreira cutscene" type="StaticBody2D" parent="."]
-position = Vector2(2959, 11820)
-collision_layer = 2
-physics_material_override = SubResource("PhysicsMaterial_8ui0g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="barreira cutscene"]
-position = Vector2(114, 544.5)
-scale = Vector2(2.71062, -14.176)
-shape = SubResource("RectangleShape2D_gyjdp")
-debug_color = Color(1, 0, 0, 0.0392157)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="barreira cutscene"]
-position = Vector2(997, 523)
-scale = Vector2(2.71062, -14.176)
-shape = SubResource("RectangleShape2D_vvpeh")
-debug_color = Color(1, 0, 0, 0.0509804)
-
-[node name="Nadador 1" parent="." instance=ExtResource("14_2iddt")]
-position = Vector2(-78.9999, 12295)
-dialogue_start = "comunicacao_pos_hollow_path"
-
-[node name="Nadador 2" parent="." instance=ExtResource("15_unv5d")]
-position = Vector2(7168, 12292)
-
-[node name="Nadador 3" parent="." instance=ExtResource("16_ne4a5")]
-position = Vector2(1153, 13825)
-
 [connection signal="Fim_de_conversa" from="." to="Personagem" method="_on_main_world_fim_de_conversa"]
+[connection signal="Fim_de_conversa_2" from="." to="Nadador 1" method="_on_main_world_fim_de_conversa_2"]
 [connection signal="Hollow_Path_Pos" from="." to="." method="_on_hollow_path_pos"]
 [connection signal="LUZ" from="." to="Cutscene Area" method="_on_main_world_luz"]
 [connection signal="body_entered" from="Profundidade/Area2D" to="Profundidade" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D3" to="Profundidade" method="_on_area_2d_3_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D5" to="Profundidade" method="_on_area_2d_5_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D7" to="Profundidade" method="_on_area_2d_7_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D9" to="Profundidade" method="_on_area_2d_9_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D10" to="Profundidade" method="_on_area_2d_10_body_entered"]
-[connection signal="Cutscene" from="Cutscene Area" to="Cutscene Area" method="_on_cutscene"]
 [connection signal="Cutscene" from="Cutscene Area" to="Personagem" method="_on_cutscene_area_cutscene"]
+[connection signal="Cutscene" from="Cutscene Area" to="Cutscene Area" method="_on_cutscene"]
 [connection signal="Fim_de_cutscene" from="Cutscene Area" to="Personagem" method="_on_cutscene_area_fim_de_cutscene"]
 [connection signal="body_entered" from="Cutscene Area" to="Cutscene Area" method="_on_body_entered"]
 [connection signal="Holograma_conversas" from="StaticBody2D" to="Personagem" method="_on_static_body_2d_holograma_conversas"]

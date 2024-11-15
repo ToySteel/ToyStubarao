@@ -115,12 +115,37 @@ Mergulhador: Magma oq?
 Mergulhador azul: Magma Throth, um lugar com varios vulcoes submarinos ativos
 Mergulhador: E porque deveriamos ir apra la primeiro? parece tao perigoso
 Mergulhador azul: E que la no Hollow Path eu achei alguns Toy Ices 
+=> Perguntas_mergulahdor_1
+~ Perguntas_mergulahdor_1
 Mergulhador: Ehhhh.....
 - Oque e Toy Ices?
 	Mergulhador: Oque sao os Toy Ices??
 	Mergulhador azul: Nossa nao te deram nenhum treinamento?
 	Mergulhador azul: Os Toy ices sao cubos de gelo imensamente condensados que conseguem esfriar ate o coraçao de um vulcao
 	Mergulhador azul: vamos usar eles para que passemos com segurança
+	=> Perguntas_mergulahdor_1
 - Oque e Hollow path
-
+	Mergulhador azul: E a area onde nos estavamos :I
+	=> Perguntas_mergulahdor_1
 - para aonde fica Magma throth
+	Mergulhador azul: Siga reto
+	=> Perguntas_mergulhador_1_pos
+- eu acho que entendi tudo
+	Nao voce nao entendeu
+~ Perguntas_mergulhador_1_pos
+Mergulhador: Ehhhh.....
+- Oque e Toy Ices?
+	Mergulhador: Oque sao os Toy Ices??
+	Mergulhador azul: Nossa nao te deram nenhum treinamento?
+	Mergulhador azul: Os Toy ices sao cubos de gelo imensamente condensados que conseguem esfriar ate o coraçao de um vulcao
+	Mergulhador azul: vamos usar eles para que passemos com segurança
+	=> Perguntas_mergulahdor_1
+- Oque e Hollow path
+	Mergulhador azul: E a area onde nos estavamos :I
+	=> Perguntas_mergulahdor_1
+- para aonde fica Magma throth
+	Mergulhador azul: Siga reto
+- eu acho que entendi tudo
+	Mergulhador: Ok eu aco que entendi tudo, vou fazer oque deve ser feito
+	do emit_signal("Fim_de_conversa")
+	=> END

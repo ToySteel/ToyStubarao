@@ -28,6 +28,9 @@ signal cutscene2
 
 #iniciar transiçao ao entrar na faze
 func _ready() -> void:
+	
+	if Globals.Missoes <= 2:
+		Globals.Missoes = 3
 	if cutscene == false:
 		personagem.follow_camera(camera)
 	transition.des_transition()
@@ -41,6 +44,8 @@ func _process(delta: float) -> void:
 func _on_bau_body_entered(body: Node2D) -> void:
 	Bau.frame = 1
 	Globals.chave_hollow_path = true
+	if Globals.Missoes <= 5:
+		Globals.Missoes = 6
 func _on_bolha_body_entered(body: Node2D) -> void:
 	anim.set_current_animation("Bolha estoura")
 	bolha.queue_free()
@@ -55,6 +60,8 @@ func _on_saida_da_caverna_body_entered(body):
 func _on_mato_body_entered(body: Node2D) -> void:
 	light_occluder_2d.visible = false
 	anima_mundo.set_current_animation("mato sumindo")
+	if Globals.Missoes <= 4:
+		Globals.Missoes = 5
 func _on_mato_body_exited(body: Node2D) -> void:
 	anima_mundo.set_current_animation("mato aparecendo")
 	await anima_mundo.animation_finished
@@ -62,8 +69,12 @@ func _on_mato_body_exited(body: Node2D) -> void:
 ###################################################################################
 #porta
 func _on_actionable_body_entered(body):
+	if Globals.Missoes <= 3:
+		Globals.Missoes = 4
 	if Globals.chave_hollow_path == true:
 		ligh_porta.visible = false
+		if Globals.Missoes <= 5:
+			Globals.Missoes = 6
 		anima_porta.play("porta explodindo")
 		await anima_porta.animation_finished
 		porta.queue_free() 

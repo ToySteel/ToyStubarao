@@ -9,10 +9,11 @@ extends Node2D
 @onready var anima_ao_do_mundo: AnimationPlayer = $"ANIMAÇAO DO MUNDO"
 @onready var cutscene_area: Area2D = $"Cutscene Area"
 @onready var nadador_1: CharacterBody2D = $"Nadador 1"
-
+@export var dialogue_resource: DialogueResource
 var things = barreira_cutscene and static_body_2d_2 and luz_1 and luz_2 and luz_3
-
+@export var dialogue_start: String = "start"
 signal Fim_de_conversa
+signal Fim_de_conversa_2
 signal LUZ
 signal Inicio_de_conversa_luz
 signal Hollow_Path_Pos
@@ -50,6 +51,9 @@ func _on_hollow_path_pos() -> void:
 	nadador_1.nadano = true
 	anima_ao_do_mundo.set_current_animation("nadaçoes")
 	await anima_ao_do_mundo.animation_finished
+	nadador_1.nadano = false
 	anima_ao_do_mundo.set_current_animation("Pedra_hollow_path_cai")
 	await anima_ao_do_mundo.animation_finished
 	Globals.camera.Shake_camera(100)
+	emit_signal("Fim_de_conversa_2")
+	
