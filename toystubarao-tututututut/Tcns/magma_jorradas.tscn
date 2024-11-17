@@ -58,11 +58,18 @@ script = ExtResource("1_mu3ff")
 
 [node name="aniamtion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t0cqd")
-animation = &"Jorrando"
+animation = &"Ligado"
 autoplay = "Jorrando"
 
 [node name="colision" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.0999939)
 shape = SubResource("RectangleShape2D_q148g")
+debug_color = Color(0.941176, 0.239216, 0, 0.12549)
+
+[node name="Timer ativo" type="Timer" parent="."]
+
+[node name="Timer desativo" type="Timer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer ativo" to="." method="_on_timer_ativo_timeout"]
+[connection signal="timeout" from="Timer desativo" to="." method="_on_timer_desativo_timeout"]
