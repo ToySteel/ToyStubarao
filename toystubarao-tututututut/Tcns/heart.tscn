@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn6ccl6cscnx8"]
+
+[ext_resource type="Texture2D" uid="uid://bcn6qtoubnsyv" path="res://Assests/free-swimming-characters-animation-pixel-art/Sprite-0002.png" id="1_btc1u"]
+[ext_resource type="Script" path="res://scripts/heart.gd" id="1_dacgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpw8h"]
+size = Vector2(64.6, 37.8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2o70"]
+atlas = ExtResource("1_btc1u")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhlmy"]
+atlas = ExtResource("1_btc1u")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eitvh"]
+atlas = ExtResource("1_btc1u")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sofmk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2o70")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhlmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eitvh")
+}],
+"loop": true,
+"name": &"ice",
+"speed": 5.0
+}]
+
+[node name="Heart" type="Area2D"]
+scale = Vector2(5, 5)
+collision_layer = 4
+script = ExtResource("1_dacgy")
+
+[node name="colision" type="CollisionShape2D" parent="."]
+position = Vector2(-1.52588e-05, 13.3)
+shape = SubResource("RectangleShape2D_qpw8h")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sofmk")
+animation = &"Normal"
+autoplay = "Normal"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

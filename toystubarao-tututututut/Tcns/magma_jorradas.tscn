@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://brmpcv4oy4xqo"]
+
+[ext_resource type="Script" path="res://scripts/magma_jorradas.gd" id="1_mu3ff"]
+[ext_resource type="Texture2D" uid="uid://c4loniaoag6ej" path="res://Assests/free-swimming-characters-animation-pixel-art/Sprite-0005.png" id="2_vegbp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k1tg"]
+atlas = ExtResource("2_vegbp")
+region = Rect2(192, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32jbt"]
+atlas = ExtResource("2_vegbp")
+region = Rect2(64, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0k3v"]
+atlas = ExtResource("2_vegbp")
+region = Rect2(128, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq60v"]
+atlas = ExtResource("2_vegbp")
+region = Rect2(0, 0, 64, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0cqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k1tg")
+}],
+"loop": true,
+"name": &"Desligado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32jbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0k3v")
+}],
+"loop": true,
+"name": &"Jorrando",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq60v")
+}],
+"loop": true,
+"name": &"Ligado",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q148g"]
+size = Vector2(32, 161.4)
+
+[node name="Magma Jorradas" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_mu3ff")
+
+[node name="aniamtion" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t0cqd")
+animation = &"Jorrando"
+autoplay = "Jorrando"
+
+[node name="colision" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.0999939)
+shape = SubResource("RectangleShape2D_q148g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
