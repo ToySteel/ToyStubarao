@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn6ccl6cscnx8"]
+[gd_scene load_steps=9 format=3 uid="uid://dn6ccl6cscnx8"]
 
 [ext_resource type="Texture2D" uid="uid://bcn6qtoubnsyv" path="res://Assests/free-swimming-characters-animation-pixel-art/Sprite-0002.png" id="1_btc1u"]
 [ext_resource type="Script" path="res://scripts/heart.gd" id="1_dacgy"]
+[ext_resource type="Texture2D" uid="uid://defkdg8t1ufy" path="res://Assests/light2D-gradient.png" id="3_eequc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpw8h"]
 size = Vector2(64.6, 37.8)
@@ -48,10 +49,20 @@ script = ExtResource("1_dacgy")
 [node name="colision" type="CollisionShape2D" parent="."]
 position = Vector2(-1.52588e-05, 13.3)
 shape = SubResource("RectangleShape2D_qpw8h")
+debug_color = Color(0.846476, 0.000973589, 0.908285, 0.42)
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sofmk")
 animation = &"Normal"
 autoplay = "Normal"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.6, 14.2)
+color = Color(1, 0.803922, 0.639216, 1)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_eequc")
+texture_scale = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

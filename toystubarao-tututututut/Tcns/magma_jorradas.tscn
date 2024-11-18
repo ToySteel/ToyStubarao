@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://brmpcv4oy4xqo"]
+[gd_scene load_steps=10 format=3 uid="uid://brmpcv4oy4xqo"]
 
 [ext_resource type="Script" path="res://scripts/magma_jorradas.gd" id="1_mu3ff"]
 [ext_resource type="Texture2D" uid="uid://c4loniaoag6ej" path="res://Assests/free-swimming-characters-animation-pixel-art/Sprite-0005.png" id="2_vegbp"]
+[ext_resource type="Texture2D" uid="uid://defkdg8t1ufy" path="res://Assests/light2D-gradient.png" id="3_2g2j1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4k1tg"]
 atlas = ExtResource("2_vegbp")
@@ -67,8 +68,41 @@ shape = SubResource("RectangleShape2D_q148g")
 debug_color = Color(0.941176, 0.239216, 0, 0.12549)
 
 [node name="Timer ativo" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="Timer desativo" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Luz" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Luz"]
+rotation = 3.14159
+scale = Vector2(0.166359, -1.1344)
+color = Color(1, 0.805142, 0.637771, 1)
+energy = 2.5
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_2g2j1")
+texture_scale = 0.5
+
+[node name="PointLight2D2" type="PointLight2D" parent="Luz"]
+scale = Vector2(1.71364, 1.3744)
+color = Color(1, 0.803922, 0.639216, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_2g2j1")
+texture_scale = 0.5
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 61)
+color = Color(1, 0.803922, 0.639216, 1)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_2g2j1")
+texture_scale = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer ativo" to="." method="_on_timer_ativo_timeout"]

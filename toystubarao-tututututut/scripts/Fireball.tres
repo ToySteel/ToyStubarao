@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://ccuknajn4hlh5"]
+
+[ext_resource type="Texture2D" uid="uid://cuc0sseg2l1p7" path="res://Assests/celeste/fireball00.png" id="1_d5oxr"]
+[ext_resource type="Texture2D" uid="uid://cei5j7aotdfl" path="res://Assests/celeste/fireball01.png" id="2_8dmc6"]
+[ext_resource type="Texture2D" uid="uid://eo11tnu78q81" path="res://Assests/celeste/fireball02.png" id="3_sl3pc"]
+[ext_resource type="Texture2D" uid="uid://dqa1cx5sguyvj" path="res://Assests/celeste/fireball03.png" id="4_nyq8j"]
+[ext_resource type="Texture2D" uid="uid://ctxryhyc67aln" path="res://Assests/celeste/fireball04.png" id="5_0a6fj"]
+[ext_resource type="Texture2D" uid="uid://cd2estieyjyw4" path="res://Assests/celeste/fireball05.png" id="6_ccssy"]
+[ext_resource type="Texture2D" uid="uid://cnbxka3e53wjw" path="res://Assests/celeste/fireball06.png" id="7_jgrlb"]
+[ext_resource type="Texture2D" uid="uid://qp5xdloce28j" path="res://Assests/celeste/fireball07.png" id="8_8joxn"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d5oxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8dmc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sl3pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nyq8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0a6fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ccssy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jgrlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8joxn")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 8.0
+}]

@@ -139,13 +139,36 @@ Mergulhador: Ehhhh.....
 	Mergulhador azul: Nossa nao te deram nenhum treinamento?
 	Mergulhador azul: Os Toy ices sao cubos de gelo imensamente condensados que conseguem esfriar ate o coraçao de um vulcao
 	Mergulhador azul: vamos usar eles para que passemos com segurança
-	=> Perguntas_mergulahdor_1
+	=> Perguntas_mergulhador_1_pos
 - Oque e Hollow path
 	Mergulhador azul: E a area onde nos estavamos :I
-	=> Perguntas_mergulahdor_1
+	=> Perguntas_mergulhador_1_pos
 - para aonde fica Magma throth
 	Mergulhador azul: Siga reto
+	=> Perguntas_mergulhador_1_pos
 - eu acho que entendi tudo
 	Mergulhador: Ok eu aco que entendi tudo, vou fazer oque deve ser feito
 	do emit_signal("Fim_de_conversa")
 	=> END
+~ mergulhador_1_Magma_throth
+Mergulhador azul: Chegamos! a area mais inospita e perigosa de toda esta caverna
+Mergulhador azul: esta regiao e tao quente que pega fogo DEBAIXO DAGUA
+Mergulhador azul: Com temperaturas tao altas que ferve as pessoas por dentro, so estamos vivos por causa da roupa especial
+Mergulhador: OK, eu entendi, pode parar de falar, voce esta me colocando medo.
+Mergulhador azul: E que eu ainda nao falei da lenda do mons...
+Mergulhador: nao fala, para disso bro
+Mergulhador azul: Ehhh... OK simbora
+Mergulhador azul: Vamos ao assunto entao
+Mergulhador: Me fale oque eu devo fazer
+Mergulhador azul: Voce deve colocar os Toy ices em cima dos coraçoes de magma e os obstaculos acabarao
+VOCE RECEBEU TOY ICES
+Mergulhador azul: depoi que voce conseguir ativar eu venho atraz.
+do emit_signal("Pos_conversa")
+=> END
+
+
+
+
+
+
+

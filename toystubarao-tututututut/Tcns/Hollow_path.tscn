@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://ms5h2rcyfva1"]
+[gd_scene load_steps=66 format=4 uid="uid://ms5h2rcyfva1"]
 
 [ext_resource type="Script" path="res://scripts/Hollow_path4.gd" id="1_5mrot"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="1_ru85q"]
@@ -239,6 +239,9 @@ size = Vector2(224.6, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qs4q"]
 size = Vector2(129.599, 135.6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nte34"]
+radius = 70.2344
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4j7s5"]
 shader = ExtResource("15_ehtnu")
@@ -737,6 +740,13 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("14_dcfha")
 texture_scale = 0.5
 
+[node name="Area de cutscene2" type="Area2D" parent="Nadador_1"]
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nadador_1/Area de cutscene2"]
+shape = SubResource("CircleShape2D_nte34")
+debug_color = Color(0.67451, 0.45098, 0.615686, 0.0313726)
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(15306, 4080)
 rotation = 3.14159
@@ -817,4 +827,5 @@ wait_time = 0.3
 [connection signal="body_entered" from="Caverna" to="." method="_on_caverna_body_entered"]
 [connection signal="Cutscene" from="Nadador_1" to="." method="_on_nadador_1_cutscene"]
 [connection signal="Cutscene" from="Nadador_1" to="Personagem" method="_on_nadador_1_cutscene"]
+[connection signal="body_entered" from="Nadador_1/Area de cutscene2" to="Nadador_1" method="_on_area_de_cutscene_2_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

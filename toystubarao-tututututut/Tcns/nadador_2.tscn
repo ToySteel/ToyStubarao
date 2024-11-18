@@ -218,6 +218,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mm2ul")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_p37l8")
 occluder_light_mask = 2
 

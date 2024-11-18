@@ -11,8 +11,8 @@ extends CharacterBody2D
 var rotation_direction = 0
 var direçao = true
 var em_dialgo = false
+var knockback_vector := Vector2.ZERO 
 #verificador de direçao movimento
-
 func get_input():
 	rotation_direction = Input.get_axis("ui_left", "ui_right")
 	velocity = transform.x * Input.get_axis("ui_down", "ui_up") * speed
@@ -31,7 +31,7 @@ func _physics_process(delta):
 		#rotaçao
 		rotation += rotation_direction * rotation_speed * delta 
 		#n seim oq isso faz so sei q presisa
-		move_and_slide()
+		
 		#state_machine para animaçoes
 		stade()
 		#modificar direçao do player
@@ -43,6 +43,10 @@ func _physics_process(delta):
 			player.scale.x = -1
 			$Colisao.scale.x = -1
 			$LightOccluder2D.scale.x = -1
+		if knockback_vector != Vector2.ZERO:
+			velocity = knockback_vector
+		move_and_slide()
+
 #########################################################
 #animaçoes
 func stade():
@@ -61,6 +65,7 @@ func _on_static_body_2d_holograma_conversas():
 func _on_main_world_fim_de_conversa() -> void:
 	em_dialgo = false
 	Globals.Missoes += 1
+	die(Vector2(1000, -1000))
 func _on_cutscene_area_cutscene():
 	anim.set_current_animation("Cima ou baixo")
 	position.x == 3527
@@ -82,3 +87,14 @@ func _on_hollow_path_cutscene_2() -> void:
 	$Colisao.scale.x = -1
 	$LightOccluder2D.scale.x = -1
 	anim.set_current_animation("Nadano")
+
+func die(knockback_force := Vector2.ZERO, duration := 0.25):
+	if knockback_force != Vector2.ZERO:
+		rotation = 0
+		knockback_vector = knockback_force
+		
+		var knockback_tween: Tween = get_tree().create_tween()
+		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		
+		
+		

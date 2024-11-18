@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1058ogfmb1eh"]
+[gd_scene load_steps=16 format=3 uid="uid://c1058ogfmb1eh"]
 
 [ext_resource type="Script" path="res://scripts/Nadador 1.gd" id="1_gr37x"]
 [ext_resource type="Texture2D" uid="uid://crxm0j7uqvlgp" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 1.png" id="1_um55m"]
@@ -202,9 +202,6 @@ _data = {
 "nadano": SubResource("Animation_fpx2m")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eftjd"]
-radius = 70.2344
-
 [node name="Nadador 1" type="CharacterBody2D"]
 modulate = Color(0.431373, 0.415686, 1, 1)
 scale = Vector2(5, 5)
@@ -232,12 +229,3 @@ libraries = {
 "": SubResource("AnimationLibrary_5osic")
 }
 autoplay = "Idle"
-
-[node name="Area de cutscene" type="Area2D" parent="."]
-rotation = 3.14159
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area de cutscene"]
-shape = SubResource("CircleShape2D_eftjd")
-debug_color = Color(0.67451, 0.45098, 0.615686, 0.0313726)
-
-[connection signal="body_entered" from="Area de cutscene" to="." method="_on_area_de_cutscene_body_entered"]

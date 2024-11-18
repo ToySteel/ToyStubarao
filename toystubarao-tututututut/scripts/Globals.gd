@@ -10,6 +10,7 @@ var transmissor = "false"
 var chave_hollow_path = false
 var Game_point = "Start"
 var camera = null
+var Gelo = true
 #func _ready() -> void:
 
 #Missoes
@@ -61,3 +62,6 @@ func _process(delta):
 		
 
 ######################################################
+
+func Morte():
+	print("MORREU")

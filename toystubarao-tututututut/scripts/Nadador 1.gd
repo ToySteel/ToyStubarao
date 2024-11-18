@@ -11,11 +11,11 @@ var nadano = false
 func _ready() -> void:
 	pass
 func _process(delta):
-	if nadano == true:
+	if nadano:
 		animation_player.set_current_animation("nadano")
 	else:
 		animation_player.set_current_animation("Idle")
-func _on_area_de_cutscene_body_entered(body: Node2D) -> void:
+func _on_area_de_cutscene_2_body_entered(body: Node2D) -> void:
 	if Globals.Game_point != "Hollow_Path_Pos":
 		emit_signal("Cutscene")
 		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

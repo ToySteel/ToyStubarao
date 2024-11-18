@@ -476,6 +476,15 @@ debug_color = Color(1, 0, 0, 0.0509804)
 [node name="Nadador 1" parent="." instance=ExtResource("14_2iddt")]
 position = Vector2(-78.9999, 12295)
 
+[node name="PointLight2D" type="PointLight2D" parent="Nadador 1"]
+position = Vector2(0, 0.200005)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 1
+texture = ExtResource("8_cw5hi")
+texture_scale = 0.5
+
 [node name="Nadador 2" parent="." instance=ExtResource("15_unv5d")]
 position = Vector2(7168, 12292)
 
@@ -516,7 +525,10 @@ texture = ExtResource("8_cw5hi")
 texture_scale = 1.5
 
 [node name="Hollow_pathPos" type="Marker2D" parent="."]
-position = Vector2(1861, 12138)
+position = Vector2(1713, 12168)
+
+[node name="Magma_throthPos" type="Marker2D" parent="."]
+position = Vector2(5285, 12406)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 material = SubResource("ShaderMaterial_k7y12")
@@ -569,8 +581,8 @@ libraries = {
 [connection signal="Hollow_Path_Pos" from="." to="." method="_on_hollow_path_pos"]
 [connection signal="LUZ" from="." to="Cutscene Area" method="_on_main_world_luz"]
 [connection signal="body_entered" from="Profundidade/Area2D" to="Profundidade" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Profundidade/Area2D2" to="Profundidade" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D3" to="Profundidade" method="_on_area_2d_3_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D5" to="Profundidade" method="_on_area_2d_5_body_entered"]
 [connection signal="body_entered" from="Profundidade/Area2D7" to="Profundidade" method="_on_area_2d_7_body_entered"]

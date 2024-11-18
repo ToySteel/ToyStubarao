@@ -201,16 +201,16 @@ func _on_dash_timer_timeout():
 #func follow_camera(camera):
 	#var camera_path = camera.get_path()
 	#remote_transform.remote_path = camera_path
-#func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
-	#if Globals.player_life >0:
-		#Globals.player_life -= 1
-		#if knockback_force != Vector2.ZERO:
-			#knockback_vector = knockback_force
-			#
-			#var knockback_tween := get_tree().create_tween()
-			#knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-			#animation.modulate = Color(1, 0.426, 0.357)
-			#knockback_tween.tween_property(animation, "modulate", Color(1, 1, 1, 1), duration)
+func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
+	if Globals.player_life >0:
+		Globals.player_life -= 1
+		if knockback_force != Vector2.ZERO:
+			knockback_vector = knockback_force
+			
+			var knockback_tween := get_tree().create_tween()
+			knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+			animation.modulate = Color(1, 0.426, 0.357)
+			knockback_tween.tween_property(animation, "modulate", Color(1, 1, 1, 1), duration)
 	#else:
 		#eu_nao_aguento_mais = true
 		#$die_timer.start()
