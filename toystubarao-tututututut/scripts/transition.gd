@@ -17,3 +17,9 @@ func change_scene( cena, path, posiçao_x, posiçao_y, delay = 1):
 func des_transition():
 	var show_transition = get_tree().create_tween()
 	show_transition.tween_property(color_rect, "Progress", 0.0, 1).from(4.0)
+
+func transition(delay: float = 1):
+	var transition = get_tree().create_tween()
+	transition.tween_property(color_rect, "Progress", 4.0, 1)
+	await transition.finished
+	pass

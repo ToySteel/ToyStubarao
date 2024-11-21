@@ -84,17 +84,17 @@ do emit_signal("LUZ")
 => END
 ~ cutscene_primeiro_nadador
 Mergulhador: Nossa ainda bem que eu te achei!
-Mergulhador azul: ...........
+Mergulhador azul: .......
 Mergulhador azul: Eh... você está bem?
 Mergulhador azul: ...........
 Pesquisadora: O comunicador dele quebrou esqueceu?
-Mergulhador: Então como você está aqui?????
-Pesquisadora: Eu estou conectada ao seu comunicador
+Mergulhador: Então como você está aqui?
+Pesquisadora: Eu estou conectada ao seu comunicador.
 Mergulhador: E você não me ajudou em nada aqui! Quase me perdi igual eles!!!
-Pesquisadora: você não pediu
-Mergulhador: Eh.. ok mas oque eu devo fazer agora entao
-Pesquisadora: Ative o modo comunicador do aparelho e se comunique
-Mergulhador: ok la vamos nos
+Pesquisadora: Você não pediu.
+Mergulhador: Eh.. ok, mas oque eu devo fazer agora então?
+Pesquisadora: Ative o modo comunicador do aparelho e se comunique.
+Mergulhador: ok, lá vamos nós!
 do emit_signal("Inicio_de_conversa_luz")
 => END
 ~ comunicacao_luzes_mergulhador_1

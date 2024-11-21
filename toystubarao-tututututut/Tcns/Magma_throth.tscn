@@ -47,21 +47,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Animation" id="Animation_j8wu7"]
-resource_name = "nadano 1"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Nadador 1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-302, 859), Vector2(289, 859)]
-}
-
 [sub_resource type="Animation" id="Animation_gr4sl"]
 length = 0.001
 tracks/0/type = "value"
@@ -75,6 +60,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-302, 859)]
+}
+
+[sub_resource type="Animation" id="Animation_j8wu7"]
+resource_name = "nadano 1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nadador 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-302, 859), Vector2(289, 859)]
 }
 
 [sub_resource type="Animation" id="Animation_s7heb"]
@@ -124,18 +124,28 @@ tile_set = ExtResource("2_auaeq")
 
 [node name="Camera" parent="." instance=ExtResource("3_c84g4")]
 limit_left = 0
-script = null
 
 [node name="Personagem" parent="." instance=ExtResource("4_nkuaf")]
 position = Vector2(284, 655)
 
 [node name="PointLight2D" type="PointLight2D" parent="Personagem"]
-position = Vector2(0, 0.200005)
+position = Vector2(0, 0.200012)
 energy = 2.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("6_h6jwu")
 texture_scale = 0.5
+
+[node name="RayLeft2" type="RayCast2D" parent="Personagem"]
+target_position = Vector2(-9.6, 0)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="RayRight2" type="RayCast2D" parent="Personagem"]
+scale = Vector2(-1, 1)
+target_position = Vector2(-10, 0)
+hit_from_inside = true
+collide_with_areas = true
 
 [node name="transition" parent="." instance=ExtResource("5_icmts")]
 
@@ -189,7 +199,7 @@ cubic_interp = false
 [node name="Bola" parent="Utilitarios/L3_3/Bola2" instance=ExtResource("11_a1sde")]
 
 [node name="Bola3" type="PathFollow2D" parent="Utilitarios/L3_3"]
-position = Vector2(-400.217, 193.667)
+position = Vector2(-400.216, 193.666)
 progress = 1438.29
 rotates = false
 cubic_interp = false
@@ -210,7 +220,7 @@ cubic_interp = false
 [node name="Bola" parent="Utilitarios/L4_3/Bola1" instance=ExtResource("11_a1sde")]
 
 [node name="Bola2" type="PathFollow2D" parent="Utilitarios/L4_3"]
-position = Vector2(242.083, 182.009)
+position = Vector2(242.084, 182.009)
 progress = 513.137
 rotates = false
 cubic_interp = false
@@ -326,10 +336,26 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("6_h6jwu")
 texture_scale = 0.5
 
+[node name="0" type="Marker2D" parent="."]
+position = Vector2(284, 654)
+
+[node name="1" type="Marker2D" parent="."]
+position = Vector2(746, 645)
+
+[node name="2" type="Marker2D" parent="."]
+position = Vector2(3005, 645)
+
+[node name="3" type="Marker2D" parent="."]
+position = Vector2(6189, 645)
+
+[node name="4" type="Marker2D" parent="."]
+position = Vector2(9571, 645)
+
 [node name="AINMAÇAO DO MUNDO" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3a1au")
 }
 
 [connection signal="Pos_conversa" from="." to="." method="_on_pos_conversa"]
-[connection signal="body_entered" from="Utilitarios/1" to="." method="_on__body_entered"]
+[connection signal="body_entered" from="Utilitarios/1" to="Personagem" method="_on__body_entered"]
+[connection signal="body_entered" from="Utilitarios/L1" to="Personagem" method="_on_l_1_body_entered"]

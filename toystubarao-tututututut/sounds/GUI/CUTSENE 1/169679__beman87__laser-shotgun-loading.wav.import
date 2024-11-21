@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hrfep17w6iq5"
+path="res://.godot/imported/169679__beman87__laser-shotgun-loading.wav-6738287f29a346a3f3d71e3a06f64b71.sample"
+
+[deps]
+
+source_file="res://sounds/GUI/CUTSENE 1/169679__beman87__laser-shotgun-loading.wav"
+dest_files=["res://.godot/imported/169679__beman87__laser-shotgun-loading.wav-6738287f29a346a3f3d71e3a06f64b71.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

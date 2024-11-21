@@ -16,8 +16,10 @@ func _state():
 		animation.play(state)
 #verificador de colisao
 func _on_body_entered(body):
+	body_entered(body)
+func body_entered(body = null):
 	if Globals.Gelo:
-		
+		Globals.Checkpoints = name
 		lava_adjacente()
 		#modificador de estado da animaçao
 		state = "ice"
@@ -36,6 +38,7 @@ func _on_body_entered(body):
 			$"../L7_4".desativar()
 			$"../L8_4".desativar()
 			$"../L9_4".desativar()
+	return
 func lava_adjacente():
 	var lava = get_parent().get_node("L" + name)
 	return lava

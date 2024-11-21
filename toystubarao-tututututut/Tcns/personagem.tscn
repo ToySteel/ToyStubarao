@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://tamfe7i06m3h"]
+[gd_scene load_steps=21 format=3 uid="uid://tamfe7i06m3h"]
 
 [ext_resource type="Script" path="res://scripts/personagem.gd" id="1_2yc7x"]
 [ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="2_ibpqx"]
 [ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="3_vpu4e"]
 [ext_resource type="Texture2D" uid="uid://dji6m80ckwukv" path="res://Assests/free-swimming-characters-animation-pixel-art/2 GraveRobber/shader.png" id="4_qvjx3"]
+[ext_resource type="Texture2D" uid="uid://my3ntx3sjsdl" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Death.png" id="4_yiy87"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jm1h"]
 radius = 7.0
@@ -34,6 +35,82 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_vpu4e")]
+}
+
+[sub_resource type="Animation" id="Animation_7intx"]
+resource_name = "Morte"
+length = 1.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("nadador:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_yiy87")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("nadador:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("nadador:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 6, 8, 10, 11, 12, 13]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("nadador:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:transiçao")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pwt0q"]
@@ -92,6 +169,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("OccluderPolygon2D_pwt0q"), SubResource("OccluderPolygon2D_u53dq"), SubResource("OccluderPolygon2D_o4pqs"), SubResource("OccluderPolygon2D_vtlxj"), SubResource("OccluderPolygon2D_veg7o"), SubResource("OccluderPolygon2D_ro2v6")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("nadador:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
 }
 
 [sub_resource type="Animation" id="Animation_lqk5f"]
@@ -155,6 +244,54 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -0.2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("nadador:hframes")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("nadador:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:transiçao")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p37l8"]
@@ -223,10 +360,23 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0, -0.2), Vector2(0, -2.8), Vector2(0, -0.2), Vector2(0, 2.4)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("nadador:hframes")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2g61k"]
 _data = {
 "Cima ou baixo": SubResource("Animation_wq0a5"),
+"Morte": SubResource("Animation_7intx"),
 "Nadano": SubResource("Animation_0unxr"),
 "RESET": SubResource("Animation_lqk5f"),
 "idle": SubResource("Animation_k8clq")
@@ -237,7 +387,6 @@ radius = 12.0
 height = 25.2
 
 [node name="Personagem" type="CharacterBody2D"]
-modulate = Color(0.430667, 0.414418, 0.999996, 1)
 scale = Vector2(5, 5)
 collision_mask = 14
 script = ExtResource("1_2yc7x")
@@ -249,7 +398,7 @@ shape = SubResource("CapsuleShape2D_5jm1h")
 
 [node name="nadador" type="Sprite2D" parent="."]
 texture = ExtResource("2_ibpqx")
-hframes = 6
+hframes = 14
 
 [node name="Animation personagem" type="AnimationPlayer" parent="."]
 libraries = {

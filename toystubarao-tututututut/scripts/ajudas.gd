@@ -4,12 +4,13 @@ var state = "Start"
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
 signal Holograma_conversas
+@onready var static_body_2d_2: StaticBody2D = $"../StaticBody2D2"
 
 
 func action() -> void:
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	emit_signal("Holograma_conversas")
-	$"../StaticBody2D2".queue_free()
+	static_body_2d_2.queue_free( )
 func _process(delta):
 	_set_state()
 	pass

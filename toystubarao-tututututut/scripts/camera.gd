@@ -27,5 +27,5 @@ func _on_timer_timeout() -> void:
 	offset.x = 0
 	offset.y = 0
 	tween.tween_property(self, "offset", initial_offset, default_offset)
-	tween.play()
+	await tween.finished
 #, 0.1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT

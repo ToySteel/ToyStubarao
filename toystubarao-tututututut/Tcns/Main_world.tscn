@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://phoq2ht71cmx"]
+[gd_scene load_steps=32 format=4 uid="uid://phoq2ht71cmx"]
 
 [ext_resource type="Script" path="res://scripts/main_world.gd" id="1_3hqxj"]
 [ext_resource type="Texture2D" uid="uid://xc8cfdsbjpfp" path="res://Assests/Sprite-0003.png" id="2_dwjqc"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bafn14jst357w" path="res://Tcns/pathway.tscn" id="14_s11gg"]
 [ext_resource type="PackedScene" uid="uid://bxk186dlf4jh5" path="res://Tcns/nadador_2.tscn" id="15_unv5d"]
 [ext_resource type="PackedScene" uid="uid://cdu26337ugmrf" path="res://Tcns/nadador_3.tscn" id="16_ne4a5"]
+[ext_resource type="AudioStream" uid="uid://dd47wty7qy0mn" path="res://sounds/reef.bg_sfx.mp3" id="18_alh2o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpwvu"]
 size = Vector2(158.643, 139.329)
@@ -395,7 +396,6 @@ tile_set = ExtResource("6_f37et")
 limit_left = 0
 
 [node name="Personagem" parent="." instance=ExtResource("7_dqxgi")]
-modulate = Color(0.431373, 0.415686, 1, 1)
 position = Vector2(416, 513)
 metadata/_edit_pinned_properties_ = [&"position"]
 
@@ -575,6 +575,11 @@ AAAA"
 libraries = {
 "": SubResource("AnimationLibrary_hx3ws")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_alh2o")
+volume_db = -2.019
+autoplay = true
 
 [connection signal="Fim_de_conversa" from="." to="Personagem" method="_on_main_world_fim_de_conversa"]
 [connection signal="Fim_de_conversa_2" from="." to="Nadador 1" method="_on_main_world_fim_de_conversa_2"]

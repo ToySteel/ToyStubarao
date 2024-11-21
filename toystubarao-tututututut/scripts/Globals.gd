@@ -1,7 +1,10 @@
 extends Node2D
 #onready var's
 
-
+func _ready() -> void:
+	var array = [1, 2, 3]
+	array += [4]
+	print(array)
 #var's
 var from_world
 var Missoes = 0 
@@ -11,6 +14,7 @@ var chave_hollow_path = false
 var Game_point = "Start"
 var camera = null
 var Gelo = true
+var Checkpoints: String = "0"
 #func _ready() -> void:
 
 #Missoes
@@ -62,6 +66,3 @@ func _process(delta):
 		
 
 ######################################################
-
-func Morte():
-	print("MORREU")

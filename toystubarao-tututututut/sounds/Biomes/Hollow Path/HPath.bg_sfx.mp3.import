@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3o8k7a2fnad1"
+path="res://.godot/imported/HPath.bg_sfx.mp3-a5b8901d4e75132ffb8f8fac9cbef559.mp3str"
+
+[deps]
+
+source_file="res://sounds/Biomes/Hollow Path/HPath.bg_sfx.mp3"
+dest_files=["res://.godot/imported/HPath.bg_sfx.mp3-a5b8901d4e75132ffb8f8fac9cbef559.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
