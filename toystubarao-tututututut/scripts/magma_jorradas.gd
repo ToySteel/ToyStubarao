@@ -20,6 +20,7 @@ var state: String = "Jorrando"  # Estado inicial do jorro
 
 # Função chamada quando o nó entra na cena
 func _ready():
+
 	timer_desativo.start()  # Inicia o temporizador de desativação
 
 # Função chamada a cada frame
@@ -64,6 +65,6 @@ func _on_timer_desativo_timeout():
 func _on_body_entered(body: Node2D) -> void:
 	print("die")  # Exibe "die" no console quando o corpo entra na área
 	if RayLeft.is_colliding():  # Se o RayCast à esquerda colidir
-		personagem.die(Vector2(1000,-1000))  # Mata o personagem (direciona-o para fora da tela)
+		personagem.die(Vector2(200,-200))  # Mata o personagem (direciona-o para fora da tela)
 	if RayRight.is_colliding():  # Se o RayCast à direita colidir
-		personagem.die(Vector2(-1000,-1000))  # Mata o personagem (direciona-o para fora da tela)
+		personagem.die(Vector2(-200,-200))  # Mata o personagem (direciona-o para fora da tela)

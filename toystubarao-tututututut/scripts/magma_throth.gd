@@ -17,7 +17,7 @@ signal Pos_conversa  # Sinal de interação de conversa
 
 # Função chamada quando a cena é inicializada
 func _ready():
-	# Reinicia a cena com base no checkpoint
+
 	scene_restart()
 	# Faz o personagem seguir a câmera
 	personagem.follow_camera(camera)
@@ -30,7 +30,7 @@ func _ready():
 	if Globals.Gelo:
 		nadador_1.nadano = true  # Ativa a animação de natação do nadador
 		personagem.em_dialgo = true  # Ativa o estado de diálogo do personagem
-		ainma_ao_do_mundo.set_current_animation("nadano 1")  # Reproduz a animação de natação
+		ainma_ao_do_mundo.set_current_animation("nadano 0")  # Reproduz a animação de natação
 		await ainma_ao_do_mundo.animation_finished  # Espera a animação terminar
 		nadador_1.nadano = false  # Desativa a animação de natação do nadador
 		DialogueManager.show_example_dialogue_balloon(dialogue_resource, "mergulhador_1_Magma_throth")  # Exibe o diálogo

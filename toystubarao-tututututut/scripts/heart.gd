@@ -5,6 +5,7 @@ extends Area2D
 @onready var colision = $colision  # Referência para o nó de colisão
 @onready var Luz: PointLight2D = $PointLight2D  # Referência para a luz do ponto
 @onready var dangers = $"../../dangers"  # Referência para o nó de perigos
+@onready var ainma_ao_do_mundo: AnimationPlayer = $"../../AINMAÇAO DO MUNDO"
 
 # Variáveis do estado e controle
 var state = "Normal"  # Estado inicial da animação
@@ -30,7 +31,7 @@ func body_entered(body = null):
 		lava_adjacente()  # Chama a função para verificar se há lava adjacente
 		state = "ice"  # Altera o estado para "ice" (gelo)
 		Luz.color = Color(0.498, 0.921, 1)  # Altera a cor da luz para azul claro (gelo)
-		
+		ainma_ao_do_mundo.set_current_animation("nadano " + name)
 		# Chama a função lava_adjacente para verificar e desativar a lava adjacente
 		print(lava_adjacente())  # Imprime a lava adjacente no console (para depuração)
 		if lava_adjacente() != null:  # Se houver lava adjacente

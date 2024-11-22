@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://lg1d8py8asbv"]
+[gd_scene load_steps=29 format=4 uid="uid://lg1d8py8asbv"]
 
 [ext_resource type="Script" path="res://scripts/magma_throth.gd" id="1_d2iqv"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="2_auaeq"]
@@ -63,7 +63,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_j8wu7"]
-resource_name = "nadano 1"
+resource_name = "nadano 0"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,7 +78,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_s7heb"]
-resource_name = "nadano 2"
+resource_name = "nadano 1"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -93,11 +93,62 @@ tracks/0/keys = {
 "values": [Vector2(289, 859), Vector2(1791, 859)]
 }
 
+[sub_resource type="Animation" id="Animation_j1aya"]
+resource_name = "nadano 2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nadador 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1791, 859), Vector2(3005, 859)]
+}
+
+[sub_resource type="Animation" id="Animation_q0574"]
+resource_name = "nadano 3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nadador 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3005, 859), Vector2(6189, 859)]
+}
+
+[sub_resource type="Animation" id="Animation_qg5xv"]
+resource_name = "nadano 4"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nadador 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6189, 859), Vector2(9571, 859)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3a1au"]
 _data = {
 "RESET": SubResource("Animation_gr4sl"),
-"nadano 1": SubResource("Animation_j8wu7"),
-"nadano 2": SubResource("Animation_s7heb")
+"nadano 0": SubResource("Animation_j8wu7"),
+"nadano 1": SubResource("Animation_s7heb"),
+"nadano 2": SubResource("Animation_j1aya"),
+"nadano 3": SubResource("Animation_q0574"),
+"nadano 4": SubResource("Animation_qg5xv")
 }
 
 [node name="Magma_throth" type="Node2D"]
@@ -124,28 +175,6 @@ tile_set = ExtResource("2_auaeq")
 
 [node name="Camera" parent="." instance=ExtResource("3_c84g4")]
 limit_left = 0
-
-[node name="Personagem" parent="." instance=ExtResource("4_nkuaf")]
-position = Vector2(284, 655)
-
-[node name="PointLight2D" type="PointLight2D" parent="Personagem"]
-position = Vector2(0, 0.200012)
-energy = 2.0
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("6_h6jwu")
-texture_scale = 0.5
-
-[node name="RayLeft2" type="RayCast2D" parent="Personagem"]
-target_position = Vector2(-9.6, 0)
-hit_from_inside = true
-collide_with_areas = true
-
-[node name="RayRight2" type="RayCast2D" parent="Personagem"]
-scale = Vector2(-1, 1)
-target_position = Vector2(-10, 0)
-hit_from_inside = true
-collide_with_areas = true
 
 [node name="transition" parent="." instance=ExtResource("5_icmts")]
 
@@ -319,7 +348,7 @@ texture = ExtResource("2_b1iv6")
 centered = false
 
 [node name="Nadador 2" parent="." instance=ExtResource("13_bh2lt")]
-position = Vector2(10839, -1200)
+position = Vector2(8390, -1200)
 
 [node name="Main_world" parent="." instance=ExtResource("14_2ih7x")]
 position = Vector2(-59, 234)
@@ -350,6 +379,28 @@ position = Vector2(6189, 645)
 
 [node name="4" type="Marker2D" parent="."]
 position = Vector2(9571, 645)
+
+[node name="Personagem" parent="." instance=ExtResource("4_nkuaf")]
+position = Vector2(7560, -1200)
+
+[node name="PointLight2D" type="PointLight2D" parent="Personagem"]
+position = Vector2(0, 0.200012)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_h6jwu")
+texture_scale = 0.5
+
+[node name="RayLeft2" type="RayCast2D" parent="Personagem"]
+target_position = Vector2(-9.6, 0)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="RayRight2" type="RayCast2D" parent="Personagem"]
+scale = Vector2(-1, 1)
+target_position = Vector2(-10, 0)
+hit_from_inside = true
+collide_with_areas = true
 
 [node name="AINMAÇAO DO MUNDO" type="AnimationPlayer" parent="."]
 libraries = {
