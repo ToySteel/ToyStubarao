@@ -1,23 +1,24 @@
 extends Node2D
-#onready var's
 
+# Variáveis de inicialização
 func _ready() -> void:
+	# Criação de um array e adição de um elemento
 	var array = [1, 2, 3]
-	array += [4]
-	print(array)
-#var's
-var from_world
-var Missoes = 0 
-var Texto_missoes
-var transmissor = "false"
-var chave_hollow_path = false
-var Game_point = "Start"
-var camera = null
-var Gelo = true
-var Checkpoints: String = "0"
-#func _ready() -> void:
+	array += [4]  # Adiciona o valor 4 ao array
+	print(array)  # Exibe o conteúdo do array no console
 
-#Missoes
+# Variáveis do jogo
+var from_world  # Provavelmente utilizada para armazenar o mundo ou estado atual.
+var Missoes = 0  # Controla a missão atual.
+var Texto_missoes  # Texto que descreve o objetivo atual da missão.
+var transmissor = "false"  # Indica o estado de um transmissor.
+var chave_hollow_path = false  # Indica se a chave do Hollow_path foi encontrada.
+var Game_point = "Start"  # Define o ponto inicial do jogo.
+var camera = null  # A câmera, possivelmente para movimentação ou controle.
+var Gelo = true  # Talvez um estado relacionado ao gelo no jogo.
+var Checkpoints: String = "0"  # A rastreabilidade dos checkpoints do jogo.
+
+# Função chamada a cada frame. 'delta' é o tempo decorrido desde o último frame.
 func _process(delta):
 	if Missoes == 0:
 		Texto_missoes ="Fale Com a mulher holograma"
@@ -58,11 +59,9 @@ func _process(delta):
 		Proucure o mergulhador
 		"
 	if Missoes == 7:
-		Texto_missoes = "Va ate Magma Throth
-		"
-	if Input.is_action_just_pressed("ui_end"):
-		from_world = "Hollow_path"
-		Game_point = "Hollow_Path_Pos"
-		
+		Texto_missoes = "Va ate Magma Throth"
 
-######################################################
+	# Verifica se o jogador pressionou a tecla para finalizar a missão.
+	if Input.is_action_just_pressed("ui_end"):
+		from_world = "Hollow_path"  # Define o próximo mundo ou área.
+		Game_point = "Hollow_Path_Pos"  # Atualiza o ponto de jogo.

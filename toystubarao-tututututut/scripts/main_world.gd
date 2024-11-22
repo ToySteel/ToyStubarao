@@ -1,59 +1,83 @@
 extends Node2D
-@onready var camera_2d: Camera2D = $Camera
-@onready var personagem = get_node("Personagem")
-@onready var barreira_cutscene: StaticBody2D = $"barreira cutscene"
-@onready var static_body_2d_2: StaticBody2D = $StaticBody2D2
-@onready var luz_1: Sprite2D = $"Luz 1"
-@onready var luz_2: Sprite2D = $"Luz 2"
-@onready var luz_3: Sprite2D = $"Luz 3"
-@onready var anima_ao_do_mundo: AnimationPlayer = $"ANIMAÇAO DO MUNDO"
-@onready var cutscene_area: Area2D = $"Cutscene Area"
-@onready var nadador_1: CharacterBody2D = $"Nadador 1"
-@export var dialogue_resource: DialogueResource
-var things = barreira_cutscene and static_body_2d_2 and luz_1 and luz_2 and luz_3
-@export var dialogue_start: String = "start"
+
+# Inicialização dos nós da cena usando @onready
+@onready var camera_2d: Camera2D = $Camera  # Referência à câmera 2D
+@onready var personagem = get_node("Personagem")  # Referência ao personagem
+@onready var barreira_cutscene: StaticBody2D = $"barreira cutscene"  # Referência à barreira da cutscene
+@onready var static_body_2d_2: StaticBody2D = $StaticBody2D2  # Outro corpo estático na cena
+@onready var luz_1: Sprite2D = $"Luz 1"  # Referência à primeira luz
+@onready var luz_2: Sprite2D = $"Luz 2"  # Referência à segunda luz
+@onready var luz_3: Sprite2D = $"Luz 3"  # Referência à terceira luz
+@onready var anima_ao_do_mundo: AnimationPlayer = $"ANIMAÇAO DO MUNDO"  # Referência ao AnimationPlayer
+@onready var cutscene_area: Area2D = $"Cutscene Area"  # Referência à área da cutscene
+@onready var nadador_1: CharacterBody2D = $"Nadador 1"  # Referência ao personagem "nadador 1"
+
+# Variáveis exportadas para o editor
+@export var dialogue_resource: DialogueResource  # Recurso de diálogo
+@export var dialogue_start: String = "start"  # Ponto de partida do diálogo
+
+# Sinais que serão emitidos durante a execução do jogo
 signal Fim_de_conversa
 signal Fim_de_conversa_2
 signal LUZ
 signal Inicio_de_conversa_luz
 signal Hollow_Path_Pos
 
-# Called when the node enters the scene tree for the first time.
+# Função chamada quando o nó entra na árvore de cena
 func _ready():
+	# Se o jogo vem de um ponto específico, o personagem é reposicionado na cena
 	if Globals.from_world != null:
 		personagem.global_position = get_node(Globals.from_world + "Pos").global_position
-	$Personagem.follow_camera(camera_2d)
-	print($Personagem)
-	if Globals.Game_point == "start":
-		pass
-	if Globals.Game_point == "Hollow_Path_entered":
-		barreira_cutscene.queue_free()
-		static_body_2d_2.queue_free()
-		luz_1.queue_free()
-		luz_2.queue_free()
-		luz_3.queue_free()
-		cutscene_area.queue_free()
-	if Globals.Game_point == "Hollow_Path_Pos":
-		barreira_cutscene.queue_free()
-		static_body_2d_2.queue_free()
-		luz_1.queue_free()
-		luz_2.queue_free()
-		luz_3.queue_free()
-		cutscene_area.queue_free()
-		emit_signal("Hollow_Path_Pos")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _on_hollow_path_pos() -> void:
-	personagem.em_dialgo = true
-	nadador_1.nadano = true
-	anima_ao_do_mundo.set_current_animation("nadaçoes")
-	await anima_ao_do_mundo.animation_finished
-	nadador_1.nadano = false
-	anima_ao_do_mundo.set_current_animation("Pedra_hollow_path_cai")
-	await anima_ao_do_mundo.animation_finished
-	Globals.camera.Shake_camera(100)
-	emit_signal("Fim_de_conversa_2")
 	
+	# Faz o personagem seguir a câmera
+	$Personagem.follow_camera(camera_2d)
+
+	# Verifica o ponto do jogo e realiza as ações correspondentes
+	if Globals.Game_point == "start":
+		pass  # Nenhuma ação para o ponto inicial (aqui você pode adicionar algo caso necessário)
+	
+	if Globals.Game_point == "Hollow_Path_entered":
+		# Quando o ponto do jogo é "Hollow_Path_entered", remove os objetos da cena relacionados à cutscene
+		barreira_cutscene.queue_free()  # Remove a barreira
+		static_body_2d_2.queue_free()  # Remove o corpo estático 2
+		luz_1.queue_free()  # Remove a luz 1
+		luz_2.queue_free()  # Remove a luz 2
+		luz_3.queue_free()  # Remove a luz 3
+		cutscene_area.queue_free()  # Remove a área da cutscene
+	
+	if Globals.Game_point == "Hollow_Path_Pos":
+		# Quando o ponto do jogo é "Hollow_Path_Pos", remove os objetos da cena relacionados à cutscene
+		barreira_cutscene.queue_free()
+		static_body_2d_2.queue_free()
+		luz_1.queue_free()
+		luz_2.queue_free()
+		luz_3.queue_free()
+		cutscene_area.queue_free()
+		emit_signal("Hollow_Path_Pos")  # Emite um sinal indicando que o ponto "Hollow_Path_Pos" foi alcançado
+
+# Função chamada a cada frame. 'delta' é o tempo que passou desde o último frame.
+func _process(delta):
+	pass  # Nenhuma ação necessária a cada frame, mas este método pode ser útil para futuros ajustes
+
+# Função chamada quando o sinal "Hollow_Path_Pos" é emitido
+func _on_hollow_path_pos() -> void:
+	# Ativa o estado de diálogo do personagem
+	personagem.em_dialgo = true
+	
+	# Inicia a animação de natação do nadador
+	nadador_1.nadano = true
+	anima_ao_do_mundo.set_current_animation("nadaçoes")  # Reproduz a animação de natação
+	await anima_ao_do_mundo.animation_finished  # Aguarda a animação terminar
+	
+	# Desativa a animação de natação do nadador
+	nadador_1.nadano = false
+	
+	# Reproduz outra animação quando o nadador interage com a pedra
+	anima_ao_do_mundo.set_current_animation("Pedra_hollow_path_cai")  # Reproduz a animação da pedra caindo
+	await anima_ao_do_mundo.animation_finished  # Aguarda a animação terminar
+	
+	# Agita a câmera para dar um efeito de impacto
+	Globals.camera.Shake_camera(100)
+	
+	# Emite o sinal "Fim_de_conversa_2" indicando que a conversa ou animação terminou
+	emit_signal("Fim_de_conversa_2")
