@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://lg1d8py8asbv"]
+[gd_scene load_steps=30 format=4 uid="uid://lg1d8py8asbv"]
 
 [ext_resource type="Script" path="res://scripts/magma_throth.gd" id="1_d2iqv"]
 [ext_resource type="TileSet" uid="uid://bg2if8lcelk5q" path="res://Tcns/word_tutubarao.tres" id="2_auaeq"]
@@ -46,6 +46,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -4, 1254, 0, 0, 0, 0, -2, 390)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufytc"]
+size = Vector2(20, 268.2)
 
 [sub_resource type="Animation" id="Animation_gr4sl"]
 length = 0.001
@@ -325,8 +328,24 @@ cubic_interp = false
 [node name="Bola" parent="Utilitarios/L8_4/Bola1" instance=ExtResource("11_a1sde")]
 
 [node name="L9_4" parent="Utilitarios" instance=ExtResource("8_iunvq")]
-position = Vector2(9044, 645)
+position = Vector2(9044, 636)
 scale = Vector2(5, 5)
+
+[node name="barreira lava" parent="Utilitarios" instance=ExtResource("8_iunvq")]
+position = Vector2(11157, -271)
+rotation = -1.5708
+scale = Vector2(8, 8)
+Jorravel = false
+
+[node name="PosParkour" type="Area2D" parent="Utilitarios"]
+position = Vector2(10585, -879)
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Utilitarios/PosParkour"]
+position = Vector2(0, -60.9)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ufytc")
+debug_color = Color(0.918924, 6.22812e-05, 0.697296, 0)
 
 [node name="Forefround" type="TileMapLayer" parent="."]
 modulate = Color(1, 0.921484, 0.878335, 1)
@@ -348,7 +367,7 @@ texture = ExtResource("2_b1iv6")
 centered = false
 
 [node name="Nadador 2" parent="." instance=ExtResource("13_bh2lt")]
-position = Vector2(8390, -1200)
+position = Vector2(9731, -1200)
 
 [node name="Main_world" parent="." instance=ExtResource("14_2ih7x")]
 position = Vector2(-59, 234)
@@ -381,7 +400,7 @@ position = Vector2(6189, 645)
 position = Vector2(9571, 645)
 
 [node name="Personagem" parent="." instance=ExtResource("4_nkuaf")]
-position = Vector2(7560, -1200)
+position = Vector2(284, 654)
 
 [node name="PointLight2D" type="PointLight2D" parent="Personagem"]
 position = Vector2(0, 0.200012)
@@ -410,3 +429,5 @@ libraries = {
 [connection signal="Pos_conversa" from="." to="." method="_on_pos_conversa"]
 [connection signal="body_entered" from="Utilitarios/1" to="Personagem" method="_on__body_entered"]
 [connection signal="body_entered" from="Utilitarios/L1" to="Personagem" method="_on_l_1_body_entered"]
+[connection signal="final" from="Utilitarios/barreira lava" to="." method="_on_barreira_lava_final"]
+[connection signal="body_entered" from="Utilitarios/PosParkour" to="Utilitarios/barreira lava" method="_on_pos_parkour_body_entered"]

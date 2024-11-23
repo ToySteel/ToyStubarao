@@ -77,3 +77,8 @@ func desativar_lava(number: String):
 	var lava_atual = utilitarios.get_node(number)
 	# Aqui, você pode desativar a lava de várias maneiras, por exemplo, ocultando o nó
 	lava_atual.visible = false  # Desativa a lava tornando-a invisível
+
+
+func _on_barreira_lava_final():
+	personagem.em_dialgo = true
+	DialogueManager.show_example_dialogue_balloon(dialogue_resource, "mergulhador_1_Magma_throth")

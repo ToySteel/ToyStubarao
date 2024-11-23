@@ -17,13 +17,19 @@ extends Area2D
 
 # Variáveis internas
 var state: String = "Jorrando"  # Estado inicial do jorro
-
+signal final
 # Função chamada quando o nó entra na cena
 func _ready():
-
-	timer_desativo.start()  # Inicia o temporizador de desativação
-
-# Função chamada a cada frame
+	if name != "barreira lava":
+		timer_desativo.start()  # Inicia o temporizador de desativação
+	if get_parent().name == "Lava_persegue":
+		pass
+	if name == "barreira lava":
+		timer_desativo.stop()
+		monitoring = false  # Para o monitoramento
+		await anim.animation_looped  # Aguarda o loop da animação
+		state = "Ligado"  # Muda o estado para "Ligado"
+		$Luz.visible = false
 func _process(delta):
 	_state()  # Verifica o estado da animação e atualiza se necessário
 
@@ -68,3 +74,15 @@ func _on_body_entered(body: Node2D) -> void:
 		personagem.die(Vector2(200,-200))  # Mata o personagem (direciona-o para fora da tela)
 	if RayRight.is_colliding():  # Se o RayCast à direita colidir
 		personagem.die(Vector2(-200,-200))  # Mata o personagem (direciona-o para fora da tela)
+
+
+func _on_pos_parkour_body_entered(body):
+	if name == "barreira lava":
+		monitoring = true  # Começa o monitoramento  # Reinicia o temporizador de desativação
+		await anim.animation_looped  # Aguarda o loop da animação
+		if remecheno.get_overlapping_bodies():  # Se algum corpo está sobrepondo a área de efeito
+			camera.Shake_camera(100, 0.2,80)  # Sacode a câmera
+		state = "Jorrando"  # Muda o estado para "Jorrando"
+		$Luz.visible = true
+		emit_signal("final")
+		$"../PosParkour".queue_free()
