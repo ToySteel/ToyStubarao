@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdu26337ugmrf"]
+[gd_scene load_steps=18 format=3 uid="uid://cdu26337ugmrf"]
 
 [ext_resource type="Texture2D" uid="uid://eeuqhl2p3u3n" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/Swim.png" id="1_jr7q2"]
+[ext_resource type="Script" path="res://Tcns/nadador_3.gd" id="1_oq1j7"]
 [ext_resource type="Texture2D" uid="uid://dx11m0fmy8gs3" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/pelado.png" id="2_0u70o"]
 [ext_resource type="Texture2D" uid="uid://wswlkpr7ftx4" path="res://Assests/free-swimming-characters-animation-pixel-art/3 SteamMan/nadador 3.png" id="3_7o1ds"]
 
@@ -236,6 +237,7 @@ modulate = Color(0.431373, 0.415686, 1, 1)
 scale = Vector2(5, 5)
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("1_oq1j7")
 
 [node name="Sprite 2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jr7q2")

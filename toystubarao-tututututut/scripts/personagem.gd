@@ -4,13 +4,15 @@ extends CharacterBody2D  # Herda de CharacterBody2D, que é adequado para objeto
 @onready var actionable_finder = $ActionableFinder  # A referência ao nó responsável por encontrar áreas acionáveis (por exemplo, interações).
 @onready var player = $nadador  # Referência ao personagem (nadador).
 @export var speed = 100  # Velocidade de movimento do personagem.
-@export var rotation_speed = 1.7  # Velocidade de rotação do personagem.
+@export var rotation_speed = 1.7
+@export var nadano:bool = false  # Velocidade de rotação do personagem.
 @onready var anim = $"Animation personagem"  # Referência ao nó de animações do personagem.
 @onready var remote_transform_2d: RemoteTransform2D = $RemoteTransform2D  # Referência ao nó de transformação remota, usado para seguir a câmera.
 @onready var camera: Camera2D = $"../Camera"  # Referência à câmera que segue o personagem.
 @onready var RayLeft: RayCast2D = $RayLeft  # Raycast à esquerda, usado para detectar colisões ou limites.
 @onready var RayRight: RayCast2D = $RayRight  # Raycast à direita, usado para detectar colisões ou limites.
-
+@onready var ainma_ao_do_mundo: AnimationPlayer = $"../AINMAÇAO DO MUNDO"
+var state = "idle"
 # Variáveis para controlar o estado e o movimento do personagem.
 var rotation_direction = 0  # Direção da rotação.
 var direçao = true  # Direção do personagem (possivelmente controlando o sentido do movimento).
@@ -27,7 +29,7 @@ func get_input():
 func _physics_process(delta):
 	if knockback_vector != Vector2.ZERO:  # Se houver um vetor de knockback (quando o personagem for atingido), aplica-o.
 		velocity = knockback_vector
-	
+	stade()
 	# Impede o movimento do personagem quando ele estiver em um diálogo.
 	if em_dialgo == false:
 		# Inicia interações (diálogos) quando o jogador pressiona a tecla de ação.
@@ -54,19 +56,25 @@ func _physics_process(delta):
 			$LightOccluder2D.scale.x = -1
 		
 		# Atualiza o estado da animação do personagem.
-		stade()
+		
 		move_and_slide()  # Aplica o movimento físico do personagem.
 
 # Função para controlar o estado das animações do personagem (idle, nadando, etc.).
 func stade():
-	if Input.is_action_just_pressed("ui_up"):  # Quando o jogador pressiona a tecla "cima", começa a animação de nadando.
+	if em_dialgo == false:
+		if Input.is_action_just_pressed("ui_up"):  # Quando o jogador pressiona a tecla "cima", começa a animação de nadando.
+			anim.set_current_animation("Nadano")
+		if Input.is_action_just_pressed("ui_down"):  # Quando o jogador pressiona a tecla "baixo", começa a animação de nadando.
+			anim.set_current_animation("Nadano")
+	if anim.current_animation != "Morte":
+		if Input.is_action_just_released("ui_up"):  # Quando o jogador solta a tecla "cima", retorna à animação idle.
+			anim.set_current_animation("idle")
+		if Input.is_action_just_released("ui_down"):  # Quando o jogador solta a tecla "baixo", retorna à animação idle.
+			anim.set_current_animation("idle")
+	if nadano:
 		anim.set_current_animation("Nadano")
-	if Input.is_action_just_released("ui_up"):  # Quando o jogador solta a tecla "cima", retorna à animação idle.
-		anim.set_current_animation("idle")
-	if Input.is_action_just_pressed("ui_down"):  # Quando o jogador pressiona a tecla "baixo", começa a animação de nadando.
-		anim.set_current_animation("Nadano")
-	if Input.is_action_just_released("ui_down"):  # Quando o jogador solta a tecla "baixo", retorna à animação idle.
-		anim.set_current_animation("idle")
+	else:
+		anim.set_current_animation("Idle")
 
 # Funções de interação com áreas de diálogo ou cutscenes.
 func _on_static_body_2d_holograma_conversas():  # Quando o personagem entra em uma área de conversa, ativa o diálogo.
@@ -109,7 +117,7 @@ func die(knockback_force := Vector2.ZERO, duration := 0.25):
 		em_dialgo = true
 		rotation = 0  # Zera a rotação ao morrer.
 		camera.Shake_camera(100, 0.8, 40)  # Faz a câmera tremer para dar impacto.
-		knockback_vector = knockback_force  # Aplica o efeito de "knockback".
+		#knockback_vector = knockback_force  # Aplica o efeito de "knockback".
 		var knockback_tween: Tween = get_tree().create_tween()
 		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)  # Remove o efeito de knockback após o tempo definido.
 		camera.Shake_camera(100, 0.2, 60)
@@ -123,8 +131,12 @@ func die(knockback_force := Vector2.ZERO, duration := 0.25):
 		if Globals.Checkpoints != null:  # Se houver checkpoints definidos, o personagem reaparece no último checkpoint.
 			self.global_position = get_parent().get_node(Globals.Checkpoints).global_position
 		recreate()  # Reinicia o estado do personagem.
-		transition.des_transition()  # Desativa a transição de cena.
-
+		if Globals.Checkpoints == "5":
+			$"../AINMAÇAO DO MUNDO".set_current_animation("nadano 0")
+			await $"../AINMAÇAO DO MUNDO".animation_finished
+			$"../AINMAÇAO DO MUNDO".set_current_animation("corra")
+		transition.des_transition() 
+		print("died") # Desativa a transição de cena.
 # Função chamada quando o personagem morre ao colidir com um raio.
 func died():
 	if RayLeft.is_colliding():  # Se colidir com o raio à esquerda, chama a função de morte com uma força de knockback.
@@ -135,4 +147,5 @@ func died():
 # Função que reinicia o estado do personagem após a morte.
 func recreate():
 	em_dialgo = false
-	anim.set_current_animation("idle")  # Retorna à animação idle após a morte.
+	anim.set_current_animation("idle")
+	scale = Vector2(5,5)  # Retorna à animação idle após a morte.

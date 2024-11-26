@@ -11,6 +11,7 @@ extends Area2D
 @onready var camera: Camera2D = $"../../Camera"  # Referência à câmera
 @onready var remecheno: Area2D = $remecheno  # Área de efeito (possivelmente um efeito de jorro)
 
+
 # Variáveis exportadas: podem ser configuradas no editor
 @export var Jorravel: bool = true  # Flag que indica se o jorro está ativado
 @export var timer_time: float = 1  # Tempo para os temporizadores
@@ -18,6 +19,7 @@ extends Area2D
 # Variáveis internas
 var state: String = "Jorrando"  # Estado inicial do jorro
 signal final
+
 # Função chamada quando o nó entra na cena
 func _ready():
 	if name != "barreira lava":
@@ -74,15 +76,16 @@ func _on_body_entered(body: Node2D) -> void:
 		personagem.die(Vector2(200,-200))  # Mata o personagem (direciona-o para fora da tela)
 	if RayRight.is_colliding():  # Se o RayCast à direita colidir
 		personagem.die(Vector2(-200,-200))  # Mata o personagem (direciona-o para fora da tela)
-
+	$"../../Personagem"
 
 func _on_pos_parkour_body_entered(body):
 	if name == "barreira lava":
+		emit_signal("final")
+		await $"../../AINMAÇAO DO MUNDO".animation_finished
 		monitoring = true  # Começa o monitoramento  # Reinicia o temporizador de desativação
 		await anim.animation_looped  # Aguarda o loop da animação
 		if remecheno.get_overlapping_bodies():  # Se algum corpo está sobrepondo a área de efeito
 			camera.Shake_camera(100, 0.2,80)  # Sacode a câmera
 		state = "Jorrando"  # Muda o estado para "Jorrando"
 		$Luz.visible = true
-		emit_signal("final")
 		$"../PosParkour".queue_free()

@@ -9,7 +9,7 @@ signal Cutscene
 
 # Referências aos componentes da animação
 @onready var animation_player: AnimationPlayer = $AnimationPlayer  # Controlador de animações
-var nadano = false  # Flag que indica se o personagem está nadando
+@export var nadano = false  # Flag que indica se o personagem está nadando
 
 # Referências adicionais para animações
 @onready var anima_ao_do_mundo = $"../animaçao do mundo"  # Referência à animação global do mundo

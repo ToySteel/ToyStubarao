@@ -11,6 +11,7 @@ extends Node2D
 @onready var anima_ao_do_mundo: AnimationPlayer = $"ANIMAÇAO DO MUNDO"  # Referência ao AnimationPlayer
 @onready var cutscene_area: Area2D = $"Cutscene Area"  # Referência à área da cutscene
 @onready var nadador_1: CharacterBody2D = $"Nadador 1"  # Referência ao personagem "nadador 1"
+@onready var transition: CanvasLayer = $transition
 
 # Variáveis exportadas para o editor
 @export var dialogue_resource: DialogueResource  # Recurso de diálogo
@@ -22,7 +23,9 @@ signal Fim_de_conversa_2
 signal LUZ
 signal Inicio_de_conversa_luz
 signal Hollow_Path_Pos
-
+signal Magma_throth_Pos
+signal OFIM
+signal acabou
 # Função chamada quando o nó entra na árvore de cena
 func _ready():
 	# Se o jogo vem de um ponto específico, o personagem é reposicionado na cena
@@ -53,7 +56,16 @@ func _ready():
 		luz_2.queue_free()
 		luz_3.queue_free()
 		cutscene_area.queue_free()
-		emit_signal("Hollow_Path_Pos")  # Emite um sinal indicando que o ponto "Hollow_Path_Pos" foi alcançado
+		emit_signal("Hollow_Path_Pos")
+	if Globals.Game_point == "Magma_throthPos":
+		barreira_cutscene.queue_free()
+		static_body_2d_2.queue_free()
+		luz_1.queue_free()
+		luz_2.queue_free()
+		luz_3.queue_free()
+		cutscene_area.queue_free()
+		emit_signal("Magma_throth_Pos")
+		  # Emite um sinal indicando que o ponto "Hollow_Path_Pos" foi alcançado
 
 # Função chamada a cada frame. 'delta' é o tempo que passou desde o último frame.
 func _process(delta):
@@ -81,3 +93,31 @@ func _on_hollow_path_pos() -> void:
 	
 	# Emite o sinal "Fim_de_conversa_2" indicando que a conversa ou animação terminou
 	emit_signal("Fim_de_conversa_2")
+#####################################################################
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	$"TileMap/bloqueado".collision_enabled = false
+	anima_ao_do_mundo.set_current_animation("apagano")
+
+
+func _on_magma_throth_pos() -> void:
+	personagem.em_dialgo = true
+	anima_ao_do_mundo.set_current_animation("Magma")
+	await anima_ao_do_mundo.animation_finished
+	DialogueManager.show_example_dialogue_balloon(dialogue_resource, "Quase_fim")
+	personagem.em_dialgo = false
+func _on_profundidade_cabo() -> void:
+	if Globals.Game_point == "Magma_throthPos":
+		personagem.position = Vector2(3458,14575)
+		personagem.em_dialgo = true
+		anima_ao_do_mundo.set_current_animation("FIM")
+		await anima_ao_do_mundo.animation_finished
+		anima_ao_do_mundo.set_current_animation("verde vem")
+		await anima_ao_do_mundo.animation_finished
+		DialogueManager.show_example_dialogue_balloon(dialogue_resource, "AGRSIM")
+		await anima_ao_do_mundo.animation_finished
+
+
+func _on_acabou() -> void:
+	anima_ao_do_mundo.set_current_animation("O Fim")
+	transition.transition()

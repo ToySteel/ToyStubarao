@@ -14,7 +14,8 @@ extends Node2D
 
 # Definição de sinais para comunicação entre nós
 signal Pos_conversa  # Sinal de interação de conversa
-
+signal pombas
+signal pombas2
 # Função chamada quando a cena é inicializada
 func _ready():
 
@@ -81,4 +82,27 @@ func desativar_lava(number: String):
 
 func _on_barreira_lava_final():
 	personagem.em_dialgo = true
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, "mergulhador_1_Magma_throth")
+	ainma_ao_do_mundo.set_current_animation("nadano 5")
+	await ainma_ao_do_mundo.animation_finished
+	DialogueManager.show_example_dialogue_balloon(dialogue_resource, "Pos_parkour")
+	
+
+
+func _on_pombas() -> void:
+	personagem.em_dialgo = false
+	
+
+
+func _on_pombas_2() -> void:
+	personagem.em_dialgo = false
+	ainma_ao_do_mundo.set_current_animation("corra")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	personagem.em_dialgo = true
+	personagem.position = Vector2(9993,-1200)
+	personagem.rotation = 0
+	personagem.scale = Vector2(-5,5)
+	DialogueManager.show_example_dialogue_balloon(dialogue_resource, "nadador2")
+	Globals.Checkpoints = "5"
+	$"Nadador 2/Area2D".queue_free()

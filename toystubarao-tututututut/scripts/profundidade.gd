@@ -3,7 +3,7 @@ extends Node2D  # Herda de Node2D, que é a classe base para nós 2D que não po
 # Referências aos nós usados no script.
 @onready var sprite = $"../Personagem/Sprite2D2"  # Referência ao sprite do personagem.
 @onready var point_light_2d: PointLight2D = $"../Personagem/PointLight2D"  # Referência à luz pontual 2D, caso precise ser manipulada no futuro.
-
+signal cabo
 #################################################
 # Funções de interação com diferentes áreas 2D.
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
@@ -35,3 +35,16 @@ func _on_area_2d_10_body_entered(body):
 	# Corrige um erro de sintaxe, no qual o valor das cores estava errado.
 	sprite.modulate = Color(0.113, 0.113, 0.113, 0.224)  # Modifica a cor para um tom muito escuro de cinza.
 ####################################################
+
+
+func _on_area_2d_11_body_entered(body: Node2D) -> void:
+	sprite.modulate = Color(0.085, 0.085, 0.085, 0.224)
+
+
+func _on_area_2d_12_body_entered(body: Node2D) -> void:
+	emit_signal("cabo")
+	sprite.modulate = Color(0, 0, 0, 0.224)
+
+
+func _on_area_2d_13_body_entered(body: Node2D) -> void:
+	sprite.modulate = Color(0, 0, 0, 0.471)

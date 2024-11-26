@@ -15,7 +15,7 @@ var transmissor = "false"  # Indica o estado de um transmissor.
 var chave_hollow_path = false  # Indica se a chave do Hollow_path foi encontrada.
 var Game_point = "Start"  # Define o ponto inicial do jogo.
 var camera = null  # A câmera, possivelmente para movimentação ou controle.
-var Gelo = true  # Talvez um estado relacionado ao gelo no jogo.
+var Gelo = false  # Talvez um estado relacionado ao gelo no jogo.
 var Checkpoints: String = "0"  # A rastreabilidade dos checkpoints do jogo.
 
 # Função chamada a cada frame. 'delta' é o tempo decorrido desde o último frame.

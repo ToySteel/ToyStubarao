@@ -165,10 +165,44 @@ VOCE RECEBEU TOY ICES
 Mergulhador azul: depoi que voce conseguir ativar eu venho atraz.
 do emit_signal("Pos_conversa")
 => END
-
-
-
-
-
-
-
+~ Pos_parkour
+Mergulhador azul: Ufa ainda bem que eu consegui passar.
+Mergulhador azul: Olha ali o mergulhador
+do emit_signal("pombas")
+=> END 
+~ nadador2
+Iniciando comunicaçao....
+Mergulhador: Oiii, tudo bem?
+Mergulhador roza: C...
+Mergulhador: oi?
+Mergulhador roza: c...r..a
+Mergulhador roza: c...o...r...r...a
+Mergulhador: .....
+Mergulhador roza: CORRA
+do emit_signal("pombas2")
+=> END
+~ Quase_fim
+Mergulhador roza: Arf... Arf..
+Mergulhador azul: Quase que a gente nao sobrevive
+Mergulhador: arf
+Mergulhador azul: agora so falta um mergulhador
+Mergulhador: vamos acabar logo com isso
+Mergulhador azul: Siga reto para baixo 
+=> END
+~ OK_VAMOSLA
+Mergulhador: OK VAMOS LA.
+.
+do emit_signal("OFIM")
+=> END
+~ AGRSIM
+Mergulhador azul: Ei oque você esta fazendo aqui
+Mergulhador verde: consegui sair de la
+Mergulhador roza: Nossa serio?
+Mergulhador: Nossa mas foi a muito tempo
+Mergulhador verde: e que eu sou o mergulhador mais experiente daqui, com um misero sinal luminozo consegui achalos
+Mergulhador verde: e agora eu tambem peguei o resultado do experimento
+Mergulhador roza: entao missao cumprida!!!
+Mergulhador: vamos?
+Mergulhador azul: SIMMM
+do emit_signal("acabou")
+=> END

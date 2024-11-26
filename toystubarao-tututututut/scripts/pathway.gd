@@ -10,8 +10,12 @@ extends Area2D  # A classe Area2D é usada para detectar colisões com outros ob
 func _on_body_entered(body):
 	# Verifica se o caminho da cena não está vazio
 	if path != "":
-		# Define qual é o "mundo de origem" antes da transição
-		Globals.from_world = get_parent().name
+		if !Globals.from_world == get_parent().name + "DP":
+			Globals.from_world = get_parent().name
 		
 		# Chama a função de transição de cena, passando o caminho da nova cena
 		transition.change_scene(true, path, "no", "no")
+
+
+func _on_magma_throth_pombas_2() -> void:
+	Globals.from_world = get_parent().name + "DP"
