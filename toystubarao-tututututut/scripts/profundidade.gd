@@ -42,7 +42,8 @@ func _on_area_2d_11_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_12_body_entered(body: Node2D) -> void:
-	emit_signal("cabo")
+	if Globals.Game_point =="Magma_throthPos":
+		emit_signal("cabo")
 	sprite.modulate = Color(0, 0, 0, 0.224)
 
 

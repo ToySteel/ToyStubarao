@@ -37,7 +37,7 @@ func _ready():
 
 	# Verifica o ponto do jogo e realiza as ações correspondentes
 	if Globals.Game_point == "start":
-		pass  # Nenhuma ação para o ponto inicial (aqui você pode adicionar algo caso necessário)
+		personagem.position = Vector2(403, 531)  # Nenhuma ação para o ponto inicial (aqui você pode adicionar algo caso necessário)
 	
 	if Globals.Game_point == "Hollow_Path_entered":
 		# Quando o ponto do jogo é "Hollow_Path_entered", remove os objetos da cena relacionados à cutscene
