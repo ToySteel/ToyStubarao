@@ -27,8 +27,10 @@ func action() -> void:
 	# Emite o sinal "Holograma_conversas" para indicar que uma conversa foi iniciada.
 	emit_signal("Holograma_conversas")
 	
+	
 	# Remove o StaticBody2D2 da cena.
-	static_body_2d_2.queue_free()
+	if static_body_2d_2 != null:
+		static_body_2d_2.queue_free()
 
 # Função que é executada a cada frame, usada para atualizar o estado do objeto.
 func _process(delta):

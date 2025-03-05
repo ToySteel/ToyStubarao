@@ -106,3 +106,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, "nadador2")
 	Globals.Checkpoints = "5"
 	$"Nadador 2/Area2D".queue_free()
+	Globals.Game_point = "Magma_throthPos"
