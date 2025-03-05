@@ -32,7 +32,7 @@ func _physics_process(delta):
 	stade()
 	# Impede o movimento do personagem quando ele estiver em um diálogo.
 	if em_dialgo == false:
-		 #Inicia interações (diálogos) quando o jogador pressiona a tecla de ação.
+		# Inicia interações (diálogos) quando o jogador pressiona a tecla de ação.
 		if Input.is_action_just_pressed("ui_accept"):
 			var actionables = actionable_finder.get_overlapping_areas()  # Encontra áreas acionáveis ao redor do personagem.
 			if actionables.size() > 0:
